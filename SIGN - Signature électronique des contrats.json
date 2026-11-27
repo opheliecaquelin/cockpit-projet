@@ -1,0 +1,3313 @@
+{
+  "app": "cockpit-projet",
+  "type": "projet",
+  "version": 3,
+  "projet": {
+    "id": "sig-demo2",
+    "nom": "Signature électronique des contrats",
+    "code": "SIGN",
+    "emoji": "✍️",
+    "couleur": "#7b5ea7",
+    "creeLe": "2026-11-02",
+    "description": "🧪 PROJET DE DÉMONSTRATION (données fictives). Mettre en place la signature électronique pour les contrats de travail, les avenants et les bons de commande, avec un outil du marché.",
+    "enjeu": "Passer de 10 jours à 2 jours en moyenne pour faire signer un contrat, avant la campagne de renouvellement de janvier.",
+    "objectifs": "Signer 100 % des contrats de travail et avenants en électronique d'ici fin décembre\nRéduire le délai moyen de signature de 10 à 2 jours\nZéro impression papier pour les bons de commande de plus de 5 000 €",
+    "perimetreIn": "Contrats de travail et avenants (RH)\nBons de commande (Achats)\nConnexion avec l'outil achats",
+    "perimetreOut": "Contrats commerciaux clients\nArchivage à valeur probante (projet 2027)",
+    "notes": "Projet court en mode hybride : cadrage, réalisation en sprints d'une semaine, recette et déploiement.",
+    "dateDebut": "2026-11-09",
+    "dateFin": "2026-12-04",
+    "finFerme": true,
+    "budget": {
+      "montant": "",
+      "unite": "keur",
+      "lignes": [],
+      "points": []
+    },
+    "options": {
+      "budget": false,
+      "charge": false
+    },
+    "interlocuteurs": [
+      {
+        "id": "sig0002",
+        "personneId": "sig0001",
+        "role": "Sponsor",
+        "copil": true
+      },
+      {
+        "id": "sig0004",
+        "personneId": "sig0003",
+        "role": "Chef de projet",
+        "copil": true
+      },
+      {
+        "id": "sig0006",
+        "personneId": "sig0005",
+        "role": "Référent métier",
+        "copil": true
+      },
+      {
+        "id": "sig0008",
+        "personneId": "sig0007",
+        "role": "Product Owner",
+        "copil": true
+      },
+      {
+        "id": "sig0010",
+        "personneId": "sig0009",
+        "role": "Équipe projet",
+        "copil": false
+      },
+      {
+        "id": "sig0012",
+        "personneId": "sig0011",
+        "role": "Architecte",
+        "copil": false
+      },
+      {
+        "id": "sig0014",
+        "personneId": "sig0013",
+        "role": "Utilisateur clé",
+        "copil": false
+      },
+      {
+        "id": "sig0016",
+        "personneId": "sig0015",
+        "role": "Fournisseur / prestataire",
+        "copil": false
+      }
+    ],
+    "liens": [
+      {
+        "id": "sig0030",
+        "libelle": "Espace Teams du projet",
+        "url": "https://www.exemple.fr/teams/signature-electronique"
+      }
+    ],
+    "risques": [
+      {
+        "id": "sig0017",
+        "refId": "",
+        "cat": "planning",
+        "titre": "Planning très court : aucune marge",
+        "description": "Quatre semaines de bout en bout, sans semaine tampon.",
+        "impact": "Le moindre retard décale la mise en service prévue avant la campagne de renouvellement des contrats de janvier.",
+        "p": 3,
+        "g": 3,
+        "critForce": null,
+        "statut": "traitement",
+        "responsable": "Camille Lefèvre",
+        "revue": "",
+        "notes": "",
+        "actions": [
+          {
+            "id": "sig0018",
+            "texte": "Valider avec la sponsor un périmètre minimal (MVP) en cas de retard",
+            "responsable": "Camille Lefèvre",
+            "echeance": "2026-11-20",
+            "fait": false,
+            "creeLe": "2026-11-10"
+          },
+          {
+            "id": "sig0019",
+            "texte": "Point quotidien de 15 min pendant la réalisation",
+            "responsable": "Camille Lefèvre",
+            "echeance": "2026-11-16",
+            "fait": true,
+            "creeLe": "2026-11-10"
+          }
+        ],
+        "initial": {
+          "p": 3,
+          "g": 3,
+          "c": 9
+        },
+        "creeLe": "2026-11-10",
+        "historique": [
+          {
+            "date": "2026-11-10",
+            "p": 3,
+            "g": 3
+          }
+        ]
+      },
+      {
+        "id": "sig0020",
+        "refId": "",
+        "cat": "externe",
+        "titre": "Valeur probante de la signature",
+        "description": "Le niveau de signature (simple / avancée) doit être adapté à chaque type de contrat.",
+        "impact": "Contrats contestables en cas de litige.",
+        "p": 2,
+        "g": 3,
+        "critForce": null,
+        "statut": "traitement",
+        "responsable": "Antoine Mercier",
+        "revue": "",
+        "notes": "",
+        "actions": [
+          {
+            "id": "sig0021",
+            "texte": "Classer les modèles de contrats par niveau de signature requis",
+            "responsable": "Antoine Mercier",
+            "echeance": "2026-11-18",
+            "fait": true,
+            "creeLe": "2026-11-10"
+          },
+          {
+            "id": "sig0022",
+            "texte": "Faire valider le classement par le directeur juridique",
+            "responsable": "Antoine Mercier",
+            "echeance": "2026-11-24",
+            "fait": false,
+            "creeLe": "2026-11-10"
+          }
+        ],
+        "initial": {
+          "p": 2,
+          "g": 3,
+          "c": 6
+        },
+        "creeLe": "2026-11-10",
+        "historique": [
+          {
+            "date": "2026-11-10",
+            "p": 2,
+            "g": 3
+          }
+        ]
+      },
+      {
+        "id": "sig0023",
+        "refId": "",
+        "cat": "donnees",
+        "titre": "Données personnelles hébergées chez l'éditeur",
+        "description": "Les contrats contiennent des données personnelles des salariés et fournisseurs.",
+        "impact": "Non-conformité RGPD si l'hébergement est hors UE.",
+        "p": 2,
+        "g": 3,
+        "critForce": null,
+        "statut": "traitement",
+        "responsable": "Mathieu Blanc",
+        "revue": "",
+        "notes": "",
+        "actions": [
+          {
+            "id": "sig0024",
+            "texte": "Obtenir l'attestation d'hébergement en France de l'éditeur",
+            "responsable": "Paul Renard",
+            "echeance": "2026-11-17",
+            "fait": true,
+            "creeLe": "2026-11-10"
+          },
+          {
+            "id": "sig0025",
+            "texte": "Mettre à jour le registre des traitements RGPD",
+            "responsable": "Mathieu Blanc",
+            "echeance": "2026-11-27",
+            "fait": false,
+            "creeLe": "2026-11-10"
+          }
+        ],
+        "initial": {
+          "p": 2,
+          "g": 3,
+          "c": 6
+        },
+        "creeLe": "2026-11-10",
+        "historique": [
+          {
+            "date": "2026-11-10",
+            "p": 2,
+            "g": 3
+          }
+        ]
+      },
+      {
+        "id": "sig0026",
+        "refId": "",
+        "cat": "archi",
+        "titre": "Connecteur avec l'outil achats",
+        "description": "Le connecteur standard de l'éditeur ne gère pas nos bons de commande personnalisés.",
+        "impact": "Ressaisie manuelle pour les achats, gain attendu réduit.",
+        "p": 2,
+        "g": 2,
+        "critForce": null,
+        "statut": "identifie",
+        "responsable": "Yanis Haddad",
+        "revue": "",
+        "notes": "",
+        "actions": [
+          {
+            "id": "sig0027",
+            "texte": "Tester le connecteur sur 10 bons de commande réels",
+            "responsable": "Yanis Haddad",
+            "echeance": "2026-11-23",
+            "fait": false,
+            "creeLe": "2026-11-10"
+          }
+        ],
+        "initial": {
+          "p": 2,
+          "g": 2,
+          "c": 4
+        },
+        "creeLe": "2026-11-10",
+        "historique": [
+          {
+            "date": "2026-11-10",
+            "p": 2,
+            "g": 2
+          }
+        ]
+      },
+      {
+        "id": "sig0028",
+        "refId": "",
+        "cat": "adoption",
+        "titre": "Adoption par les managers",
+        "description": "Habitués aux signatures papier, certains managers pourraient contourner l'outil.",
+        "impact": "Double circuit papier / électronique.",
+        "p": 2,
+        "g": 2,
+        "critForce": null,
+        "statut": "identifie",
+        "responsable": "Laura Fontaine",
+        "revue": "",
+        "notes": "",
+        "actions": [
+          {
+            "id": "sig0029",
+            "texte": "Préparer un tuto vidéo de 2 minutes",
+            "responsable": "Inès Morel",
+            "echeance": "2026-12-01",
+            "fait": false,
+            "creeLe": "2026-11-10"
+          }
+        ],
+        "initial": {
+          "p": 2,
+          "g": 2,
+          "c": 4
+        },
+        "creeLe": "2026-11-10",
+        "historique": [
+          {
+            "date": "2026-11-10",
+            "p": 2,
+            "g": 2
+          }
+        ]
+      },
+      {
+        "id": "pbsign1",
+        "refId": null,
+        "cat": "fournis",
+        "titre": "Accès à l'environnement de test de l'éditeur en retard",
+        "description": "Les comptes de test SignaFlow ont été ouverts avec 2 jours de retard.",
+        "impact": "Démarrage du paramétrage décalé ; le tableau de suivi peut glisser au sprint 2.",
+        "p": 3,
+        "g": 2,
+        "critForce": null,
+        "statut": "survenu",
+        "avereLe": "2026-11-12",
+        "resoluLe": "2026-11-16",
+        "imprevu": true,
+        "responsable": "Paul Renard",
+        "revue": "",
+        "notes": "",
+        "actions": [
+          {
+            "id": "pbact5",
+            "texte": "Escalader auprès du responsable de compte SignaFlow",
+            "responsable": "Camille Lefèvre",
+            "echeance": "2026-11-13",
+            "fait": true,
+            "creeLe": "2026-11-13"
+          }
+        ],
+        "initial": {
+          "p": 3,
+          "g": 2,
+          "c": 6
+        },
+        "creeLe": "2026-11-12",
+        "historique": [
+          {
+            "date": "2026-11-12",
+            "p": 3,
+            "g": 2
+          }
+        ]
+      }
+    ],
+    "planning": {
+      "methode": "hybride",
+      "sprint": {
+        "duree": 1,
+        "jour": 1,
+        "avance": 6
+      },
+      "types": {
+        "lancement": {
+          "actif": true
+        },
+        "cadrage": {
+          "actif": true
+        },
+        "entretien": {
+          "actif": true,
+          "nombre": 3
+        },
+        "avancement": {
+          "actif": true,
+          "tousLes": 2,
+          "jourSemaine": 4
+        },
+        "planning": {
+          "actif": true
+        },
+        "affinage": {
+          "actif": true
+        },
+        "revue": {
+          "actif": true
+        },
+        "retro": {
+          "actif": true
+        },
+        "copil": {
+          "actif": true,
+          "regle": "sprints",
+          "tousLes": 2,
+          "rang": 1,
+          "jourSemaine": 2
+        },
+        "cloture": {
+          "actif": true
+        }
+      },
+      "phases": [
+        {
+          "id": "w4o0xfukw2m4",
+          "nom": "Cadrage",
+          "jours": 7,
+          "sprints": false,
+          "verrou": false,
+          "debut": "2026-11-09",
+          "fin": "2026-11-15",
+          "debutInitial": "2026-11-09",
+          "finInitiale": "2026-11-15",
+          "reel": 100,
+          "reelLe": "2026-11-19"
+        },
+        {
+          "id": "gotp9ln0w2m4",
+          "nom": "Réalisation (sprints)",
+          "jours": 14,
+          "sprints": true,
+          "verrou": false,
+          "debut": "2026-11-16",
+          "fin": "2026-11-29",
+          "debutInitial": "2026-11-16",
+          "finInitiale": "2026-11-29",
+          "reel": 45,
+          "reelLe": "2026-11-19"
+        },
+        {
+          "id": "jpyd6a40w2m4",
+          "nom": "Recette globale",
+          "jours": 3,
+          "sprints": false,
+          "verrou": false,
+          "debut": "2026-11-30",
+          "fin": "2026-12-02",
+          "debutInitial": "2026-11-30",
+          "finInitiale": "2026-12-02",
+          "reel": 0,
+          "reelLe": "2026-11-19"
+        },
+        {
+          "id": "8z5y7eaaw2m4",
+          "nom": "Déploiement",
+          "jours": 2,
+          "sprints": false,
+          "verrou": false,
+          "debut": "2026-12-03",
+          "fin": "2026-12-04",
+          "debutInitial": "2026-12-03",
+          "finInitiale": "2026-12-04",
+          "reel": 0,
+          "reelLe": "2026-11-19"
+        }
+      ],
+      "sprints": [
+        {
+          "id": "z7k4wldmw2m5",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 1,
+          "debut": "2026-11-16",
+          "fin": "2026-11-20",
+          "debutInitial": "2026-11-16",
+          "finInitiale": "2026-11-20"
+        },
+        {
+          "id": "3vsa951pw2m5",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 2,
+          "debut": "2026-11-23",
+          "fin": "2026-11-27",
+          "debutInitial": "2026-11-23",
+          "finInitiale": "2026-11-27"
+        }
+      ],
+      "jalons": [
+        {
+          "id": "mxryxu5dw2m4",
+          "nom": "Fin de cadrage",
+          "ancre": "phase:w4o0xfukw2m4",
+          "date": "2026-11-13",
+          "frise": true,
+          "atteint": true,
+          "verrou": false,
+          "notes": "",
+          "dateInitiale": "2026-11-13"
+        },
+        {
+          "id": "0li85m3sw2m4",
+          "nom": "Fin de réalisation",
+          "ancre": "phase:gotp9ln0w2m4",
+          "date": "2026-11-27",
+          "frise": true,
+          "atteint": false,
+          "verrou": false,
+          "notes": "",
+          "dateInitiale": "2026-11-27"
+        },
+        {
+          "id": "0r9rdg9bw2m4",
+          "nom": "Recette validée",
+          "ancre": "phase:jpyd6a40w2m4",
+          "date": "2026-12-02",
+          "frise": true,
+          "atteint": false,
+          "verrou": false,
+          "notes": "",
+          "dateInitiale": "2026-12-02"
+        },
+        {
+          "id": "ex1z3tetw2m4",
+          "nom": "Mise en production",
+          "ancre": "phase:8z5y7eaaw2m4",
+          "date": "2026-12-04",
+          "frise": true,
+          "atteint": false,
+          "verrou": false,
+          "notes": "",
+          "dateInitiale": "2026-12-04"
+        }
+      ],
+      "reunions": [
+        {
+          "id": "ebhata0hw2m6",
+          "auto": true,
+          "cle": "lancement:",
+          "type": "lancement",
+          "date": "2026-11-09",
+          "heure": "10:00",
+          "duree": 90,
+          "motif": "",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-09",
+          "cr": {
+            "presence": {
+              "sig0002": "present",
+              "sig0004": "present",
+              "sig0006": "present",
+              "sig0008": "present",
+              "sig0010": "present",
+              "sig0012": "present",
+              "sig0014": "present",
+              "sig0016": "present"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "sigc0001",
+                "titre": "Contexte et enjeux",
+                "notes": "Délai moyen actuel de signature d'un contrat : 10 jours (envois papier, relances).\nObjectif : 2 jours, avant la campagne de renouvellement de janvier."
+              },
+              {
+                "id": "sigc0002",
+                "titre": "Objectifs et périmètre",
+                "notes": "Contrats de travail, avenants et bons de commande.\nHors périmètre : contrats commerciaux et archivage à valeur probante (2027)."
+              },
+              {
+                "id": "sigc0003",
+                "titre": "Organisation et planning",
+                "notes": "4 semaines en hybride : cadrage (1 semaine), 2 sprints d'une semaine, recette, déploiement le 4 décembre.\nPoint quotidien de 15 min pendant les sprints."
+              },
+              {
+                "id": "sigc0004",
+                "titre": "Questions",
+                "notes": "La DRH demande que les gestionnaires RH soient formés avant la mise en service."
+              }
+            ],
+            "creeLe": "2026-11-09",
+            "diffuseLe": "2026-11-09"
+          }
+        },
+        {
+          "id": "nwi0s2jbw2m6",
+          "auto": true,
+          "cle": "cadrage:",
+          "type": "cadrage",
+          "date": "2026-11-09",
+          "heure": "14:00",
+          "duree": 120,
+          "motif": "",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-09",
+          "cr": {
+            "presence": {
+              "sig0004": "present",
+              "sig0006": "present",
+              "sig0008": "present",
+              "sig0012": "present",
+              "sig0016": "present",
+              "sig0014": "present",
+              "sig0010": "excuse"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "sigc0005",
+                "titre": "Parcours de signature cibles",
+                "notes": "RH : contrat préparé par la gestionnaire → validation du manager → signature du salarié → signature de la DRH.\nAchats : bon de commande > 5 000 € → signature du responsable achats puis du fournisseur."
+              },
+              {
+                "id": "sigc0006",
+                "titre": "Niveaux de signature",
+                "notes": "Le juridique classe chaque modèle de contrat (signature simple ou avancée) pour le 18 novembre."
+              },
+              {
+                "id": "sigc0007",
+                "titre": "Sécurité et RGPD",
+                "notes": "L'éditeur confirme un hébergement en France ; attestation attendue sous une semaine."
+              },
+              {
+                "id": "sigc0008",
+                "titre": "Entretiens utilisateurs",
+                "notes": "3 entretiens prévus (RH, achats, un manager) pour valider les parcours."
+              }
+            ],
+            "creeLe": "2026-11-09",
+            "diffuseLe": "2026-11-10"
+          }
+        },
+        {
+          "id": "1x3lfemcw2m6",
+          "auto": true,
+          "cle": "entretien:e1",
+          "type": "entretien",
+          "date": "2026-11-12",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "n°1",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-12",
+          "cr": {
+            "presence": {
+              "sig0004": "present",
+              "sig0008": "present",
+              "sig0014": "present"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "sigc0009",
+                "titre": "Personne interviewée",
+                "notes": "Inès Morel, gestionnaire RH : prépare environ 40 contrats et avenants par mois."
+              },
+              {
+                "id": "sigc0010",
+                "titre": "Irritants actuels",
+                "notes": "Relances par téléphone, contrats égarés dans les bannettes, scans illisibles."
+              },
+              {
+                "id": "sigc0011",
+                "titre": "Attentes",
+                "notes": "Voir en un coup d'œil où en est chaque contrat.\nRelance automatique au bout de 48 h."
+              },
+              {
+                "id": "sigc0012",
+                "titre": "Verbatim",
+                "notes": "« Si je pouvais ne plus jamais imprimer un avenant, ce serait déjà une victoire. »"
+              }
+            ],
+            "creeLe": "2026-11-12",
+            "diffuseLe": "2026-11-13"
+          }
+        },
+        {
+          "id": "75hsefsew2m6",
+          "auto": true,
+          "cle": "entretien:e2",
+          "type": "entretien",
+          "date": "2026-11-19",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "n°2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-19",
+          "cr": {
+            "presence": {
+              "sig0004": "present",
+              "sig0008": "present"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "vrgz0g1ca815",
+                "titre": "Introduction",
+                "notes": ""
+              },
+              {
+                "id": "4rww14h4a815",
+                "titre": "Dernière utilisation",
+                "notes": ""
+              },
+              {
+                "id": "5u0z5ro2a815",
+                "titre": "Freins et ressenti",
+                "notes": ""
+              },
+              {
+                "id": "rfbtdw3sa815",
+                "titre": "Questions orientées métier",
+                "notes": ""
+              },
+              {
+                "id": "bs70kaeja815",
+                "titre": "Approfondissement",
+                "notes": ""
+              },
+              {
+                "id": "jhv96ivma815",
+                "titre": "La baguette magique",
+                "notes": ""
+              },
+              {
+                "id": "m9sr9wyha815",
+                "titre": "Conclusion",
+                "notes": ""
+              }
+            ],
+            "creeLe": "2026-11-19",
+            "diffuseLe": ""
+          }
+        },
+        {
+          "id": "i0t3lbksw2m6",
+          "auto": true,
+          "cle": "entretien:e3",
+          "type": "entretien",
+          "date": "2026-11-26",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "n°3",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-26",
+          "cr": {
+            "presence": {
+              "sig0004": "present",
+              "sig0008": "present",
+              "sig0010": "excuse"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "bjwd4z6kcdhg",
+                "titre": "Introduction",
+                "notes": ""
+              },
+              {
+                "id": "1e9sq6f7cdhg",
+                "titre": "Dernière utilisation",
+                "notes": ""
+              },
+              {
+                "id": "md15gzjfcdhg",
+                "titre": "Freins et ressenti",
+                "notes": ""
+              },
+              {
+                "id": "di67h6bucdhg",
+                "titre": "Questions orientées métier",
+                "notes": ""
+              },
+              {
+                "id": "c1wswjd9cdhg",
+                "titre": "Approfondissement",
+                "notes": ""
+              },
+              {
+                "id": "33bsp8aucdhg",
+                "titre": "La baguette magique",
+                "notes": ""
+              },
+              {
+                "id": "gy2haglfcdhg",
+                "titre": "Conclusion",
+                "notes": ""
+              }
+            ],
+            "creeLe": "2026-11-19",
+            "diffuseLe": ""
+          },
+          "prepareeLe": "2026-11-19"
+        },
+        {
+          "id": "8bo3f8s1w2m6",
+          "auto": true,
+          "cle": "avancement:2026-11-19",
+          "type": "avancement",
+          "date": "2026-11-19",
+          "heure": "11:00",
+          "duree": 45,
+          "motif": "n°1",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-19",
+          "cr": {
+            "presence": {
+              "sig0004": "present",
+              "sig0006": "present",
+              "sig0008": "present",
+              "sig0014": "present"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "wlewlf04abzc",
+                "titre": "Avancement depuis le dernier point",
+                "notes": ""
+              },
+              {
+                "id": "lh3oglpaabzc",
+                "titre": "Démonstration ou réalisations à montrer",
+                "notes": ""
+              },
+              {
+                "id": "poecfdgaabzc",
+                "titre": "Retours et besoins du métier",
+                "notes": ""
+              },
+              {
+                "id": "3ip548toabzc",
+                "titre": "Points ouverts",
+                "notes": ""
+              },
+              {
+                "id": "a7gmx3l2abzc",
+                "titre": "Décisions à prendre",
+                "notes": ""
+              },
+              {
+                "id": "9w7ru1nfabzc",
+                "titre": "Prochaines étapes",
+                "notes": ""
+              }
+            ],
+            "creeLe": "2026-11-19",
+            "diffuseLe": ""
+          }
+        },
+        {
+          "id": "pjupzfi6w2m6",
+          "auto": true,
+          "cle": "avancement:2026-12-03",
+          "type": "avancement",
+          "date": "2026-12-03",
+          "heure": "11:00",
+          "duree": 45,
+          "motif": "n°2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-12-03",
+          "cr": {
+            "presence": {
+              "sig0004": "present",
+              "sig0006": "present",
+              "sig0008": "present",
+              "sig0014": "present"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "m6cfzsy31l18",
+                "titre": "Avancement depuis le dernier point",
+                "notes": ""
+              },
+              {
+                "id": "jf43ufel1l18",
+                "titre": "Démonstration ou réalisations à montrer",
+                "notes": ""
+              },
+              {
+                "id": "0y2yct3g1l18",
+                "titre": "Retours et besoins du métier",
+                "notes": ""
+              },
+              {
+                "id": "4ytez4eb1l18",
+                "titre": "Points ouverts",
+                "notes": ""
+              },
+              {
+                "id": "o6wgaln41l18",
+                "titre": "Décisions à prendre",
+                "notes": ""
+              },
+              {
+                "id": "i4gjew921l18",
+                "titre": "Prochaines étapes",
+                "notes": ""
+              }
+            ],
+            "creeLe": "2026-11-19",
+            "diffuseLe": ""
+          }
+        },
+        {
+          "id": "o42kucmkw2m6",
+          "auto": true,
+          "cle": "planning:z7k4wldmw2m5",
+          "type": "planning",
+          "date": "2026-11-16",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 1",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-16",
+          "cr": {
+            "presence": {
+              "sig0004": "present",
+              "sig0008": "present",
+              "sig0010": "present",
+              "sig0016": "present"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "sigc0013",
+                "titre": "Objectif du sprint 1",
+                "notes": "Parcours de signature RH de bout en bout, sur l'environnement de test de l'éditeur."
+              },
+              {
+                "id": "sigc0014",
+                "titre": "Éléments retenus",
+                "notes": "Modèles de contrats importés · circuit de validation manager · notifications par mail · tableau de suivi des signatures."
+              },
+              {
+                "id": "sigc0015",
+                "titre": "Capacité et risques",
+                "notes": "Accès à l'environnement de test reçu avec 2 jours de retard : le tableau de suivi pourrait glisser au sprint 2."
+              }
+            ],
+            "creeLe": "2026-11-16",
+            "diffuseLe": ""
+          }
+        },
+        {
+          "id": "vnngv5ukw2m6",
+          "auto": true,
+          "cle": "affinage:z7k4wldmw2m5",
+          "type": "affinage",
+          "date": "2026-11-18",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 1",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-18"
+        },
+        {
+          "id": "wrp9aegcw2m6",
+          "auto": true,
+          "cle": "revue:z7k4wldmw2m5",
+          "type": "revue",
+          "date": "2026-11-20",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 1",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-20"
+        },
+        {
+          "id": "2wfj62wuw2m6",
+          "auto": true,
+          "cle": "retro:z7k4wldmw2m5",
+          "type": "retro",
+          "date": "2026-11-20",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 1",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-20"
+        },
+        {
+          "id": "ldn7hbabw2m6",
+          "auto": true,
+          "cle": "planning:3vsa951pw2m5",
+          "type": "planning",
+          "date": "2026-11-23",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-23"
+        },
+        {
+          "id": "3sxv4qh9w2m6",
+          "auto": true,
+          "cle": "affinage:3vsa951pw2m5",
+          "type": "affinage",
+          "date": "2026-11-25",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-25"
+        },
+        {
+          "id": "wvz531ztw2m6",
+          "auto": true,
+          "cle": "revue:3vsa951pw2m5",
+          "type": "revue",
+          "date": "2026-11-27",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-27"
+        },
+        {
+          "id": "lxbughevw2m6",
+          "auto": true,
+          "cle": "retro:3vsa951pw2m5",
+          "type": "retro",
+          "date": "2026-11-27",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-27"
+        },
+        {
+          "id": "s0ft4x2ww2m6",
+          "auto": true,
+          "cle": "copil:3vsa951pw2m5",
+          "type": "copil",
+          "date": "2026-11-30",
+          "heure": "14:00",
+          "duree": 90,
+          "motif": "après le sprint 2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-30",
+          "prep": {
+            "meteo": {
+              "global": "nuage",
+              "delais": "nuage",
+              "perimetre": "soleil",
+              "equipe": "soleil"
+            },
+            "faits": "Cadrage terminé dans les temps\nParcours RH testé avec 3 contrats réels\nAttestation d'hébergement en France reçue",
+            "decisions": "Inclure ou non les contrats d'intérim dans la V1\nGo / No-Go de mise en production du 4 décembre",
+            "etapes": "Recette globale du 30 novembre au 2 décembre\nFormation des gestionnaires RH le 2 décembre\nMise en production le 4 décembre",
+            "budget": "",
+            "diapos": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "changements",
+              "gonogo",
+              "decisions",
+              "etapes"
+            ],
+            "statue": false,
+            "connues": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "backlog",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "decisions",
+              "budget",
+              "etapes",
+              "changements",
+              "gonogo"
+            ]
+          },
+          "cr": {
+            "presence": {
+              "sig0002": "present",
+              "sig0004": "present",
+              "sig0006": "present",
+              "sig0008": "present"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "grt9fw4h1qlg",
+                "titre": "Météo et faits marquants",
+                "notes": ""
+              },
+              {
+                "id": "kay5kyq51qlg",
+                "titre": "Avancement et frise du planning",
+                "notes": ""
+              },
+              {
+                "id": "p1uomu831qlg",
+                "titre": "Écarts de planning",
+                "notes": ""
+              },
+              {
+                "id": "u78rlos51qlg",
+                "titre": "Top risques",
+                "notes": ""
+              },
+              {
+                "id": "hwk5uy0l1qlg",
+                "titre": "Actions en retard et à venir",
+                "notes": ""
+              },
+              {
+                "id": "x2g5a2241qlg",
+                "titre": "Relevé des décisions prises",
+                "notes": ""
+              },
+              {
+                "id": "vt9f5qft1qlg",
+                "titre": "Demandes de changement",
+                "notes": ""
+              },
+              {
+                "id": "v1qp65bo1qlg",
+                "titre": "Go / No-Go de mise en production",
+                "notes": ""
+              },
+              {
+                "id": "gottsl8f1qlg",
+                "titre": "Décisions attendues",
+                "notes": ""
+              },
+              {
+                "id": "xmarjpa01qlg",
+                "titre": "Prochaines étapes",
+                "notes": ""
+              }
+            ],
+            "creeLe": "2026-11-19",
+            "diffuseLe": ""
+          }
+        },
+        {
+          "id": "zuq4mqwew2m6",
+          "auto": true,
+          "cle": "cloture:",
+          "type": "cloture",
+          "date": "2026-12-04",
+          "heure": "14:00",
+          "duree": 90,
+          "motif": "",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-12-04",
+          "cr": {
+            "presence": {
+              "sig0002": "present",
+              "sig0004": "present",
+              "sig0006": "present",
+              "sig0008": "present"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "0mo55p929v00",
+                "titre": "Bilan des objectifs",
+                "notes": ""
+              },
+              {
+                "id": "xo3zv5ka9v00",
+                "titre": "Bilan du planning",
+                "notes": ""
+              },
+              {
+                "id": "tahra1kd9v00",
+                "titre": "Bilan des risques",
+                "notes": ""
+              },
+              {
+                "id": "fgeeubx89v00",
+                "titre": "Retour d'expérience",
+                "notes": ""
+              },
+              {
+                "id": "3p7h8vwl9v00",
+                "titre": "Actions de clôture et transfert",
+                "notes": ""
+              }
+            ],
+            "creeLe": "2026-11-19",
+            "diffuseLe": ""
+          },
+          "prepareeLe": "2026-11-19"
+        }
+      ],
+      "base": {
+        "dateDebut": "2026-11-09",
+        "dateFin": "2026-12-04"
+      },
+      "referenceLe": "2026-11-09",
+      "taches": {
+        "responsable": "",
+        "horizon": 45,
+        "modeles": {
+          "lancement": [
+            {
+              "id": "ut53ocr2w2ma",
+              "libelle": "✉️ Envoyer l'invitation",
+              "decalage": -10,
+              "actif": true
+            },
+            {
+              "id": "fnh337kqw2ma",
+              "libelle": "🚀 Préparer le support de lancement",
+              "decalage": -3,
+              "actif": true
+            },
+            {
+              "id": "n31btk7tw2ma",
+              "libelle": "📝 Envoyer le compte rendu",
+              "decalage": 2,
+              "actif": true
+            }
+          ],
+          "cadrage": [
+            {
+              "id": "8brtx3t8w2ma",
+              "libelle": "✉️ Envoyer l'invitation",
+              "decalage": -10,
+              "actif": true
+            },
+            {
+              "id": "tsju3w4yw2ma",
+              "libelle": "🧭 Préparer le support de cadrage",
+              "decalage": -3,
+              "actif": true
+            },
+            {
+              "id": "6inkqg6kw2ma",
+              "libelle": "📝 Rédiger la note de cadrage",
+              "decalage": 5,
+              "actif": true
+            }
+          ],
+          "entretien": [
+            {
+              "id": "7p8duriow2ma",
+              "libelle": "✉️ Inviter la personne interrogée",
+              "decalage": -7,
+              "actif": true
+            },
+            {
+              "id": "xpe24a9ew2ma",
+              "libelle": "📝 Rédiger la synthèse de l'entretien",
+              "decalage": 1,
+              "actif": true
+            }
+          ],
+          "avancement": [],
+          "planning": [],
+          "affinage": [],
+          "revue": [],
+          "retro": [],
+          "copil": [
+            {
+              "id": "rqxx8njfw2ma",
+              "libelle": "✉️ Envoyer l'invitation",
+              "decalage": -10,
+              "actif": true
+            },
+            {
+              "id": "fv452s1tw2ma",
+              "libelle": "🏛️ Préparer le copil (météo, faits marquants, décisions attendues)",
+              "decalage": -5,
+              "actif": true
+            },
+            {
+              "id": "ieb465h7w2ma",
+              "libelle": "📤 Envoyer le support",
+              "decalage": -1,
+              "actif": true
+            },
+            {
+              "id": "rafjgn7aw2ma",
+              "libelle": "📝 Envoyer le compte rendu et le relevé de décisions",
+              "decalage": 2,
+              "actif": true
+            }
+          ],
+          "cloture": [
+            {
+              "id": "gvj3qf4gw2ma",
+              "libelle": "✉️ Envoyer l'invitation",
+              "decalage": -10,
+              "actif": true
+            },
+            {
+              "id": "n1zq4xsfw2ma",
+              "libelle": "🏁 Préparer le bilan du projet",
+              "decalage": -5,
+              "actif": true
+            },
+            {
+              "id": "lmszy8qbw2ma",
+              "libelle": "📝 Envoyer le compte rendu",
+              "decalage": 2,
+              "actif": true
+            }
+          ],
+          "libre": []
+        }
+      },
+      "tachesIgnorees": [],
+      "avReel": true
+    },
+    "actions": [
+      {
+        "id": "nowa19q8w2ma",
+        "auto": true,
+        "cle": "75hsefsew2m6:xpe24a9ew2ma",
+        "texte": "📝 Rédiger la synthèse de l'entretien",
+        "responsable": "",
+        "echeance": "2026-11-20",
+        "fait": false,
+        "creeLe": "2026-11-19",
+        "source": {
+          "type": "reunion",
+          "id": "75hsefsew2m6"
+        },
+        "notes": ""
+      },
+      {
+        "id": "qywupebhw2ma",
+        "auto": true,
+        "cle": "i0t3lbksw2m6:7p8duriow2ma",
+        "texte": "✉️ Inviter la personne interrogée",
+        "responsable": "",
+        "echeance": "2026-11-19",
+        "fait": true,
+        "creeLe": "2026-11-19",
+        "source": {
+          "type": "reunion",
+          "id": "i0t3lbksw2m6"
+        },
+        "notes": "",
+        "faitLe": "2026-11-19",
+        "faitParPrep": true
+      },
+      {
+        "id": "fu0lvwlkw2ma",
+        "auto": true,
+        "cle": "i0t3lbksw2m6:xpe24a9ew2ma",
+        "texte": "📝 Rédiger la synthèse de l'entretien",
+        "responsable": "",
+        "echeance": "2026-11-27",
+        "fait": false,
+        "creeLe": "2026-11-19",
+        "source": {
+          "type": "reunion",
+          "id": "i0t3lbksw2m6"
+        },
+        "notes": ""
+      },
+      {
+        "id": "7pztkufnw2ma",
+        "auto": true,
+        "cle": "s0ft4x2ww2m6:rqxx8njfw2ma",
+        "texte": "✉️ Envoyer l'invitation",
+        "responsable": "",
+        "echeance": "2026-11-20",
+        "fait": false,
+        "creeLe": "2026-11-19",
+        "source": {
+          "type": "reunion",
+          "id": "s0ft4x2ww2m6"
+        },
+        "notes": ""
+      },
+      {
+        "id": "cgiypo1bw2ma",
+        "auto": true,
+        "cle": "s0ft4x2ww2m6:fv452s1tw2ma",
+        "texte": "🏛️ Préparer le copil (météo, faits marquants, décisions attendues)",
+        "responsable": "",
+        "echeance": "2026-11-25",
+        "fait": false,
+        "creeLe": "2026-11-19",
+        "source": {
+          "type": "reunion",
+          "id": "s0ft4x2ww2m6"
+        },
+        "notes": ""
+      },
+      {
+        "id": "9djxttr2w2ma",
+        "auto": true,
+        "cle": "s0ft4x2ww2m6:ieb465h7w2ma",
+        "texte": "📤 Envoyer le support",
+        "responsable": "",
+        "echeance": "2026-11-27",
+        "fait": false,
+        "creeLe": "2026-11-19",
+        "source": {
+          "type": "reunion",
+          "id": "s0ft4x2ww2m6"
+        },
+        "notes": ""
+      },
+      {
+        "id": "cv4nr9wuw2ma",
+        "auto": true,
+        "cle": "s0ft4x2ww2m6:rafjgn7aw2ma",
+        "texte": "📝 Envoyer le compte rendu et le relevé de décisions",
+        "responsable": "",
+        "echeance": "2026-12-02",
+        "fait": false,
+        "creeLe": "2026-11-19",
+        "source": {
+          "type": "reunion",
+          "id": "s0ft4x2ww2m6"
+        },
+        "notes": ""
+      },
+      {
+        "id": "8ejohe0ow2ma",
+        "auto": true,
+        "cle": "zuq4mqwew2m6:gvj3qf4gw2ma",
+        "texte": "✉️ Envoyer l'invitation",
+        "responsable": "",
+        "echeance": "2026-11-24",
+        "fait": true,
+        "creeLe": "2026-11-19",
+        "source": {
+          "type": "reunion",
+          "id": "zuq4mqwew2m6"
+        },
+        "notes": "",
+        "faitLe": "2026-11-19",
+        "faitParPrep": true
+      },
+      {
+        "id": "xms0e5qww2ma",
+        "auto": true,
+        "cle": "zuq4mqwew2m6:n1zq4xsfw2ma",
+        "texte": "🏁 Préparer le bilan du projet",
+        "responsable": "",
+        "echeance": "2026-11-27",
+        "fait": true,
+        "creeLe": "2026-11-19",
+        "source": {
+          "type": "reunion",
+          "id": "zuq4mqwew2m6"
+        },
+        "notes": "",
+        "faitLe": "2026-11-19",
+        "faitParPrep": true
+      },
+      {
+        "id": "vnrl6z9lw2ma",
+        "auto": true,
+        "cle": "zuq4mqwew2m6:lmszy8qbw2ma",
+        "texte": "📝 Envoyer le compte rendu",
+        "responsable": "",
+        "echeance": "2026-12-07",
+        "fait": false,
+        "creeLe": "2026-11-19",
+        "source": {
+          "type": "reunion",
+          "id": "zuq4mqwew2m6"
+        },
+        "notes": ""
+      },
+      {
+        "id": "sigc0020",
+        "texte": "Envoyer la note de cadrage à la sponsor pour validation",
+        "responsable": "Camille Lefèvre",
+        "echeance": "2026-11-13",
+        "fait": true,
+        "faitLe": "2026-11-13",
+        "creeLe": "2026-11-10",
+        "source": {
+          "type": "reunion",
+          "id": "nwi0s2jbw2m6"
+        },
+        "notes": ""
+      },
+      {
+        "id": "sigc0021",
+        "texte": "Créer les comptes utilisateurs sur l'environnement de test",
+        "responsable": "Paul Renard",
+        "echeance": "2026-11-12",
+        "fait": true,
+        "faitLe": "2026-11-13",
+        "creeLe": "2026-11-10",
+        "source": {
+          "type": "reunion",
+          "id": "nwi0s2jbw2m6"
+        },
+        "notes": ""
+      },
+      {
+        "id": "sigc0022",
+        "texte": "Paramétrer la relance automatique à 48 h",
+        "responsable": "Yanis Haddad",
+        "echeance": "2026-11-20",
+        "fait": false,
+        "faitLe": "",
+        "creeLe": "2026-11-16",
+        "source": {
+          "type": "decision",
+          "id": "sigc0018"
+        },
+        "notes": ""
+      },
+      {
+        "id": "sigc0023",
+        "texte": "Récupérer 10 bons de commande réels anonymisés pour les tests",
+        "responsable": "Laura Fontaine",
+        "echeance": "2026-11-18",
+        "fait": true,
+        "faitLe": "2026-11-19",
+        "creeLe": "2026-11-16",
+        "source": {
+          "type": "libre"
+        },
+        "notes": ""
+      },
+      {
+        "id": "sigc0024",
+        "texte": "Planifier la formation des gestionnaires RH (2 décembre)",
+        "responsable": "Inès Morel",
+        "echeance": "2026-11-25",
+        "fait": false,
+        "faitLe": "",
+        "creeLe": "2026-11-09",
+        "source": {
+          "type": "reunion",
+          "id": "ebhata0hw2m6"
+        },
+        "notes": ""
+      },
+      {
+        "id": "sigc0025",
+        "texte": "Chiffrer l'ajout des contrats d'intérim pour le copil",
+        "responsable": "Camille Lefèvre",
+        "echeance": "2026-11-26",
+        "fait": false,
+        "faitLe": "",
+        "creeLe": "2026-11-17",
+        "source": {
+          "type": "decision",
+          "id": "sigc0019"
+        },
+        "notes": ""
+      }
+    ],
+    "decisions": [
+      {
+        "id": "sigc0016",
+        "titre": "Outil retenu : SignaFlow (offre entreprise)",
+        "date": "2026-11-09",
+        "statut": "validee",
+        "instance": "ebhata0hw2m6",
+        "decideur": "Hélène Garnier",
+        "description": "Choix fait à l'issue de la consultation d'octobre : meilleure intégration avec l'outil achats et hébergement en France.",
+        "impacts": [
+          "Organisation"
+        ],
+        "risques": [],
+        "creeLe": "2026-11-09"
+      },
+      {
+        "id": "sigc0017",
+        "titre": "Signature avancée pour les contrats de travail, simple pour les avenants et bons de commande",
+        "date": "2026-11-10",
+        "statut": "validee",
+        "instance": "nwi0s2jbw2m6",
+        "decideur": "Antoine Mercier",
+        "description": "Niveau de signature adapté à la valeur probante requise par type de document.",
+        "impacts": [
+          "Périmètre"
+        ],
+        "risques": [
+          "sig0020"
+        ],
+        "creeLe": "2026-11-10"
+      },
+      {
+        "id": "sigc0018",
+        "titre": "Relance automatique des signataires au bout de 48 h",
+        "date": "2026-11-16",
+        "statut": "validee",
+        "instance": "o42kucmkw2m6",
+        "decideur": "Laura Fontaine",
+        "description": "Demande issue de l'entretien utilisateur n°1.",
+        "impacts": [
+          "Périmètre"
+        ],
+        "risques": [],
+        "creeLe": "2026-11-16"
+      },
+      {
+        "id": "sigc0019",
+        "titre": "Inclure les contrats d'intérim dans la V1 ?",
+        "date": "",
+        "statut": "attente",
+        "instance": "",
+        "decideur": "Hélène Garnier",
+        "description": "Demande de la DRH. Impact estimé : +3 jours. À trancher au copil du 30 novembre.",
+        "impacts": [
+          "Planning",
+          "Périmètre"
+        ],
+        "risques": [],
+        "creeLe": "2026-11-17"
+      },
+      {
+        "id": "8dx3iihzz2hf",
+        "titre": "⚠️ Go sous réserves de mise en production : Mise en production",
+        "date": "2026-11-19",
+        "statut": "validee",
+        "instance": "",
+        "decideur": "Hélène Garnier",
+        "description": "",
+        "impacts": [],
+        "risques": [],
+        "creeLe": "2026-11-19"
+      }
+    ],
+    "livrables": [
+      {
+        "id": "sigliv000",
+        "titre": "Expression de besoin",
+        "cat": "specs",
+        "statut": "valide",
+        "responsable": "Laura Fontaine",
+        "valideur": "Hélène Garnier",
+        "echeance": "2026-11-06",
+        "version": "1.0",
+        "lien": "",
+        "jalonId": "",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "sigliv001",
+        "titre": "Grille d'analyse des offres",
+        "cat": "doc",
+        "statut": "valide",
+        "responsable": "Camille Lefèvre",
+        "valideur": "Hélène Garnier",
+        "echeance": "2026-11-06",
+        "version": "1.0",
+        "lien": "",
+        "jalonId": "",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "sigliv002",
+        "titre": "Accord de confidentialité SignaFlow",
+        "cat": "nda",
+        "statut": "valide",
+        "responsable": "Antoine Mercier",
+        "valideur": "Hélène Garnier",
+        "echeance": "2026-11-06",
+        "version": "1.0",
+        "lien": "",
+        "jalonId": "",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "sigliv003",
+        "titre": "Contrat SignaFlow (licences et mise en œuvre)",
+        "cat": "contrat",
+        "statut": "valide",
+        "responsable": "Antoine Mercier",
+        "valideur": "Hélène Garnier",
+        "echeance": "2026-11-13",
+        "version": "1.0",
+        "lien": "",
+        "jalonId": "",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "sigc0026",
+        "titre": "Note de cadrage",
+        "cat": "doc",
+        "statut": "valide",
+        "responsable": "Camille Lefèvre",
+        "valideur": "Hélène Garnier",
+        "echeance": "2026-11-13",
+        "version": "1.0",
+        "lien": "",
+        "jalonId": "mxryxu5dw2m4",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "sigc0027",
+        "titre": "Classement des contrats par niveau de signature",
+        "cat": "doc",
+        "statut": "relecture",
+        "responsable": "Antoine Mercier",
+        "valideur": "Directeur juridique",
+        "echeance": "2026-11-18",
+        "version": "0.9",
+        "lien": "",
+        "jalonId": "mxryxu5dw2m4",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "sigc0028",
+        "titre": "Spécifications du connecteur achats",
+        "cat": "specs",
+        "statut": "redaction",
+        "responsable": "Yanis Haddad",
+        "valideur": "Laura Fontaine",
+        "echeance": "2026-11-24",
+        "version": "0.3",
+        "lien": "",
+        "jalonId": "0li85m3sw2m4",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "sigc0029",
+        "titre": "Plan et cahier de recette",
+        "cat": "doc",
+        "statut": "afaire",
+        "responsable": "Laura Fontaine",
+        "valideur": "Camille Lefèvre",
+        "echeance": "2026-11-27",
+        "version": "",
+        "lien": "",
+        "jalonId": "0r9rdg9bw2m4",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "sigc0030",
+        "titre": "PV de recette",
+        "cat": "doc",
+        "statut": "afaire",
+        "responsable": "Camille Lefèvre",
+        "valideur": "Hélène Garnier",
+        "echeance": "2026-12-02",
+        "version": "",
+        "lien": "",
+        "jalonId": "0r9rdg9bw2m4",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "sigc0031",
+        "titre": "Guide « Signer un contrat en 3 clics »",
+        "cat": "manuel",
+        "statut": "afaire",
+        "responsable": "Inès Morel",
+        "valideur": "Laura Fontaine",
+        "echeance": "2026-12-01",
+        "version": "",
+        "lien": "",
+        "jalonId": "ex1z3tetw2m4",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "sigc0032",
+        "titre": "Tuto vidéo managers (2 min)",
+        "cat": "tuto",
+        "statut": "afaire",
+        "responsable": "Inès Morel",
+        "valideur": "",
+        "echeance": "2026-12-01",
+        "version": "",
+        "lien": "",
+        "jalonId": "ex1z3tetw2m4",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "sigc0033",
+        "titre": "How-to support : signataire qui ne reçoit pas le mail",
+        "cat": "support",
+        "statut": "afaire",
+        "responsable": "Yanis Haddad",
+        "valideur": "",
+        "echeance": "2026-12-03",
+        "version": "",
+        "lien": "",
+        "jalonId": "ex1z3tetw2m4",
+        "notes": "",
+        "fichier": null
+      }
+    ],
+    "retex": [
+      {
+        "id": "sigc0042",
+        "date": "2026-11-13",
+        "nature": "positif",
+        "categorie": "Organisation & équipe",
+        "sprintId": "",
+        "constat": "Les entretiens utilisateurs pendant le cadrage ont fait émerger la relance à 48 h",
+        "cause": "Utilisateurs rencontrés dès la première semaine",
+        "recommandation": "Toujours prévoir au moins un entretien utilisateur dans la semaine de cadrage",
+        "phase": "",
+        "partage": true
+      },
+      {
+        "id": "sigc0043",
+        "date": "2026-11-17",
+        "nature": "ameliorer",
+        "categorie": "Fournisseurs",
+        "sprintId": "",
+        "constat": "Accès à l'environnement de test de l'éditeur reçu avec 2 jours de retard",
+        "cause": "Demande d'accès faite après la signature du bon de commande",
+        "recommandation": "Demander les accès éditeur dès la décision de choix de l'outil",
+        "phase": "",
+        "partage": true
+      }
+    ],
+    "raci": {
+      "activites": [
+        {
+          "id": "sigc0034",
+          "nom": "Pilotage du projet"
+        },
+        {
+          "id": "sigc0035",
+          "nom": "Paramétrage des parcours de signature"
+        },
+        {
+          "id": "sigc0036",
+          "nom": "Classement juridique des contrats"
+        },
+        {
+          "id": "sigc0037",
+          "nom": "Connecteur outil achats"
+        },
+        {
+          "id": "sigc0038",
+          "nom": "Sécurité et RGPD"
+        },
+        {
+          "id": "sigc0039",
+          "nom": "Recette"
+        },
+        {
+          "id": "sigc0040",
+          "nom": "Formation et communication"
+        },
+        {
+          "id": "sigc0041",
+          "nom": "Mise en production"
+        }
+      ],
+      "cells": {
+        "sigc0034": {
+          "sig0002": "A",
+          "sig0004": "R",
+          "sig0006": "C",
+          "sig0008": "C",
+          "sig0014": "I"
+        },
+        "sigc0035": {
+          "sig0004": "A",
+          "sig0008": "C",
+          "sig0010": "R",
+          "sig0016": "R"
+        },
+        "sigc0036": {
+          "sig0006": "R",
+          "sig0002": "A",
+          "sig0004": "I"
+        },
+        "sigc0037": {
+          "sig0004": "A",
+          "sig0010": "R",
+          "sig0012": "C",
+          "sig0008": "C",
+          "sig0016": "C"
+        },
+        "sigc0038": {
+          "sig0012": "R",
+          "sig0004": "A",
+          "sig0016": "C",
+          "sig0006": "C"
+        },
+        "sigc0039": {
+          "sig0008": "A",
+          "sig0014": "R",
+          "sig0004": "R",
+          "sig0010": "C"
+        },
+        "sigc0040": {
+          "sig0014": "R",
+          "sig0004": "A",
+          "sig0002": "I",
+          "sig0008": "C"
+        },
+        "sigc0041": {
+          "sig0004": "A",
+          "sig0010": "R",
+          "sig0016": "R",
+          "sig0002": "I"
+        }
+      }
+    },
+    "flash": {
+      "2026-11-09": {
+        "meteo": {
+          "global": "soleil",
+          "delais": "soleil",
+          "perimetre": "soleil",
+          "equipe": "soleil"
+        },
+        "faits": "Lancement et cadrage réalisés\nOutil SignaFlow confirmé",
+        "attention": "",
+        "besoins": "",
+        "envoyeLe": "2026-11-13"
+      },
+      "2026-11-16": {
+        "meteo": {
+          "global": "nuage",
+          "delais": "nuage",
+          "perimetre": "soleil",
+          "equipe": "soleil"
+        },
+        "faits": "Sprint 1 démarré : parcours RH en cours de paramétrage\nAttestation d'hébergement en France reçue",
+        "attention": "Accès éditeur reçu avec 2 jours de retard : le tableau de suivi peut glisser au sprint 2",
+        "besoins": "Décision attendue sur les contrats d'intérim",
+        "envoyeLe": ""
+      }
+    },
+    "flashRappel": true,
+    "changements": [
+      {
+        "id": "sigc0044",
+        "titre": "Ajouter les contrats d'intérim",
+        "demandeur": "Inès Morel",
+        "date": "2026-11-17",
+        "priorite": "moyenne",
+        "description": "La DRH souhaite signer aussi les contrats de mission des intérimaires (environ 15 par mois).",
+        "justification": "Même circuit que les contrats de travail ; gain de temps important pour la RH.",
+        "impacts": {
+          "delai": "3",
+          "cout": "",
+          "charge": "4",
+          "perimetre": "Ajout : modèle de contrat d'intérim et circuit agence d'intérim"
+        },
+        "jalons": [
+          "ex1z3tetw2m4"
+        ],
+        "instance": "s0ft4x2ww2m6",
+        "statut": "arbitrage",
+        "creeLe": "2026-11-17"
+      }
+    ],
+    "backlog": {
+      "outil": "jira",
+      "url": "https://www.exemple.fr/jira/projects/SIGN",
+      "imports": [
+        {
+          "id": "sigbl0000001",
+          "date": "2026-11-13",
+          "source": "SIGN-export-2026-11-13.csv",
+          "totaux": {
+            "nb": 31,
+            "pts": 104,
+            "afaire": {
+              "nb": 24,
+              "pts": 81
+            },
+            "encours": {
+              "nb": 1,
+              "pts": 5
+            },
+            "bloque": {
+              "nb": 0,
+              "pts": 0
+            },
+            "fait": {
+              "nb": 6,
+              "pts": 18
+            }
+          },
+          "items": [
+            {
+              "k": "SIGN-1",
+              "t": "Ouvrir l'environnement de test éditeur",
+              "type": "Task",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Paul Renard",
+              "pts": 2,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-2",
+              "t": "Connexion par le compte de l'entreprise (SSO)",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 8,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-3",
+              "t": "Créer les profils : gestionnaire, manager, signataire",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "Medium",
+              "qui": "Paul Renard",
+              "pts": 3,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-4",
+              "t": "Importer la charte graphique dans les mails",
+              "type": "Task",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "Low",
+              "qui": "Paul Renard",
+              "pts": 1,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-5",
+              "t": "Attestation d'hébergement en France",
+              "type": "Task",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Mathieu Blanc",
+              "pts": 1,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-6",
+              "t": "Importer les modèles de contrats de travail",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Inès Morel",
+              "pts": 3,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-7",
+              "t": "Journal d'audit des signatures",
+              "type": "Story",
+              "st": "In Progress",
+              "cat": "encours",
+              "prio": "Medium",
+              "qui": "Mathieu Blanc",
+              "pts": 5,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-8",
+              "t": "Circuit RH : gestionnaire → manager → salarié → DRH",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 8,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-9",
+              "t": "Signature avancée pour les contrats de travail",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Paul Renard",
+              "pts": 5,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-10",
+              "t": "Signature simple pour les avenants",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Medium",
+              "qui": "Paul Renard",
+              "pts": 2,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-11",
+              "t": "Notifications par mail aux signataires",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 3,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-13",
+              "t": "Tableau de suivi des signatures en cours",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Medium",
+              "qui": "Yanis Haddad",
+              "pts": 5,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-20"
+            },
+            {
+              "k": "SIGN-14",
+              "t": "Pré-remplir le contrat depuis la fiche salarié",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Medium",
+              "qui": "Paul Renard",
+              "pts": 5,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-20"
+            },
+            {
+              "k": "SIGN-15",
+              "t": "Tester le parcours RH avec 3 contrats réels",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Inès Morel",
+              "pts": 2,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-19"
+            },
+            {
+              "k": "SIGN-16",
+              "t": "Importer les modèles de bons de commande",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Laura Fontaine",
+              "pts": 2,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Bons de commande",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-17",
+              "t": "Circuit achats : responsable achats → fournisseur",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 5,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Bons de commande",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-18",
+              "t": "Seuil : signature obligatoire au-delà de 5 000 €",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Medium",
+              "qui": "Yanis Haddad",
+              "pts": 2,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Bons de commande",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-19",
+              "t": "Connecteur : envoyer le bon de commande à signer",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 8,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Connecteur achats",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-27"
+            },
+            {
+              "k": "SIGN-20",
+              "t": "Connecteur : retour du bon signé dans l'outil achats",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 5,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Connecteur achats",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-27"
+            },
+            {
+              "k": "SIGN-21",
+              "t": "Gérer les bons de commande personnalisés",
+              "type": "Bug",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Paul Renard",
+              "pts": 3,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Connecteur achats",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-18"
+            },
+            {
+              "k": "SIGN-22",
+              "t": "Signature depuis un smartphone",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Low",
+              "qui": "Paul Renard",
+              "pts": 3,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-23",
+              "t": "Mise à jour du registre RGPD",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Medium",
+              "qui": "Mathieu Blanc",
+              "pts": 1,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-27"
+            },
+            {
+              "k": "SIGN-24",
+              "t": "Délégation de signature en cas d'absence",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Low",
+              "qui": "",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-25",
+              "t": "Export mensuel des contrats signés",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Low",
+              "qui": "",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-26",
+              "t": "Rappel au manager avant l'échéance du contrat",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Low",
+              "qui": "",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-27",
+              "t": "Préparer le jeu de données de recette",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Laura Fontaine",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Recette & déploiement",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-27"
+            },
+            {
+              "k": "SIGN-28",
+              "t": "Recette globale des parcours RH et achats",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Laura Fontaine",
+              "pts": 5,
+              "sprint": "",
+              "epic": "Recette & déploiement",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-12-02"
+            },
+            {
+              "k": "SIGN-29",
+              "t": "Former les gestionnaires RH",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Inès Morel",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Recette & déploiement",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-12-02"
+            },
+            {
+              "k": "SIGN-30",
+              "t": "Ouvrir l'environnement de production",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Paul Renard",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Recette & déploiement",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-12-03"
+            },
+            {
+              "k": "SIGN-31",
+              "t": "Basculer les contrats en cours sur l'outil",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Medium",
+              "qui": "Inès Morel",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Recette & déploiement",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-12-04"
+            },
+            {
+              "k": "SIGN-33",
+              "t": "Signer les contrats d'intérim",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Medium",
+              "qui": "",
+              "pts": 3,
+              "sprint": "",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            }
+          ]
+        },
+        {
+          "id": "sigbl0000002",
+          "date": "2026-11-19",
+          "source": "SIGN-export-2026-11-19.csv",
+          "totaux": {
+            "nb": 32,
+            "pts": 105,
+            "afaire": {
+              "nb": 17,
+              "pts": 49
+            },
+            "encours": {
+              "nb": 2,
+              "pts": 8
+            },
+            "bloque": {
+              "nb": 1,
+              "pts": 5
+            },
+            "fait": {
+              "nb": 12,
+              "pts": 43
+            }
+          },
+          "items": [
+            {
+              "k": "SIGN-1",
+              "t": "Ouvrir l'environnement de test éditeur",
+              "type": "Task",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Paul Renard",
+              "pts": 2,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-2",
+              "t": "Connexion par le compte de l'entreprise (SSO)",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 8,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-3",
+              "t": "Créer les profils : gestionnaire, manager, signataire",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "Medium",
+              "qui": "Paul Renard",
+              "pts": 3,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-4",
+              "t": "Importer la charte graphique dans les mails",
+              "type": "Task",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "Low",
+              "qui": "Paul Renard",
+              "pts": 1,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-5",
+              "t": "Attestation d'hébergement en France",
+              "type": "Task",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Mathieu Blanc",
+              "pts": 1,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-6",
+              "t": "Importer les modèles de contrats de travail",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Inès Morel",
+              "pts": 3,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-7",
+              "t": "Journal d'audit des signatures",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "Medium",
+              "qui": "Mathieu Blanc",
+              "pts": 5,
+              "sprint": "SIGN Sprint 0",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-8",
+              "t": "Circuit RH : gestionnaire → manager → salarié → DRH",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 8,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-9",
+              "t": "Signature avancée pour les contrats de travail",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Paul Renard",
+              "pts": 5,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-10",
+              "t": "Signature simple pour les avenants",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "Medium",
+              "qui": "Paul Renard",
+              "pts": 2,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-11",
+              "t": "Notifications par mail aux signataires",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 3,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-12",
+              "t": "Relance automatique au bout de 48 h",
+              "type": "Story",
+              "st": "In Progress",
+              "cat": "encours",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 3,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-20"
+            },
+            {
+              "k": "SIGN-13",
+              "t": "Tableau de suivi des signatures en cours",
+              "type": "Story",
+              "st": "In Progress",
+              "cat": "encours",
+              "prio": "Medium",
+              "qui": "Yanis Haddad",
+              "pts": 5,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-20"
+            },
+            {
+              "k": "SIGN-14",
+              "t": "Pré-remplir le contrat depuis la fiche salarié",
+              "type": "Story",
+              "st": "Blocked",
+              "cat": "bloque",
+              "prio": "Medium",
+              "qui": "Paul Renard",
+              "pts": 5,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-20"
+            },
+            {
+              "k": "SIGN-15",
+              "t": "Tester le parcours RH avec 3 contrats réels",
+              "type": "Task",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "High",
+              "qui": "Inès Morel",
+              "pts": 2,
+              "sprint": "SIGN Sprint 1",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-19"
+            },
+            {
+              "k": "SIGN-16",
+              "t": "Importer les modèles de bons de commande",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Laura Fontaine",
+              "pts": 2,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Bons de commande",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-17",
+              "t": "Circuit achats : responsable achats → fournisseur",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 5,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Bons de commande",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-18",
+              "t": "Seuil : signature obligatoire au-delà de 5 000 €",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Medium",
+              "qui": "Yanis Haddad",
+              "pts": 2,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Bons de commande",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-19",
+              "t": "Connecteur : envoyer le bon de commande à signer",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 8,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Connecteur achats",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-27"
+            },
+            {
+              "k": "SIGN-20",
+              "t": "Connecteur : retour du bon signé dans l'outil achats",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Yanis Haddad",
+              "pts": 5,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Connecteur achats",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-27"
+            },
+            {
+              "k": "SIGN-21",
+              "t": "Gérer les bons de commande personnalisés",
+              "type": "Bug",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Paul Renard",
+              "pts": 3,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Connecteur achats",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-18"
+            },
+            {
+              "k": "SIGN-22",
+              "t": "Signature depuis un smartphone",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Low",
+              "qui": "Paul Renard",
+              "pts": 3,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-23",
+              "t": "Mise à jour du registre RGPD",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Medium",
+              "qui": "Mathieu Blanc",
+              "pts": 1,
+              "sprint": "SIGN Sprint 2",
+              "epic": "Socle & sécurité",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-27"
+            },
+            {
+              "k": "SIGN-24",
+              "t": "Délégation de signature en cas d'absence",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Low",
+              "qui": "",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Parcours RH",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-25",
+              "t": "Export mensuel des contrats signés",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Low",
+              "qui": "",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-26",
+              "t": "Rappel au manager avant l'échéance du contrat",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Low",
+              "qui": "",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "SIGN-27",
+              "t": "Préparer le jeu de données de recette",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Laura Fontaine",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Recette & déploiement",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-27"
+            },
+            {
+              "k": "SIGN-28",
+              "t": "Recette globale des parcours RH et achats",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Laura Fontaine",
+              "pts": 5,
+              "sprint": "",
+              "epic": "Recette & déploiement",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-12-02"
+            },
+            {
+              "k": "SIGN-29",
+              "t": "Former les gestionnaires RH",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Inès Morel",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Recette & déploiement",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-12-02"
+            },
+            {
+              "k": "SIGN-30",
+              "t": "Ouvrir l'environnement de production",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "High",
+              "qui": "Paul Renard",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Recette & déploiement",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-12-03"
+            },
+            {
+              "k": "SIGN-31",
+              "t": "Basculer les contrats en cours sur l'outil",
+              "type": "Task",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Medium",
+              "qui": "Inès Morel",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Recette & déploiement",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-12-04"
+            },
+            {
+              "k": "SIGN-32",
+              "t": "Libellé tronqué dans le mail de relance",
+              "type": "Bug",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "Low",
+              "qui": "Yanis Haddad",
+              "pts": 1,
+              "sprint": "",
+              "epic": "Suivi & notifications",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            }
+          ]
+        }
+      ],
+      "mapping": {
+        "champs": {
+          "k": "Issue key",
+          "t": "Summary",
+          "type": "Issue Type",
+          "st": "Status",
+          "prio": "Priority",
+          "qui": "Assignee",
+          "pts": "Story Points",
+          "sprint": "Sprint",
+          "epic": "Epic Link",
+          "cree": "",
+          "resolu": "",
+          "ech": "Due Date"
+        },
+        "statuts": {
+          "Blocked": "bloque",
+          "Done": "fait",
+          "In Progress": "encours",
+          "To Do": "afaire"
+        },
+        "dateFmt": "mj"
+      }
+    },
+    "gonogo": {
+      "jalonId": "",
+      "criteres": [
+        {
+          "id": "tsszjegw0jhr",
+          "cat": "Recette",
+          "libelle": "La recette fonctionnelle est validée par le métier",
+          "bloquant": true,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "ezlrq4a60jhr",
+          "cat": "Recette",
+          "libelle": "Aucune anomalie bloquante n'est ouverte",
+          "bloquant": true,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "1rt4zyqp0jhr",
+          "cat": "Recette",
+          "libelle": "Le PV de recette est signé",
+          "bloquant": false,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "q7zzs6wg0jhr",
+          "cat": "Technique",
+          "libelle": "Les tests de performance et de charge sont concluants",
+          "bloquant": false,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "2vdyeh9q0jhr",
+          "cat": "Technique",
+          "libelle": "La sécurité et les droits d'accès sont validés",
+          "bloquant": false,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "x1lq8pth0jhr",
+          "cat": "Technique",
+          "libelle": "Le plan de retour arrière est prêt et testé",
+          "bloquant": true,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "4h0p04gb0jhr",
+          "cat": "Technique",
+          "libelle": "Les sauvegardes et la restauration sont vérifiées",
+          "bloquant": false,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "51kfh7p90jhr",
+          "cat": "Exploitation & support",
+          "libelle": "Le support est formé et connaît la procédure d'escalade",
+          "bloquant": true,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "byatames0jhr",
+          "cat": "Exploitation & support",
+          "libelle": "Les procédures d'exploitation et la supervision sont en place",
+          "bloquant": false,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "azenyv6b0jhr",
+          "cat": "Utilisateurs",
+          "libelle": "Les utilisateurs clés sont formés",
+          "bloquant": false,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "j74gv0v00jhr",
+          "cat": "Utilisateurs",
+          "libelle": "La documentation utilisateur est disponible",
+          "bloquant": false,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "fl4yfwws0jhr",
+          "cat": "Utilisateurs",
+          "libelle": "La communication de lancement est prête",
+          "bloquant": false,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "0jnwtadx0jhr",
+          "cat": "Organisation",
+          "libelle": "La date et le créneau de bascule sont validés par le sponsor",
+          "bloquant": true,
+          "statut": "",
+          "commentaire": ""
+        },
+        {
+          "id": "hn6flqgp0jhr",
+          "cat": "Organisation",
+          "libelle": "L'équipe est mobilisée pour la bascule et l'hypercare (J à J+5)",
+          "bloquant": false,
+          "statut": "",
+          "commentaire": ""
+        }
+      ],
+      "anomalies": {
+        "bloquantes": "",
+        "majeures": "",
+        "mineures": "",
+        "majLe": ""
+      },
+      "verdict": {
+        "v": "reserve",
+        "date": "2026-11-19",
+        "decideur": "Hélène Garnier",
+        "commentaire": "",
+        "instance": "",
+        "decisionId": "8dx3iihzz2hf",
+        "reco": "attente"
+      },
+      "objectifs": {
+        "Signer 100 % des contrats de travail et avenants en électronique d'ici fin décembre": {
+          "cible": "100 %",
+          "actuel": "Pas encore en production",
+          "statut": "",
+          "majLe": "2026-11-19"
+        },
+        "Réduire le délai moyen de signature de 10 à 2 jours": {
+          "cible": "2 jours",
+          "actuel": "1,5 jour sur les 3 contrats de test",
+          "statut": "encours",
+          "majLe": "2026-11-19"
+        }
+      }
+    },
+    "etapes": {
+      "mode": "timeline",
+      "actives": [
+        "besoins",
+        "cadrage",
+        "contrat",
+        "realisation",
+        "recette",
+        "deploiement",
+        "cloture"
+      ],
+      "dates": {
+        "besoins": {
+          "debut": "2026-10-26",
+          "fin": "2026-11-06"
+        },
+        "cadrage": {
+          "debut": "2026-11-09",
+          "fin": "2026-11-13"
+        },
+        "contrat": {
+          "debut": "2026-11-09",
+          "fin": "2026-11-13"
+        }
+      },
+      "courante": "realisation",
+      "terminees": {
+        "besoins": "2026-11-06",
+        "cadrage": "2026-11-13",
+        "contrat": "2026-11-13"
+      }
+    },
+    "tendances": {
+      "2026-11-09": {
+        "meteo": 4,
+        "temps": 15,
+        "reel": 20,
+        "backlog": 17,
+        "risques": 5,
+        "critiques": 3,
+        "problemes": 1,
+        "retard": 0,
+        "glissement": 0
+      },
+      "2026-11-16": {
+        "meteo": 3,
+        "reel": 51,
+        "temps": 44,
+        "backlog": 41,
+        "risques": 5,
+        "critiques": 3,
+        "problemes": 0,
+        "retard": 0,
+        "glissement": 0
+      },
+      "2026-11-23": {
+        "meteo": 3,
+        "reel": 51,
+        "temps": 64,
+        "backlog": 41,
+        "risques": 5,
+        "critiques": 3,
+        "problemes": 0,
+        "retard": 6,
+        "glissement": 0
+      }
+    }
+  },
+  "personnes": [
+    {
+      "id": "sig0001",
+      "nom": "Hélène Garnier",
+      "fonction": "Directrice administrative et financière",
+      "entite": "Finance",
+      "email": "helene.garnier@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0003",
+      "nom": "Camille Lefèvre",
+      "fonction": "Cheffe de projet",
+      "entite": "DSI",
+      "email": "camille.lefevre@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0005",
+      "nom": "Antoine Mercier",
+      "fonction": "Juriste",
+      "entite": "Juridique",
+      "email": "antoine.mercier@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0007",
+      "nom": "Laura Fontaine",
+      "fonction": "Responsable achats",
+      "entite": "Achats",
+      "email": "laura.fontaine@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0009",
+      "nom": "Yanis Haddad",
+      "fonction": "Développeur intégration",
+      "entite": "DSI",
+      "email": "yanis.haddad@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0011",
+      "nom": "Mathieu Blanc",
+      "fonction": "Responsable sécurité SI",
+      "entite": "DSI",
+      "email": "mathieu.blanc@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0013",
+      "nom": "Inès Morel",
+      "fonction": "Gestionnaire RH",
+      "entite": "RH",
+      "email": "ines.morel@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0015",
+      "nom": "Paul Renard",
+      "fonction": "Consultant éditeur",
+      "entite": "SignaFlow (éditeur)",
+      "email": "paul.renard@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    }
+  ]
+}

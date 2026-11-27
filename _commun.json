@@ -1,0 +1,172 @@
+{
+  "app": "cockpit-projet",
+  "type": "commun",
+  "version": 3,
+  "actif": "sig-demo2",
+  "annuaire": [
+    {
+      "id": "demo0001",
+      "nom": "Claire Martin",
+      "fonction": "Directrice RH",
+      "entite": "RH",
+      "email": "claire.martin@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0002",
+      "nom": "Julien Moreau",
+      "fonction": "Chef de projet",
+      "entite": "DSI",
+      "email": "julien.moreau@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0003",
+      "nom": "Sophie Laurent",
+      "fonction": "Product Owner",
+      "entite": "RH",
+      "email": "sophie.laurent@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0004",
+      "nom": "Karim Benali",
+      "fonction": "Scrum Master",
+      "entite": "DSI",
+      "email": "karim.benali@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0005",
+      "nom": "Élise Dubois",
+      "fonction": "Développeuse",
+      "entite": "DSI",
+      "email": "elise.dubois@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0006",
+      "nom": "Thomas Petit",
+      "fonction": "Architecte",
+      "entite": "DSI",
+      "email": "thomas.petit@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0007",
+      "nom": "Nadia Roux",
+      "fonction": "Référente paie",
+      "entite": "RH",
+      "email": "nadia.roux@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0001",
+      "nom": "Hélène Garnier",
+      "fonction": "Directrice administrative et financière",
+      "entite": "Finance",
+      "email": "helene.garnier@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0003",
+      "nom": "Camille Lefèvre",
+      "fonction": "Cheffe de projet",
+      "entite": "DSI",
+      "email": "camille.lefevre@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0005",
+      "nom": "Antoine Mercier",
+      "fonction": "Juriste",
+      "entite": "Juridique",
+      "email": "antoine.mercier@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0007",
+      "nom": "Laura Fontaine",
+      "fonction": "Responsable achats",
+      "entite": "Achats",
+      "email": "laura.fontaine@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0009",
+      "nom": "Yanis Haddad",
+      "fonction": "Développeur intégration",
+      "entite": "DSI",
+      "email": "yanis.haddad@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0011",
+      "nom": "Mathieu Blanc",
+      "fonction": "Responsable sécurité SI",
+      "entite": "DSI",
+      "email": "mathieu.blanc@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0013",
+      "nom": "Inès Morel",
+      "fonction": "Gestionnaire RH",
+      "entite": "RH",
+      "email": "ines.morel@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "sig0015",
+      "nom": "Paul Renard",
+      "fonction": "Consultant éditeur",
+      "entite": "SignaFlow (éditeur)",
+      "email": "paul.renard@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    }
+  ],
+  "calendrier": {
+    "alsace": false,
+    "pentecoteTravaillee": false,
+    "fermetures": []
+  },
+  "theme": "inter",
+  "tuiles": {
+    "n": 3,
+    "cols": [
+      [
+        "etape",
+        "flash",
+        "meteo",
+        "budget",
+        "backlog"
+      ],
+      [
+        "aujourdhui",
+        "jalons",
+        "echeances"
+      ],
+      [
+        "risques",
+        "toprisques",
+        "problemes"
+      ]
+    ]
+  },
+  "modeles": []
+}

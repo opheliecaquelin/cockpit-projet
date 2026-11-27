@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cockpit Projet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1795596842">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand" data-act="portefeuille" role="button" tabindex="0" title="Retour à l'accueil : tous mes projets">
+      <span class="brand-logo">🧭</span>
+      <div>
+        <div class="brand-title">Cockpit Projet</div>
+        <div class="brand-sub">Pilotage de projet</div>
+      </div>
+    </div>
+    <div class="project-bar" id="projectBar"></div>
+  </header>
+
+  <nav class="etapes" id="etapes" aria-label="Étapes du projet"></nav>
+  <nav class="tabs" id="tabs"></nav>
+  <nav class="subtabs" id="subtabs"></nav>
+  <datalist id="dlPersonnes"></datalist>
+
+  <button class="btn ghost small cp-exit hide" id="sortieCapture" data-act="quit-capture" title="Quitter le mode capture (Échap)" aria-label="Quitter le mode capture">✕<span class="cp-exit-txt">&nbsp;Quitter le mode capture (Échap)</span></button>
+  <main id="main"></main>
+
+  <div class="modal-back" id="modalBack" hidden>
+    <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+  </div>
+  <div class="toasts" id="toasts"></div>
+  <input type="file" id="importFile" accept="application/json,.json" hidden>
+
+  <script src="data.js?v=1795596842"></script>
+  <script src="app.js?v=1795596842"></script>
+</body>
+</html>

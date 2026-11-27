@@ -1,0 +1,4238 @@
+{
+  "app": "cockpit-projet",
+  "type": "projet",
+  "version": 3,
+  "projet": {
+    "id": "demo0009",
+    "nom": "Portail RH en ligne",
+    "code": "DEMO",
+    "emoji": "🌐",
+    "couleur": "#5a9fc9",
+    "creeLe": "2026-09-07",
+    "description": "🧪 PROJET DE DÉMONSTRATION (données fictives). Un portail où chaque salarié consulte ses bulletins de paie, pose ses congés et met à jour ses informations personnelles.",
+    "enjeu": "Supprimer les demandes papier et libérer 2 jours par semaine à l'équipe RH.",
+    "objectifs": "Dématérialiser 100 % des demandes de congés\nMettre en ligne les bulletins de paie",
+    "perimetreIn": "Congés, bulletins, données personnelles",
+    "perimetreOut": "Recrutement, formation",
+    "notes": "Validation demandée : reporter les notes de frais en V2.",
+    "dateDebut": "2026-09-07",
+    "dateFin": "2027-03-28",
+    "finFerme": true,
+    "budget": {
+      "montant": "180",
+      "unite": "keur",
+      "lignes": [
+        {
+          "id": "demo0017",
+          "categorie": "interne",
+          "poste": "Équipe projet DSI",
+          "prevu": "90",
+          "engage": "90",
+          "consomme": "38",
+          "raf": "56"
+        },
+        {
+          "id": "demo0018",
+          "categorie": "externe",
+          "poste": "Intégrateur (développement)",
+          "prevu": "60",
+          "engage": "60",
+          "consomme": "22",
+          "raf": "38"
+        },
+        {
+          "id": "demo0019",
+          "categorie": "licences",
+          "poste": "Licences éditeur de paie",
+          "prevu": "20",
+          "engage": "24",
+          "consomme": "24",
+          "raf": "0"
+        },
+        {
+          "id": "demo001a",
+          "categorie": "materiel",
+          "poste": "Hébergement",
+          "prevu": "10",
+          "engage": "6",
+          "consomme": "2",
+          "raf": "6"
+        },
+        {
+          "id": "9dzk6ye3lwxb",
+          "categorie": "autre",
+          "poste": "DC1 · Ajouter l'export PDF des bulletins de paie",
+          "prevu": "8",
+          "engage": "",
+          "consomme": "",
+          "raf": ""
+        }
+      ],
+      "points": [
+        {
+          "id": "demo001b",
+          "date": "2026-09-19",
+          "prevu": 180,
+          "engage": 120,
+          "consomme": 10,
+          "atterrissage": 180,
+          "commentaire": ""
+        },
+        {
+          "id": "demo001c",
+          "date": "2026-10-19",
+          "prevu": 180,
+          "engage": 170,
+          "consomme": 48,
+          "atterrissage": 182,
+          "commentaire": ""
+        },
+        {
+          "id": "demo001d",
+          "date": "2026-11-17",
+          "prevu": 180,
+          "engage": 180,
+          "consomme": 86,
+          "atterrissage": 186,
+          "commentaire": "Licences plus chères que prévu"
+        }
+      ]
+    },
+    "options": {
+      "budget": true,
+      "charge": true
+    },
+    "interlocuteurs": [
+      {
+        "id": "demo000a",
+        "personneId": "demo0001",
+        "role": "Sponsor",
+        "copil": true
+      },
+      {
+        "id": "demo000b",
+        "personneId": "demo0002",
+        "role": "Chef de projet",
+        "copil": true
+      },
+      {
+        "id": "demo000c",
+        "personneId": "demo0003",
+        "role": "Product Owner",
+        "copil": true
+      },
+      {
+        "id": "demo000d",
+        "personneId": "demo0004",
+        "role": "Scrum Master",
+        "copil": false
+      },
+      {
+        "id": "demo000e",
+        "personneId": "demo0005",
+        "role": "Équipe projet",
+        "copil": false
+      },
+      {
+        "id": "demo000f",
+        "personneId": "demo0006",
+        "role": "Architecte",
+        "copil": false
+      },
+      {
+        "id": "demo000g",
+        "personneId": "demo0007",
+        "role": "Référent métier",
+        "copil": true
+      }
+    ],
+    "liens": [],
+    "risques": [
+      {
+        "id": "demo000h",
+        "refId": "ref-11",
+        "cat": "archi",
+        "titre": "Dépendance à un système legacy",
+        "description": "Le projet repose sur un système ancien, peu documenté ou en fin de vie.",
+        "impact": "Blocages, compétences rares, risque de panne.",
+        "p": 3,
+        "g": 3,
+        "critForce": null,
+        "statut": "survenu",
+        "responsable": "Thomas Petit",
+        "revue": "",
+        "notes": "Point d'attention remonté au copil d'octobre.",
+        "actions": [
+          {
+            "id": "demo000n",
+            "texte": "Organiser un atelier d'architecture avec l'éditeur de paie",
+            "responsable": "Thomas Petit",
+            "echeance": "2026-11-15",
+            "fait": false,
+            "creeLe": "2026-10-29"
+          },
+          {
+            "id": "demo000o",
+            "texte": "Tester l'interface de paie sur l'environnement de recette",
+            "responsable": "Élise Dubois",
+            "echeance": "2026-11-27",
+            "fait": false,
+            "creeLe": "2026-10-29"
+          }
+        ],
+        "initial": {
+          "p": 2,
+          "g": 2,
+          "c": 4
+        },
+        "creeLe": "2026-09-19",
+        "historique": [
+          {
+            "date": "2026-09-19",
+            "p": 2,
+            "g": 2
+          },
+          {
+            "date": "2026-11-08",
+            "p": 3,
+            "g": 3
+          }
+        ],
+        "statutAvant": "traitement",
+        "avereLe": "2026-11-19"
+      },
+      {
+        "id": "demo000i",
+        "refId": "ref-26",
+        "cat": "orga",
+        "titre": "Réorganisation interne",
+        "description": "Restructuration, changement de management ou fusion d'équipes.",
+        "impact": "Perte de repères, changement d'interlocuteurs.",
+        "p": 2,
+        "g": 3,
+        "critForce": null,
+        "statut": "traitement",
+        "responsable": "Julien Moreau",
+        "revue": "",
+        "notes": "",
+        "actions": [
+          {
+            "id": "demo000p",
+            "texte": "Faire valider le planning de recette par la RH",
+            "responsable": "Julien Moreau",
+            "echeance": "2026-11-22",
+            "fait": false,
+            "creeLe": "2026-11-03"
+          },
+          {
+            "id": "demo000q",
+            "texte": "Identifier un renfort pour la recette",
+            "responsable": "Claire Martin",
+            "echeance": "2026-11-06",
+            "fait": true,
+            "faitLe": "2026-11-04",
+            "creeLe": "2026-10-19"
+          }
+        ],
+        "initial": {
+          "p": 2,
+          "g": 2,
+          "c": 4
+        },
+        "creeLe": "2026-09-19",
+        "historique": [
+          {
+            "date": "2026-09-19",
+            "p": 2,
+            "g": 2
+          },
+          {
+            "date": "2026-11-08",
+            "p": 2,
+            "g": 3
+          }
+        ]
+      },
+      {
+        "id": "demo000j",
+        "refId": "ref-41",
+        "cat": "planning",
+        "titre": "Mise en production en période sensible",
+        "description": "Go-live prévu lors d'un pic d'activité métier (clôture, soldes…).",
+        "impact": "Impact business maximal en cas de problème.",
+        "p": 2,
+        "g": 2,
+        "critForce": null,
+        "statut": "surveille",
+        "responsable": "Sophie Laurent",
+        "revue": "",
+        "notes": "",
+        "actions": [],
+        "initial": {
+          "p": 2,
+          "g": 3,
+          "c": 6
+        },
+        "creeLe": "2026-09-19",
+        "historique": [
+          {
+            "date": "2026-09-19",
+            "p": 2,
+            "g": 3
+          },
+          {
+            "date": "2026-11-08",
+            "p": 2,
+            "g": 2
+          }
+        ]
+      },
+      {
+        "id": "demo000k",
+        "refId": "ref-56",
+        "cat": "fournis",
+        "titre": "Défaillance d'un fournisseur",
+        "description": "Le prestataire fait faillite, est racheté ou ne peut plus livrer.",
+        "impact": "Arrêt des travaux, perte de support.",
+        "p": 3,
+        "g": 2,
+        "critForce": null,
+        "statut": "identifie",
+        "responsable": "",
+        "revue": "",
+        "notes": "",
+        "actions": [],
+        "initial": {
+          "p": 1,
+          "g": 3,
+          "c": 3
+        },
+        "creeLe": "2026-09-19",
+        "historique": [
+          {
+            "date": "2026-09-19",
+            "p": 1,
+            "g": 3
+          },
+          {
+            "date": "2026-11-08",
+            "p": 3,
+            "g": 2
+          }
+        ]
+      },
+      {
+        "id": "demo000l",
+        "refId": "ref-71",
+        "cat": "donnees",
+        "titre": "Volumétrie sous-estimée",
+        "description": "Le volume réel de données dépasse largement les hypothèses.",
+        "impact": "Lenteurs, temps de migration trop long.",
+        "p": 1,
+        "g": 2,
+        "critForce": null,
+        "statut": "surveille",
+        "responsable": "Karim Benali",
+        "revue": "",
+        "notes": "",
+        "actions": [],
+        "initial": {
+          "p": 2,
+          "g": 2,
+          "c": 4
+        },
+        "creeLe": "2026-09-19",
+        "historique": [
+          {
+            "date": "2026-09-19",
+            "p": 2,
+            "g": 2
+          },
+          {
+            "date": "2026-11-08",
+            "p": 1,
+            "g": 2
+          }
+        ]
+      },
+      {
+        "id": "demo000m",
+        "refId": "ref-6",
+        "cat": "infra",
+        "titre": "Performances insuffisantes",
+        "description": "Temps de réponse dégradés ne respectant pas les exigences.",
+        "impact": "Insatisfaction utilisateurs, refus de recette.",
+        "p": 1,
+        "g": 1,
+        "critForce": null,
+        "statut": "leve",
+        "responsable": "",
+        "revue": "",
+        "notes": "",
+        "actions": [],
+        "initial": {
+          "p": 2,
+          "g": 2,
+          "c": 4
+        },
+        "creeLe": "2026-09-19",
+        "historique": [
+          {
+            "date": "2026-09-19",
+            "p": 2,
+            "g": 2
+          },
+          {
+            "date": "2026-11-08",
+            "p": 1,
+            "g": 1
+          }
+        ]
+      },
+      {
+        "id": "pbdemo1",
+        "refId": null,
+        "cat": "fournis",
+        "titre": "Licences de l'éditeur de paie livrées en retard",
+        "description": "Les licences de production n'ont pas été livrées à la date prévue.",
+        "impact": "Impossible de préparer l'environnement de pré-production : la recette risque de glisser.",
+        "p": 3,
+        "g": 3,
+        "critForce": null,
+        "statut": "survenu",
+        "avereLe": "2026-11-10",
+        "imprevu": true,
+        "responsable": "Thomas Petit",
+        "revue": "",
+        "notes": "",
+        "actions": [
+          {
+            "id": "pbact1",
+            "texte": "Relancer le commercial de l'éditeur et demander une date ferme",
+            "responsable": "Julien Moreau",
+            "echeance": "2026-11-13",
+            "fait": true,
+            "creeLe": "2026-11-13"
+          },
+          {
+            "id": "pbact2",
+            "texte": "Utiliser les licences de test pour la pré-production en attendant",
+            "responsable": "Thomas Petit",
+            "echeance": "2026-11-24",
+            "fait": false,
+            "creeLe": "2026-11-24"
+          }
+        ],
+        "initial": {
+          "p": 3,
+          "g": 3,
+          "c": 9
+        },
+        "creeLe": "2026-11-10",
+        "historique": [
+          {
+            "date": "2026-11-10",
+            "p": 3,
+            "g": 3
+          }
+        ],
+        "resoluLe": "2026-11-19"
+      },
+      {
+        "id": "pbdemo2",
+        "refId": null,
+        "cat": "infra",
+        "titre": "Environnement de recette indisponible",
+        "description": "Le serveur de recette est tombé en panne après une mise à jour système.",
+        "impact": "Tests bloqués pendant une semaine.",
+        "p": 3,
+        "g": 2,
+        "critForce": null,
+        "statut": "survenu",
+        "avereLe": "2026-10-20",
+        "resoluLe": "2026-10-27",
+        "imprevu": true,
+        "responsable": "Karim Benali",
+        "revue": "",
+        "notes": "",
+        "actions": [
+          {
+            "id": "pbact3",
+            "texte": "Restaurer le serveur depuis la sauvegarde",
+            "responsable": "Karim Benali",
+            "echeance": "2026-10-22",
+            "fait": true,
+            "creeLe": "2026-10-22"
+          },
+          {
+            "id": "pbact4",
+            "texte": "Mettre en place une supervision du serveur de recette",
+            "responsable": "Thomas Petit",
+            "echeance": "2026-10-27",
+            "fait": true,
+            "creeLe": "2026-10-27"
+          }
+        ],
+        "initial": {
+          "p": 3,
+          "g": 2,
+          "c": 6
+        },
+        "creeLe": "2026-10-20",
+        "historique": [
+          {
+            "date": "2026-10-20",
+            "p": 3,
+            "g": 2
+          }
+        ]
+      }
+    ],
+    "planning": {
+      "methode": "agile",
+      "sprint": {
+        "duree": 2,
+        "jour": 1,
+        "avance": 6
+      },
+      "types": {
+        "lancement": {
+          "actif": true
+        },
+        "planning": {
+          "actif": true
+        },
+        "affinage": {
+          "actif": true
+        },
+        "revue": {
+          "actif": true
+        },
+        "retro": {
+          "actif": true
+        },
+        "copil": {
+          "actif": true,
+          "regle": "sprints",
+          "tousLes": 2,
+          "rang": 1,
+          "jourSemaine": 2
+        },
+        "cloture": {
+          "actif": true
+        },
+        "cadrage": {
+          "actif": false
+        },
+        "entretien": {
+          "actif": false,
+          "nombre": 3,
+          "depuis": "2026-11-18"
+        },
+        "avancement": {
+          "actif": false,
+          "tousLes": 2,
+          "jourSemaine": 4,
+          "depuis": "2026-11-18"
+        }
+      },
+      "phases": [],
+      "sprints": [
+        {
+          "id": "k2gne7lo8tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 1,
+          "debut": "2026-09-07",
+          "fin": "2026-09-18",
+          "debutInitial": "2026-09-07",
+          "finInitiale": "2026-09-18"
+        },
+        {
+          "id": "iw62dwvh8tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 2,
+          "debut": "2026-09-21",
+          "fin": "2026-10-02",
+          "debutInitial": "2026-09-21",
+          "finInitiale": "2026-10-02"
+        },
+        {
+          "id": "74ash1358tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 3,
+          "debut": "2026-10-05",
+          "fin": "2026-10-16",
+          "debutInitial": "2026-10-05",
+          "finInitiale": "2026-10-16"
+        },
+        {
+          "id": "ve9myyon8tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 4,
+          "debut": "2026-10-19",
+          "fin": "2026-10-30",
+          "debutInitial": "2026-10-19",
+          "finInitiale": "2026-10-30"
+        },
+        {
+          "id": "rkr5m9zl8tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 5,
+          "debut": "2026-11-02",
+          "fin": "2026-11-13",
+          "debutInitial": "2026-11-02",
+          "finInitiale": "2026-11-13"
+        },
+        {
+          "id": "9dbbqo5o8tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 6,
+          "debut": "2026-11-16",
+          "fin": "2026-11-27",
+          "debutInitial": "2026-11-16",
+          "finInitiale": "2026-11-27"
+        },
+        {
+          "id": "2ym8npoh8tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 7,
+          "debut": "2026-11-30",
+          "fin": "2026-12-11",
+          "debutInitial": "2026-11-30",
+          "finInitiale": "2026-12-11"
+        },
+        {
+          "id": "8zo7dvji8tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 8,
+          "debut": "2026-12-14",
+          "fin": "2026-12-24",
+          "debutInitial": "2026-12-14",
+          "finInitiale": "2026-12-23"
+        },
+        {
+          "id": "lu99jn978tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 9,
+          "debut": "2026-12-28",
+          "fin": "2027-01-08",
+          "debutInitial": "2026-12-28",
+          "finInitiale": "2027-01-08"
+        },
+        {
+          "id": "rrsyga268tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 10,
+          "debut": "2027-01-11",
+          "fin": "2027-01-22",
+          "debutInitial": "2027-01-11",
+          "finInitiale": "2027-01-22"
+        },
+        {
+          "id": "f18p7j5d8tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 11,
+          "debut": "2027-01-25",
+          "fin": "2027-02-05",
+          "debutInitial": "2027-01-25",
+          "finInitiale": "2027-02-05"
+        },
+        {
+          "id": "p6kquxnp8tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 12,
+          "debut": "2027-02-08",
+          "fin": "2027-02-19",
+          "debutInitial": "2027-02-08",
+          "finInitiale": "2027-02-19"
+        },
+        {
+          "id": "l3vc4c8c8tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 13,
+          "debut": "2027-02-22",
+          "fin": "2027-03-05",
+          "debutInitial": "2027-02-22",
+          "finInitiale": "2027-03-05"
+        },
+        {
+          "id": "k24mj6ir8tq2",
+          "objectif": "",
+          "verrou": false,
+          "duree": null,
+          "num": 14,
+          "debut": "2027-03-08",
+          "fin": "2027-03-19",
+          "debutInitial": "2027-03-08",
+          "finInitiale": "2027-03-19"
+        }
+      ],
+      "jalons": [
+        {
+          "id": "pfxk4tfn8tq2",
+          "nom": "Mise en production",
+          "ancre": "fin",
+          "date": "2027-03-26",
+          "dateInitiale": "2027-03-26",
+          "frise": true,
+          "atteint": false,
+          "verrou": false,
+          "notes": "",
+          "risques": [
+            "demo000l"
+          ]
+        },
+        {
+          "id": "pigyoazef2tl",
+          "nom": "Fin du cadrage",
+          "ancre": null,
+          "date": "2026-10-02",
+          "dateInitiale": "2026-10-02",
+          "frise": true,
+          "atteint": true,
+          "verrou": false,
+          "notes": "",
+          "risques": []
+        },
+        {
+          "id": "eofdjcnaf3lv",
+          "nom": "Recette utilisateurs",
+          "ancre": null,
+          "date": "2027-02-04",
+          "dateInitiale": "2027-01-11",
+          "frise": true,
+          "atteint": false,
+          "verrou": false,
+          "notes": "",
+          "risques": [
+            "demo000i"
+          ]
+        },
+        {
+          "id": "15kmkc4sf4e2",
+          "nom": "Ouverture pilote",
+          "ancre": null,
+          "date": "2027-02-22",
+          "dateInitiale": "2027-02-22",
+          "frise": true,
+          "atteint": false,
+          "verrou": false,
+          "notes": "",
+          "risques": []
+        }
+      ],
+      "reunions": [
+        {
+          "id": "01b55sl48tq3",
+          "auto": true,
+          "cle": "lancement:",
+          "type": "lancement",
+          "date": "2026-09-07",
+          "heure": "10:00",
+          "duree": 90,
+          "motif": "",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-09-07"
+        },
+        {
+          "id": "k12zmfiy8tq3",
+          "auto": true,
+          "cle": "planning:k2gne7lo8tq2",
+          "type": "planning",
+          "date": "2026-09-07",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 1",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-09-07"
+        },
+        {
+          "id": "qqf49acv8tq3",
+          "auto": true,
+          "cle": "revue:k2gne7lo8tq2",
+          "type": "revue",
+          "date": "2026-09-18",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 1",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-09-18"
+        },
+        {
+          "id": "g33s1sx88tq3",
+          "auto": true,
+          "cle": "retro:k2gne7lo8tq2",
+          "type": "retro",
+          "date": "2026-09-18",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 1",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-09-18"
+        },
+        {
+          "id": "itwxntv18tq3",
+          "auto": true,
+          "cle": "planning:iw62dwvh8tq2",
+          "type": "planning",
+          "date": "2026-09-21",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-09-21"
+        },
+        {
+          "id": "3snpl2bw8tq3",
+          "auto": true,
+          "cle": "revue:iw62dwvh8tq2",
+          "type": "revue",
+          "date": "2026-10-02",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-10-02"
+        },
+        {
+          "id": "f9e2myu48tq3",
+          "auto": true,
+          "cle": "retro:iw62dwvh8tq2",
+          "type": "retro",
+          "date": "2026-10-02",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-10-02"
+        },
+        {
+          "id": "ynywnshf8tq3",
+          "auto": true,
+          "cle": "planning:74ash1358tq2",
+          "type": "planning",
+          "date": "2026-10-05",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 3",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-10-05"
+        },
+        {
+          "id": "cfry3fns8tq3",
+          "auto": true,
+          "cle": "revue:74ash1358tq2",
+          "type": "revue",
+          "date": "2026-10-16",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 3",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-10-16"
+        },
+        {
+          "id": "pycfd8888tq3",
+          "auto": true,
+          "cle": "retro:74ash1358tq2",
+          "type": "retro",
+          "date": "2026-10-16",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 3",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-10-16"
+        },
+        {
+          "id": "q1q9lg9f8tq3",
+          "auto": true,
+          "cle": "planning:ve9myyon8tq2",
+          "type": "planning",
+          "date": "2026-10-19",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 4",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-10-19"
+        },
+        {
+          "id": "vhzed4nt8tq3",
+          "auto": true,
+          "cle": "revue:ve9myyon8tq2",
+          "type": "revue",
+          "date": "2026-10-30",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 4",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-10-30"
+        },
+        {
+          "id": "473nn2yi8tq3",
+          "auto": true,
+          "cle": "retro:ve9myyon8tq2",
+          "type": "retro",
+          "date": "2026-10-30",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 4",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-10-30"
+        },
+        {
+          "id": "27wa7h5g8tq3",
+          "auto": true,
+          "cle": "planning:rkr5m9zl8tq2",
+          "type": "planning",
+          "date": "2026-11-02",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 5",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-02"
+        },
+        {
+          "id": "dhhccho18tq3",
+          "auto": true,
+          "cle": "revue:rkr5m9zl8tq2",
+          "type": "revue",
+          "date": "2026-11-13",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 5",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-13"
+        },
+        {
+          "id": "wwa4utli8tq3",
+          "auto": true,
+          "cle": "retro:rkr5m9zl8tq2",
+          "type": "retro",
+          "date": "2026-11-13",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 5",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-13"
+        },
+        {
+          "id": "2a8138ko8tq3",
+          "auto": true,
+          "cle": "planning:9dbbqo5o8tq2",
+          "type": "planning",
+          "date": "2026-11-16",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 6",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-16"
+        },
+        {
+          "id": "sustulzm8tq3",
+          "auto": true,
+          "cle": "revue:9dbbqo5o8tq2",
+          "type": "revue",
+          "date": "2026-11-27",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 6",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-27",
+          "cr": {
+            "presence": {
+              "demo000c": "present",
+              "demo000d": "present",
+              "demo000e": "present"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "48uka2oek0hz",
+                "titre": "Rappel de l'objectif du sprint",
+                "notes": ""
+              },
+              {
+                "id": "0mi7dtvqk0hz",
+                "titre": "Démonstration des éléments livrés",
+                "notes": ""
+              },
+              {
+                "id": "6iqli4azk0hz",
+                "titre": "Retours des parties prenantes",
+                "notes": ""
+              },
+              {
+                "id": "lo9j6xtpk0hz",
+                "titre": "Risques apparus pendant le sprint",
+                "notes": ""
+              },
+              {
+                "id": "aibe78r8k0hz",
+                "titre": "Prochaines échéances",
+                "notes": ""
+              }
+            ],
+            "creeLe": "2026-11-18",
+            "diffuseLe": ""
+          }
+        },
+        {
+          "id": "mdhxiqjk8tq3",
+          "auto": true,
+          "cle": "retro:9dbbqo5o8tq2",
+          "type": "retro",
+          "date": "2026-11-27",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 6",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-27"
+        },
+        {
+          "id": "sa92vvgd8tq3",
+          "auto": true,
+          "cle": "planning:2ym8npoh8tq2",
+          "type": "planning",
+          "date": "2026-11-30",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 7",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-30"
+        },
+        {
+          "id": "8ulgtxdf8tq3",
+          "auto": true,
+          "cle": "revue:2ym8npoh8tq2",
+          "type": "revue",
+          "date": "2026-12-11",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 7",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-12-11"
+        },
+        {
+          "id": "jisuzmh48tq3",
+          "auto": true,
+          "cle": "retro:2ym8npoh8tq2",
+          "type": "retro",
+          "date": "2026-12-11",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 7",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-12-11"
+        },
+        {
+          "id": "i6nr4bcj8tq3",
+          "auto": true,
+          "cle": "planning:8zo7dvji8tq2",
+          "type": "planning",
+          "date": "2026-12-14",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 8",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-12-14"
+        },
+        {
+          "id": "205f61f48tq3",
+          "auto": true,
+          "cle": "revue:8zo7dvji8tq2",
+          "type": "revue",
+          "date": "2026-12-24",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 8",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-12-23"
+        },
+        {
+          "id": "nkeiszfe8tq3",
+          "auto": true,
+          "cle": "retro:8zo7dvji8tq2",
+          "type": "retro",
+          "date": "2026-12-24",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 8",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-12-23"
+        },
+        {
+          "id": "444xuvbe8tq3",
+          "auto": true,
+          "cle": "planning:lu99jn978tq2",
+          "type": "planning",
+          "date": "2026-12-28",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 9",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-01-04"
+        },
+        {
+          "id": "xaflb5968tq3",
+          "auto": true,
+          "cle": "revue:lu99jn978tq2",
+          "type": "revue",
+          "date": "2027-01-08",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 9",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-01-08"
+        },
+        {
+          "id": "h6rrul8n8tq3",
+          "auto": true,
+          "cle": "retro:lu99jn978tq2",
+          "type": "retro",
+          "date": "2027-01-08",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 9",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-01-08"
+        },
+        {
+          "id": "ugt9i2m48tq3",
+          "auto": true,
+          "cle": "planning:rrsyga268tq2",
+          "type": "planning",
+          "date": "2027-01-11",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 10",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-01-11"
+        },
+        {
+          "id": "3qnpg5fb8tq3",
+          "auto": true,
+          "cle": "revue:rrsyga268tq2",
+          "type": "revue",
+          "date": "2027-01-22",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 10",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-01-22"
+        },
+        {
+          "id": "rab9h3hz8tq3",
+          "auto": true,
+          "cle": "retro:rrsyga268tq2",
+          "type": "retro",
+          "date": "2027-01-22",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 10",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-01-22"
+        },
+        {
+          "id": "q060st6b8tq3",
+          "auto": true,
+          "cle": "planning:f18p7j5d8tq2",
+          "type": "planning",
+          "date": "2027-01-25",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 11",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-01-25"
+        },
+        {
+          "id": "lmlwyqi88tq3",
+          "auto": true,
+          "cle": "revue:f18p7j5d8tq2",
+          "type": "revue",
+          "date": "2027-02-05",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 11",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-02-05"
+        },
+        {
+          "id": "zq3hftsz8tq3",
+          "auto": true,
+          "cle": "retro:f18p7j5d8tq2",
+          "type": "retro",
+          "date": "2027-02-05",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 11",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-02-05"
+        },
+        {
+          "id": "51hj64e38tq3",
+          "auto": true,
+          "cle": "planning:p6kquxnp8tq2",
+          "type": "planning",
+          "date": "2027-02-08",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 12",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-02-08"
+        },
+        {
+          "id": "n3wfn7ax8tq3",
+          "auto": true,
+          "cle": "revue:p6kquxnp8tq2",
+          "type": "revue",
+          "date": "2027-02-19",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 12",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-02-19"
+        },
+        {
+          "id": "jkpzsqy38tq3",
+          "auto": true,
+          "cle": "retro:p6kquxnp8tq2",
+          "type": "retro",
+          "date": "2027-02-19",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 12",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-02-19"
+        },
+        {
+          "id": "t34xtdz88tq3",
+          "auto": true,
+          "cle": "planning:l3vc4c8c8tq2",
+          "type": "planning",
+          "date": "2027-02-22",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 13",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-02-22"
+        },
+        {
+          "id": "zdoc251m8tq3",
+          "auto": true,
+          "cle": "revue:l3vc4c8c8tq2",
+          "type": "revue",
+          "date": "2027-03-05",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 13",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-03-05"
+        },
+        {
+          "id": "jbwe1fcn8tq3",
+          "auto": true,
+          "cle": "retro:l3vc4c8c8tq2",
+          "type": "retro",
+          "date": "2027-03-05",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 13",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-03-05"
+        },
+        {
+          "id": "z6v6egl38tq3",
+          "auto": true,
+          "cle": "planning:k24mj6ir8tq2",
+          "type": "planning",
+          "date": "2027-03-08",
+          "heure": "09:30",
+          "duree": 120,
+          "motif": "Sprint 14",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-03-08"
+        },
+        {
+          "id": "gky05sax8tq3",
+          "auto": true,
+          "cle": "revue:k24mj6ir8tq2",
+          "type": "revue",
+          "date": "2027-03-19",
+          "heure": "14:00",
+          "duree": 60,
+          "motif": "Sprint 14",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-03-19"
+        },
+        {
+          "id": "9icderbp8tq3",
+          "auto": true,
+          "cle": "retro:k24mj6ir8tq2",
+          "type": "retro",
+          "date": "2027-03-19",
+          "heure": "15:30",
+          "duree": 60,
+          "motif": "Sprint 14",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-03-19"
+        },
+        {
+          "id": "vvaxpoyj8tq3",
+          "auto": true,
+          "cle": "copil:iw62dwvh8tq2",
+          "type": "copil",
+          "date": "2026-10-05",
+          "heure": "14:00",
+          "duree": 90,
+          "motif": "après le sprint 2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-10-05"
+        },
+        {
+          "id": "nz40anz48tq3",
+          "auto": true,
+          "cle": "copil:ve9myyon8tq2",
+          "type": "copil",
+          "date": "2026-11-02",
+          "heure": "14:00",
+          "duree": 90,
+          "motif": "après le sprint 4",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-02",
+          "prep": {
+            "meteo": {},
+            "faits": "",
+            "decisions": "",
+            "etapes": "",
+            "budget": "",
+            "diapos": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "backlog",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "decisions",
+              "budget",
+              "etapes"
+            ],
+            "statue": true
+          },
+          "cr": {
+            "presence": {
+              "demo000a": "present",
+              "demo000b": "present",
+              "demo000c": "present",
+              "demo000g": "present",
+              "demo000e": "excuse"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "r3o03h7d9z1n",
+                "titre": "Météo et faits marquants",
+                "notes": "Sprints 3 et 4 livrés : la pose de congés fonctionne de bout en bout.\nDémo appréciée par la RH.",
+                "captures": [
+                  {
+                    "id": "0gwpq2wrah3q",
+                    "fichier": "2026-11-18_aic4ule2ah3o.webp",
+                    "nom": "Capture d'écran",
+                    "date": "2026-11-18"
+                  }
+                ]
+              },
+              {
+                "id": "9hi896jn9z1n",
+                "titre": "Avancement et frise du planning",
+                "notes": "Retard de 2 semaines sur l'interface avec l'éditeur de paie.\nAtelier d'architecture prévu, voir https://www.exemple.fr/portail-rh/interface-paie"
+              },
+              {
+                "id": "bgwzkj0e9z1n",
+                "titre": "Backlog : avancement et vélocité",
+                "notes": "Budget consommé : 86 k€ sur 180 k€. Atterrissage estimé à 186 k€ (licences plus chères)."
+              },
+              {
+                "id": "mwo7w38x9z1n",
+                "titre": "Écarts de planning",
+                "notes": "Validation demandée : reporter les notes de frais en V2."
+              },
+              {
+                "id": "cseoznnf9z1n",
+                "titre": "Top risques",
+                "notes": ""
+              },
+              {
+                "id": "281sbp5g9z1n",
+                "titre": "Actions en retard et à venir",
+                "notes": ""
+              },
+              {
+                "id": "pmyj02pe9z1n",
+                "titre": "Relevé des décisions prises",
+                "notes": ""
+              },
+              {
+                "id": "7w9fscpz9z1n",
+                "titre": "Décisions attendues",
+                "notes": ""
+              },
+              {
+                "id": "ydsh5jt19z1n",
+                "titre": "Budget",
+                "notes": ""
+              },
+              {
+                "id": "49bycmki9z1n",
+                "titre": "Prochaines étapes",
+                "notes": ""
+              }
+            ],
+            "creeLe": "2026-11-18",
+            "diffuseLe": "2026-11-18"
+          }
+        },
+        {
+          "id": "47fiwx7t8tq3",
+          "auto": true,
+          "cle": "copil:9dbbqo5o8tq2",
+          "type": "copil",
+          "date": "2026-11-30",
+          "heure": "14:00",
+          "duree": 90,
+          "motif": "après le sprint 6",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-30",
+          "prep": {
+            "meteo": {
+              "global": "nuage",
+              "delais": "nuage",
+              "budget": "soleil",
+              "perimetre": "nuage",
+              "equipe": "soleil"
+            },
+            "faits": "Sprint 5 livré : bulletins de paie consultables en ligne\nFAQ salariés en cours de rédaction\nRecrutement d'un renfort pour la recette",
+            "decisions": "Ouvrir le portail aux managers dès la V1\nValider le décalage de 2 semaines de l'interface paie",
+            "etapes": "Recette utilisateurs en janvier\nFormation des managers",
+            "budget": "Atterrissage à 186 k€ (+6 k€) à cause des licences.",
+            "diapos": [
+              "titre",
+              "odj",
+              "meteo",
+              "backlog",
+              "ecarts",
+              "actions",
+              "releve",
+              "gonogo",
+              "decisions",
+              "budget",
+              "etapes"
+            ],
+            "connues": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "backlog",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "decisions",
+              "budget",
+              "etapes",
+              "changements",
+              "gonogo"
+            ]
+          },
+          "cr": {
+            "presence": {
+              "demo000a": "present",
+              "demo000b": "present",
+              "demo000c": "present",
+              "demo000g": "present"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "n5sedfucp75v",
+                "titre": "Météo et faits marquants",
+                "notes": ""
+              },
+              {
+                "id": "p3pmoxzpp75v",
+                "titre": "Avancement et frise du planning",
+                "notes": ""
+              },
+              {
+                "id": "200rirdtp75v",
+                "titre": "Backlog : avancement et vélocité",
+                "notes": ""
+              },
+              {
+                "id": "ws4nleqvp75v",
+                "titre": "Écarts de planning",
+                "notes": ""
+              },
+              {
+                "id": "kzkhmfegp75v",
+                "titre": "Top risques",
+                "notes": ""
+              },
+              {
+                "id": "mrqpjn7pp75v",
+                "titre": "Actions en retard et à venir",
+                "notes": ""
+              },
+              {
+                "id": "vwn7swcmp75v",
+                "titre": "Relevé des décisions prises",
+                "notes": ""
+              },
+              {
+                "id": "qre1ljhlp75v",
+                "titre": "Décisions attendues",
+                "notes": ""
+              },
+              {
+                "id": "w8hikwutp75v",
+                "titre": "Budget",
+                "notes": ""
+              },
+              {
+                "id": "y1cr3d4hp75v",
+                "titre": "Prochaines étapes",
+                "notes": ""
+              }
+            ],
+            "creeLe": "2026-11-18",
+            "diffuseLe": ""
+          }
+        },
+        {
+          "id": "w30p3vgs8tq3",
+          "auto": true,
+          "cle": "copil:8zo7dvji8tq2",
+          "type": "copil",
+          "date": "2026-12-28",
+          "heure": "14:00",
+          "duree": 90,
+          "motif": "après le sprint 8",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-01-04",
+          "prep": {
+            "meteo": {
+              "delais": "nuage",
+              "budget": "soleil",
+              "perimetre": "nuage",
+              "equipe": "nuage",
+              "global": "pluie"
+            },
+            "faits": "",
+            "decisions": "",
+            "etapes": "",
+            "budget": "",
+            "diapos": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "backlog",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "changements",
+              "gonogo",
+              "decisions",
+              "budget",
+              "etapes"
+            ],
+            "connues": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "backlog",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "decisions",
+              "budget",
+              "etapes",
+              "changements",
+              "gonogo"
+            ]
+          }
+        },
+        {
+          "id": "kyifh8v68tq3",
+          "auto": true,
+          "cle": "copil:rrsyga268tq2",
+          "type": "copil",
+          "date": "2027-01-25",
+          "heure": "14:00",
+          "duree": 90,
+          "motif": "après le sprint 10",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-01-25",
+          "prep": {
+            "meteo": {
+              "global": "nuage",
+              "delais": "soleil",
+              "budget": "soleil",
+              "perimetre": "soleil",
+              "equipe": "nuage"
+            },
+            "faits": "",
+            "decisions": "",
+            "etapes": "",
+            "budget": "",
+            "diapos": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "backlog",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "changements",
+              "gonogo",
+              "decisions",
+              "budget",
+              "etapes"
+            ],
+            "connues": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "backlog",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "decisions",
+              "budget",
+              "etapes",
+              "changements",
+              "gonogo"
+            ]
+          }
+        },
+        {
+          "id": "qiz2qiuw8tq3",
+          "auto": true,
+          "cle": "copil:p6kquxnp8tq2",
+          "type": "copil",
+          "date": "2027-02-22",
+          "heure": "14:00",
+          "duree": 90,
+          "motif": "après le sprint 12",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-02-22",
+          "prep": {
+            "meteo": {
+              "global": "nuage",
+              "delais": "pluie",
+              "budget": "nuage",
+              "perimetre": "pluie",
+              "equipe": "soleil"
+            },
+            "faits": "",
+            "decisions": "",
+            "etapes": "",
+            "budget": "",
+            "diapos": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "backlog",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "changements",
+              "gonogo",
+              "decisions",
+              "budget",
+              "etapes"
+            ],
+            "connues": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "backlog",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "decisions",
+              "budget",
+              "etapes",
+              "changements",
+              "gonogo"
+            ]
+          }
+        },
+        {
+          "id": "6i76rebd8tq3",
+          "auto": true,
+          "cle": "copil:k24mj6ir8tq2",
+          "type": "copil",
+          "date": "2027-03-22",
+          "heure": "14:00",
+          "duree": 90,
+          "motif": "après le sprint 14",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-03-22",
+          "prep": {
+            "meteo": {
+              "global": "orage",
+              "delais": "pluie",
+              "budget": "orage",
+              "perimetre": "orage",
+              "equipe": "orage"
+            },
+            "faits": "",
+            "decisions": "",
+            "etapes": "",
+            "budget": "",
+            "diapos": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "backlog",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "changements",
+              "gonogo",
+              "decisions",
+              "budget",
+              "etapes"
+            ],
+            "connues": [
+              "titre",
+              "odj",
+              "meteo",
+              "avancement",
+              "backlog",
+              "ecarts",
+              "risques",
+              "actions",
+              "releve",
+              "decisions",
+              "budget",
+              "etapes",
+              "changements",
+              "gonogo"
+            ]
+          }
+        },
+        {
+          "id": "2ppi6cyj8tq3",
+          "auto": true,
+          "cle": "cloture:",
+          "type": "cloture",
+          "date": "2027-03-30",
+          "heure": "14:00",
+          "duree": 90,
+          "motif": "",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-03-30"
+        },
+        {
+          "id": "1lb12db68d6u",
+          "auto": true,
+          "cle": "affinage:k2gne7lo8tq2",
+          "type": "affinage",
+          "date": "2026-09-14",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 1",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-09-14"
+        },
+        {
+          "id": "qy0dnupy8d6u",
+          "auto": true,
+          "cle": "affinage:iw62dwvh8tq2",
+          "type": "affinage",
+          "date": "2026-09-28",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 2",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-09-28"
+        },
+        {
+          "id": "7iqf2jk88d6u",
+          "auto": true,
+          "cle": "affinage:74ash1358tq2",
+          "type": "affinage",
+          "date": "2026-10-12",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 3",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-10-12"
+        },
+        {
+          "id": "b6bf5vm68d6u",
+          "auto": true,
+          "cle": "affinage:ve9myyon8tq2",
+          "type": "affinage",
+          "date": "2026-10-26",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 4",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-10-26"
+        },
+        {
+          "id": "2j4d6w698d6u",
+          "auto": true,
+          "cle": "affinage:rkr5m9zl8tq2",
+          "type": "affinage",
+          "date": "2026-11-09",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 5",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-09"
+        },
+        {
+          "id": "glrj0t7g8d6u",
+          "auto": true,
+          "cle": "affinage:9dbbqo5o8tq2",
+          "type": "affinage",
+          "date": "2026-11-23",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 6",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-11-23",
+          "cr": {
+            "presence": {
+              "demo000c": "present",
+              "demo000d": "present",
+              "demo000e": "present"
+            },
+            "autres": "",
+            "points": [
+              {
+                "id": "zh0lvv508y3b",
+                "titre": "Revue des éléments prévus pour les prochains sprints",
+                "notes": ""
+              },
+              {
+                "id": "0n4cansz8y3b",
+                "titre": "Découpage et estimation",
+                "notes": ""
+              },
+              {
+                "id": "vbcm22b18y3b",
+                "titre": "Dépendances et risques",
+                "notes": ""
+              }
+            ],
+            "creeLe": "2026-11-18",
+            "diffuseLe": ""
+          }
+        },
+        {
+          "id": "di4mc4gp8d6u",
+          "auto": true,
+          "cle": "affinage:2ym8npoh8tq2",
+          "type": "affinage",
+          "date": "2026-12-07",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 7",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-12-07"
+        },
+        {
+          "id": "5demyqe88d6u",
+          "auto": true,
+          "cle": "affinage:8zo7dvji8tq2",
+          "type": "affinage",
+          "date": "2026-12-21",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 8",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2026-12-21"
+        },
+        {
+          "id": "qbwao53i8d6u",
+          "auto": true,
+          "cle": "affinage:lu99jn978tq2",
+          "type": "affinage",
+          "date": "2027-01-05",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 9",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-01-05"
+        },
+        {
+          "id": "t2oudekv8d6u",
+          "auto": true,
+          "cle": "affinage:rrsyga268tq2",
+          "type": "affinage",
+          "date": "2027-01-18",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 10",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-01-18"
+        },
+        {
+          "id": "im2j3do08d6u",
+          "auto": true,
+          "cle": "affinage:f18p7j5d8tq2",
+          "type": "affinage",
+          "date": "2027-02-01",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 11",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-02-01"
+        },
+        {
+          "id": "pburwjgr8d6u",
+          "auto": true,
+          "cle": "affinage:p6kquxnp8tq2",
+          "type": "affinage",
+          "date": "2027-02-15",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 12",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-02-15"
+        },
+        {
+          "id": "hqiy5ki28d6u",
+          "auto": true,
+          "cle": "affinage:l3vc4c8c8tq2",
+          "type": "affinage",
+          "date": "2027-03-01",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 13",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-03-01"
+        },
+        {
+          "id": "ox4l10ja8d6u",
+          "auto": true,
+          "cle": "affinage:k24mj6ir8tq2",
+          "type": "affinage",
+          "date": "2027-03-15",
+          "heure": "10:00",
+          "duree": 60,
+          "motif": "Sprint 14",
+          "titre": "",
+          "notes": "",
+          "verrou": false,
+          "annulee": false,
+          "dateInitiale": "2027-03-15"
+        }
+      ],
+      "base": {
+        "dateDebut": "2026-09-07",
+        "dateFin": "2027-03-28"
+      },
+      "referenceLe": "2026-11-18",
+      "taches": {
+        "responsable": "",
+        "horizon": 45,
+        "modeles": {
+          "lancement": [
+            {
+              "id": "rswifzyh8tq3",
+              "libelle": "✉️ Envoyer l'invitation",
+              "decalage": -10,
+              "actif": true
+            },
+            {
+              "id": "ef0wp31w8tq3",
+              "libelle": "🚀 Préparer le support de lancement",
+              "decalage": -3,
+              "actif": true
+            },
+            {
+              "id": "uvm7adq58tq3",
+              "libelle": "📝 Envoyer le compte rendu",
+              "decalage": 2,
+              "actif": true
+            }
+          ],
+          "planning": [],
+          "affinage": [],
+          "revue": [],
+          "retro": [],
+          "copil": [
+            {
+              "id": "dtx7bseh8tq3",
+              "libelle": "✉️ Envoyer l'invitation",
+              "decalage": -10,
+              "actif": true
+            },
+            {
+              "id": "hwdc4ck48tq3",
+              "libelle": "🏛️ Préparer le copil (météo, faits marquants, décisions attendues)",
+              "decalage": -5,
+              "actif": true
+            },
+            {
+              "id": "m380o8b28tq3",
+              "libelle": "📤 Envoyer le support",
+              "decalage": -1,
+              "actif": true
+            },
+            {
+              "id": "rkz4wdzo8tq3",
+              "libelle": "📝 Envoyer le compte rendu et le relevé de décisions",
+              "decalage": 2,
+              "actif": true
+            }
+          ],
+          "cloture": [
+            {
+              "id": "sa1q1wld8tq3",
+              "libelle": "✉️ Envoyer l'invitation",
+              "decalage": -10,
+              "actif": true
+            },
+            {
+              "id": "c4hln3c68tq3",
+              "libelle": "🏁 Préparer le bilan du projet",
+              "decalage": -5,
+              "actif": true
+            },
+            {
+              "id": "9rozbizl8tq3",
+              "libelle": "📝 Envoyer le compte rendu",
+              "decalage": 2,
+              "actif": true
+            }
+          ],
+          "libre": [
+            {
+              "id": "k515ky2vfton",
+              "libelle": "Préparer la réunion",
+              "decalage": -3,
+              "actif": true
+            },
+            {
+              "id": "ubhccng9g9bt",
+              "libelle": "Envoyer le CR",
+              "decalage": 2,
+              "actif": true
+            }
+          ],
+          "cadrage": [
+            {
+              "id": "j021vcl7rvgu",
+              "libelle": "✉️ Envoyer l'invitation",
+              "decalage": -10,
+              "actif": true
+            },
+            {
+              "id": "drxmxg52rvgu",
+              "libelle": "🧭 Préparer le support de cadrage",
+              "decalage": -3,
+              "actif": true
+            },
+            {
+              "id": "10qsk5evrvgu",
+              "libelle": "📝 Rédiger la note de cadrage",
+              "decalage": 5,
+              "actif": true
+            }
+          ],
+          "entretien": [
+            {
+              "id": "k59wdh77rvgu",
+              "libelle": "✉️ Inviter la personne interrogée",
+              "decalage": -7,
+              "actif": true
+            },
+            {
+              "id": "a1uvf19wrvgu",
+              "libelle": "📝 Rédiger la synthèse de l'entretien",
+              "decalage": 1,
+              "actif": true
+            }
+          ],
+          "avancement": []
+        }
+      },
+      "tachesIgnorees": [],
+      "avReel": true
+    },
+    "actions": [
+      {
+        "id": "demo000v",
+        "texte": "Rédiger la FAQ salariés",
+        "responsable": "Sophie Laurent",
+        "echeance": "2026-11-30",
+        "fait": false,
+        "faitLe": "",
+        "creeLe": "2026-10-29",
+        "source": {
+          "type": "decision",
+          "id": "demo000s"
+        },
+        "notes": ""
+      },
+      {
+        "id": "demo000w",
+        "texte": "Envoyer le planning de formation aux managers",
+        "responsable": "Julien Moreau",
+        "echeance": "2026-11-16",
+        "fait": false,
+        "faitLe": "",
+        "creeLe": "2026-10-29",
+        "source": {
+          "type": "libre"
+        },
+        "notes": ""
+      },
+      {
+        "id": "demo000x",
+        "texte": "Commander les licences de l'outil de signature",
+        "responsable": "Marc Girard",
+        "echeance": "2026-11-18",
+        "fait": false,
+        "faitLe": "",
+        "creeLe": "2026-10-29",
+        "source": {
+          "type": "libre"
+        },
+        "notes": ""
+      },
+      {
+        "id": "demo000y",
+        "texte": "Mettre à jour la charte graphique du portail",
+        "responsable": "Élise Dubois",
+        "echeance": "2026-11-12",
+        "fait": true,
+        "faitLe": "2026-11-16",
+        "creeLe": "2026-10-29",
+        "source": {
+          "type": "libre"
+        },
+        "notes": ""
+      },
+      {
+        "id": "w49w8rm98tq3",
+        "auto": true,
+        "cle": "47fiwx7t8tq3:dtx7bseh8tq3",
+        "texte": "✉️ Envoyer l'invitation",
+        "responsable": "",
+        "echeance": "2026-11-20",
+        "fait": false,
+        "creeLe": "2026-11-18",
+        "source": {
+          "type": "reunion",
+          "id": "47fiwx7t8tq3"
+        },
+        "notes": ""
+      },
+      {
+        "id": "pgbx1e2h8tq3",
+        "auto": true,
+        "cle": "47fiwx7t8tq3:hwdc4ck48tq3",
+        "texte": "🏛️ Préparer le copil (météo, faits marquants, décisions attendues)",
+        "responsable": "",
+        "echeance": "2026-11-25",
+        "fait": false,
+        "creeLe": "2026-11-18",
+        "source": {
+          "type": "reunion",
+          "id": "47fiwx7t8tq3"
+        },
+        "notes": ""
+      },
+      {
+        "id": "zd1jw8rt8tq3",
+        "auto": true,
+        "cle": "47fiwx7t8tq3:m380o8b28tq3",
+        "texte": "📤 Envoyer le support",
+        "responsable": "",
+        "echeance": "2026-11-27",
+        "fait": false,
+        "creeLe": "2026-11-18",
+        "source": {
+          "type": "reunion",
+          "id": "47fiwx7t8tq3"
+        },
+        "notes": ""
+      },
+      {
+        "id": "7uhqfda38tq3",
+        "auto": true,
+        "cle": "47fiwx7t8tq3:rkz4wdzo8tq3",
+        "texte": "📝 Envoyer le compte rendu et le relevé de décisions",
+        "responsable": "",
+        "echeance": "2026-12-02",
+        "fait": false,
+        "creeLe": "2026-11-18",
+        "source": {
+          "type": "reunion",
+          "id": "47fiwx7t8tq3"
+        },
+        "notes": ""
+      },
+      {
+        "id": "y2b9njzka1qz",
+        "texte": "Organiser l'atelier interface paie",
+        "responsable": "Thomas Petit",
+        "echeance": "2026-11-20",
+        "fait": false,
+        "creeLe": "2026-11-18",
+        "source": {
+          "type": "reunion",
+          "id": "nz40anz48tq3"
+        },
+        "notes": ""
+      },
+      {
+        "id": "n3eobc4aa22d",
+        "texte": "Envoyer le compte rendu aux participants",
+        "responsable": "Julien Moreau",
+        "echeance": "2026-11-06",
+        "fait": true,
+        "creeLe": "2026-11-18",
+        "source": {
+          "type": "reunion",
+          "id": "nz40anz48tq3"
+        },
+        "notes": "",
+        "faitLe": "2026-11-18"
+      },
+      {
+        "id": "b4065hok15or",
+        "auto": true,
+        "cle": "w30p3vgs8tq3:dtx7bseh8tq3",
+        "texte": "✉️ Envoyer l'invitation",
+        "responsable": "",
+        "echeance": "2026-12-18",
+        "fait": false,
+        "creeLe": "2026-11-18",
+        "source": {
+          "type": "reunion",
+          "id": "w30p3vgs8tq3"
+        },
+        "notes": ""
+      },
+      {
+        "id": "iqw4izrd15or",
+        "auto": true,
+        "cle": "w30p3vgs8tq3:hwdc4ck48tq3",
+        "texte": "🏛️ Préparer le copil (météo, faits marquants, décisions attendues)",
+        "responsable": "",
+        "echeance": "2026-12-23",
+        "fait": false,
+        "creeLe": "2026-11-18",
+        "source": {
+          "type": "reunion",
+          "id": "w30p3vgs8tq3"
+        },
+        "notes": ""
+      },
+      {
+        "id": "vgqor83z15or",
+        "auto": true,
+        "cle": "w30p3vgs8tq3:m380o8b28tq3",
+        "texte": "📤 Envoyer le support",
+        "responsable": "",
+        "echeance": "2026-12-24",
+        "fait": false,
+        "creeLe": "2026-11-18",
+        "source": {
+          "type": "reunion",
+          "id": "w30p3vgs8tq3"
+        },
+        "notes": ""
+      },
+      {
+        "id": "ifng7keb15or",
+        "auto": true,
+        "cle": "w30p3vgs8tq3:rkz4wdzo8tq3",
+        "texte": "📝 Envoyer le compte rendu et le relevé de décisions",
+        "responsable": "",
+        "echeance": "2026-12-30",
+        "fait": false,
+        "creeLe": "2026-11-18",
+        "source": {
+          "type": "reunion",
+          "id": "w30p3vgs8tq3"
+        },
+        "notes": ""
+      }
+    ],
+    "decisions": [
+      {
+        "id": "demo000r",
+        "titre": "Connexion au portail avec le compte Windows (SSO)",
+        "date": "2026-10-09",
+        "statut": "validee",
+        "instance": "",
+        "decideur": "Marc Girard",
+        "description": "Évite un mot de passe de plus. Note d’architecture : https://www.exemple.fr/portail-rh/architecture-sso",
+        "impacts": [
+          "Planning"
+        ],
+        "risques": [],
+        "creeLe": "2026-10-09",
+        "captures": [
+          {
+            "id": "pk02ach0hfm0",
+            "fichier": "2026-11-18_cnbn8f5dhflx.webp",
+            "nom": "Capture d'écran",
+            "date": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "id": "demo000s",
+        "titre": "Reporter le module « notes de frais » en version 2",
+        "date": "2026-10-24",
+        "statut": "validee",
+        "instance": "",
+        "decideur": "Claire Martin",
+        "description": "Pour tenir la date de mise en production.",
+        "impacts": [
+          "Périmètre"
+        ],
+        "risques": [],
+        "creeLe": "2026-10-24"
+      },
+      {
+        "id": "demo000t",
+        "titre": "Ouvrir le portail aux managers dès la V1",
+        "date": "2026-11-13",
+        "statut": "attente",
+        "instance": "",
+        "decideur": "Claire Martin",
+        "description": "",
+        "impacts": [
+          "Périmètre",
+          "Planning"
+        ],
+        "risques": [],
+        "creeLe": "2026-11-13"
+      },
+      {
+        "id": "demo000u",
+        "titre": "Application mobile dédiée",
+        "date": "2026-10-19",
+        "statut": "refusee",
+        "instance": "",
+        "decideur": "Marc Girard",
+        "description": "Le portail sera adapté aux téléphones : pas d'application à installer.",
+        "impacts": [
+          "Budget"
+        ],
+        "risques": [],
+        "creeLe": "2026-10-19"
+      },
+      {
+        "id": "0ch4sntma1fm",
+        "titre": "Reporter le module « notes de frais » en V2",
+        "statut": "validee",
+        "date": "2026-11-02",
+        "instance": "nz40anz48tq3",
+        "decideur": "",
+        "description": "",
+        "impacts": [],
+        "risques": [],
+        "creeLe": "2026-11-18"
+      },
+      {
+        "id": "vpi4i22e7m1i",
+        "titre": "Demande de changement DC1 : Ajouter l'export PDF des bulletins de paie",
+        "date": "2026-11-16",
+        "statut": "validee",
+        "instance": "",
+        "decideur": "Claire Martin",
+        "description": "Les salariés veulent télécharger leurs bulletins en PDF pour les envoyer à leur banque ou à leur bailleur.\n\nArbitrage : Accepté : demande n°1 des salariés. La recette est décalée de 10 jours, la mise en production ne bouge pas.",
+        "impacts": [
+          "Planning",
+          "Budget",
+          "Périmètre"
+        ],
+        "risques": [],
+        "creeLe": "2026-11-16",
+        "changementId": "fjv1zpi08eki"
+      },
+      {
+        "id": "1vn7cewbwbmw",
+        "titre": "Demande de changement DC4 : Notifications SMS pour les congés validés",
+        "date": "2026-11-02",
+        "statut": "refusee",
+        "instance": "nz40anz48tq3",
+        "decideur": "Claire Martin",
+        "description": "Envoyer un SMS au salarié quand son congé est validé par son manager.\n\nArbitrage : Coût de la passerelle SMS non justifié : une notification par e-mail suffit.",
+        "impacts": [
+          "Planning",
+          "Budget",
+          "Périmètre"
+        ],
+        "risques": [],
+        "creeLe": "2026-11-02",
+        "changementId": "d0h54rr0cit1"
+      },
+      {
+        "id": "folkm384v8ho",
+        "titre": "Demande de changement DC3 : Reprendre l'historique des congés sur 3 ans",
+        "date": "2026-11-18",
+        "statut": "reportee",
+        "instance": "47fiwx7t8tq3",
+        "decideur": "Claire Martin",
+        "description": "Importer les congés des 3 dernières années depuis l'ancien logiciel, pour que les salariés retrouvent leur historique.\n\nArbitrage : lot 2",
+        "impacts": [
+          "Planning",
+          "Budget",
+          "Périmètre"
+        ],
+        "risques": [],
+        "creeLe": "2026-11-18",
+        "changementId": "2uejx14k5fc9"
+      }
+    ],
+    "livrables": [
+      {
+        "id": "demo000z",
+        "titre": "Note de cadrage",
+        "cat": "doc",
+        "statut": "valide",
+        "responsable": "Julien Moreau",
+        "valideur": "Claire Martin",
+        "echeance": "2026-09-29",
+        "version": "1.2",
+        "lien": "https://www.exemple.fr/portail-rh/cadrage",
+        "jalonId": "",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "demo0010",
+        "titre": "Spécifications fonctionnelles",
+        "cat": "specs",
+        "statut": "relecture",
+        "responsable": "Sophie Laurent",
+        "valideur": "Nadia Roux",
+        "echeance": "2026-11-24",
+        "version": "0.9",
+        "lien": "",
+        "jalonId": "",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "demo0011",
+        "titre": "Manuel utilisateur salarié",
+        "cat": "manuel",
+        "statut": "redaction",
+        "responsable": "Sophie Laurent",
+        "valideur": "Claire Martin",
+        "echeance": "2027-01-17",
+        "version": "0.3",
+        "lien": "",
+        "jalonId": "",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "demo0012",
+        "titre": "Contrat éditeur de paie",
+        "cat": "contrat",
+        "statut": "diffuse",
+        "responsable": "Marc Girard",
+        "valideur": "",
+        "echeance": "2026-09-14",
+        "version": "",
+        "lien": "",
+        "jalonId": "",
+        "notes": "",
+        "fichier": null
+      },
+      {
+        "id": "demo0013",
+        "titre": "Tutoriel « Poser un congé »",
+        "cat": "tuto",
+        "statut": "afaire",
+        "responsable": "Élise Dubois",
+        "valideur": "Sophie Laurent",
+        "echeance": "2026-11-17",
+        "version": "",
+        "lien": "",
+        "jalonId": "",
+        "notes": "",
+        "fichier": null
+      }
+    ],
+    "retex": [
+      {
+        "id": "demo0014",
+        "date": "2026-11-03",
+        "nature": "positif",
+        "categorie": "Organisation & équipe",
+        "sprintId": "",
+        "constat": "Les démos de fin de sprint ont beaucoup rassuré la RH",
+        "cause": "Les utilisateurs voient le produit tôt",
+        "recommandation": "Inviter un utilisateur clé à chaque démo",
+        "phase": "",
+        "partage": true
+      },
+      {
+        "id": "demo0015",
+        "date": "2026-11-03",
+        "nature": "ameliorer",
+        "categorie": "Technique",
+        "sprintId": "",
+        "constat": "Les environnements de test n'étaient pas prêts au sprint 1",
+        "cause": "Demande faite trop tard à l'infrastructure",
+        "recommandation": "Commander les environnements dès le cadrage",
+        "phase": "",
+        "partage": true
+      },
+      {
+        "id": "demo0016",
+        "date": "2026-11-17",
+        "nature": "positif",
+        "categorie": "Communication",
+        "sprintId": "",
+        "constat": "Daily courts et efficaces (10 min)",
+        "cause": "",
+        "recommandation": "",
+        "phase": "",
+        "partage": true
+      }
+    ],
+    "backlog": {
+      "outil": "clickup",
+      "url": "https://app.clickup.com/exemple/portail-rh",
+      "imports": [
+        {
+          "id": "h2449s0v9mp3",
+          "date": "2026-11-18",
+          "source": "texte collé",
+          "totaux": {
+            "nb": 48,
+            "pts": 176,
+            "afaire": {
+              "nb": 13,
+              "pts": 49
+            },
+            "encours": {
+              "nb": 2,
+              "pts": 5
+            },
+            "bloque": {
+              "nb": 1,
+              "pts": 8
+            },
+            "fait": {
+              "nb": 32,
+              "pts": 114
+            }
+          },
+          "items": [
+            {
+              "k": "PRH-1",
+              "t": "Afficher un bulletin",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 2,
+              "sprint": "PRH Sprint 1",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-2",
+              "t": "Valider les absences",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 3,
+              "sprint": "PRH Sprint 1",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-3",
+              "t": "Exporter le manager",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "",
+              "pts": 5,
+              "sprint": "PRH Sprint 1",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-4",
+              "t": "Notifier l'adresse",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 8,
+              "sprint": "PRH Sprint 1",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-5",
+              "t": "Modifier l'historique",
+              "type": "Bug",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 3,
+              "sprint": "PRH Sprint 1",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-6",
+              "t": "Consulter le solde de congés",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 1,
+              "sprint": "PRH Sprint 1",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-7",
+              "t": "Afficher les absences",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 3,
+              "sprint": "PRH Sprint 2",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-8",
+              "t": "Valider le manager",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "",
+              "pts": 5,
+              "sprint": "PRH Sprint 2",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-9",
+              "t": "Exporter l'adresse",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 8,
+              "sprint": "PRH Sprint 2",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-10",
+              "t": "Notifier l'historique",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 3,
+              "sprint": "PRH Sprint 2",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-11",
+              "t": "Modifier le solde de congés",
+              "type": "Bug",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 1,
+              "sprint": "PRH Sprint 2",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-12",
+              "t": "Consulter un bulletin",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "",
+              "pts": 2,
+              "sprint": "PRH Sprint 2",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-13",
+              "t": "Afficher le manager",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "",
+              "pts": 5,
+              "sprint": "PRH Sprint 3",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-14",
+              "t": "Valider l'adresse",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 8,
+              "sprint": "PRH Sprint 3",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-15",
+              "t": "Exporter l'historique",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 3,
+              "sprint": "PRH Sprint 3",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-16",
+              "t": "Notifier le solde de congés",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 1,
+              "sprint": "PRH Sprint 3",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-17",
+              "t": "Modifier un bulletin",
+              "type": "Bug",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "",
+              "pts": 2,
+              "sprint": "PRH Sprint 3",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-18",
+              "t": "Consulter les absences",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 3,
+              "sprint": "PRH Sprint 3",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-19",
+              "t": "Afficher l'adresse",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 8,
+              "sprint": "PRH Sprint 4",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-20",
+              "t": "Valider l'historique",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 3,
+              "sprint": "PRH Sprint 4",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-21",
+              "t": "Exporter le solde de congés",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 1,
+              "sprint": "PRH Sprint 4",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-22",
+              "t": "Notifier un bulletin",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "",
+              "pts": 2,
+              "sprint": "PRH Sprint 4",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-23",
+              "t": "Modifier les absences",
+              "type": "Bug",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 3,
+              "sprint": "PRH Sprint 4",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-24",
+              "t": "Consulter le manager",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 5,
+              "sprint": "PRH Sprint 4",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-25",
+              "t": "Afficher l'historique",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 3,
+              "sprint": "PRH Sprint 5",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-26",
+              "t": "Valider le solde de congés",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 1,
+              "sprint": "PRH Sprint 5",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-27",
+              "t": "Exporter un bulletin",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "",
+              "pts": 2,
+              "sprint": "PRH Sprint 5",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-28",
+              "t": "Notifier les absences",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 3,
+              "sprint": "PRH Sprint 5",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-29",
+              "t": "Modifier le manager",
+              "type": "Bug",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 5,
+              "sprint": "PRH Sprint 5",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-30",
+              "t": "Consulter l'adresse",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 8,
+              "sprint": "PRH Sprint 5",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-31",
+              "t": "Afficher le solde de congés",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 1,
+              "sprint": "PRH Sprint 6",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-32",
+              "t": "Valider un bulletin",
+              "type": "Story",
+              "st": "In Progress",
+              "cat": "encours",
+              "prio": "",
+              "qui": "",
+              "pts": 2,
+              "sprint": "PRH Sprint 6",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-33",
+              "t": "Exporter les absences",
+              "type": "Story",
+              "st": "In Progress",
+              "cat": "encours",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 3,
+              "sprint": "PRH Sprint 6",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-34",
+              "t": "Notifier le manager",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 5,
+              "sprint": "PRH Sprint 6",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-35",
+              "t": "Modifier l'adresse",
+              "type": "Bug",
+              "st": "Blocked",
+              "cat": "bloque",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 8,
+              "sprint": "PRH Sprint 6",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": "2026-11-10"
+            },
+            {
+              "k": "PRH-36",
+              "t": "Consulter l'historique",
+              "type": "Story",
+              "st": "Done",
+              "cat": "fait",
+              "prio": "",
+              "qui": "",
+              "pts": 3,
+              "sprint": "PRH Sprint 6",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-37",
+              "t": "Afficher un bulletin",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-38",
+              "t": "Valider les absences",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 3,
+              "sprint": "",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-39",
+              "t": "Exporter le manager",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 5,
+              "sprint": "",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-40",
+              "t": "Notifier l'adresse",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 8,
+              "sprint": "",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-41",
+              "t": "Modifier l'historique",
+              "type": "Bug",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "",
+              "pts": 3,
+              "sprint": "",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-42",
+              "t": "Consulter le solde de congés",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 1,
+              "sprint": "",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-43",
+              "t": "Afficher les absences",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 3,
+              "sprint": "",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-44",
+              "t": "Valider le manager",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 5,
+              "sprint": "",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-45",
+              "t": "Exporter l'adresse",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "Thomas Petit",
+              "pts": 8,
+              "sprint": "",
+              "epic": "Données personnelles",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-46",
+              "t": "Notifier l'historique",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "",
+              "pts": 3,
+              "sprint": "",
+              "epic": "Connexion",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-47",
+              "t": "Modifier le solde de congés",
+              "type": "Bug",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "Élise Dubois",
+              "pts": 1,
+              "sprint": "",
+              "epic": "Congés",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            },
+            {
+              "k": "PRH-48",
+              "t": "Consulter un bulletin",
+              "type": "Story",
+              "st": "To Do",
+              "cat": "afaire",
+              "prio": "",
+              "qui": "Karim Benali",
+              "pts": 2,
+              "sprint": "",
+              "epic": "Bulletins de paie",
+              "cree": "",
+              "resolu": "",
+              "ech": ""
+            }
+          ]
+        }
+      ],
+      "mapping": {
+        "champs": {
+          "k": "Issue key",
+          "t": "Summary",
+          "type": "Issue Type",
+          "st": "Status",
+          "prio": "",
+          "qui": "Assignee",
+          "pts": "Story Points",
+          "sprint": "Sprint",
+          "epic": "Epic Link",
+          "cree": "",
+          "resolu": "",
+          "ech": "Due Date"
+        },
+        "statuts": {
+          "Blocked": "bloque",
+          "Done": "fait",
+          "In Progress": "encours",
+          "To Do": "afaire"
+        },
+        "dateFmt": "mj"
+      }
+    },
+    "raci": {
+      "activites": [
+        {
+          "id": "konbw08kb1hn",
+          "nom": "Pilotage du projet"
+        },
+        {
+          "id": "lqvnw648b1hn",
+          "nom": "Expression du besoin"
+        },
+        {
+          "id": "6gq51l6ob1hn",
+          "nom": "Rédaction des spécifications"
+        },
+        {
+          "id": "rm3mf928b1hn",
+          "nom": "Validation des spécifications"
+        },
+        {
+          "id": "9v1bacw4b1hn",
+          "nom": "Réalisation"
+        },
+        {
+          "id": "eucexa9nb1hn",
+          "nom": "Recette"
+        },
+        {
+          "id": "qo9qf3alb1hn",
+          "nom": "Validation des livrables"
+        },
+        {
+          "id": "21u27e0db1hn",
+          "nom": "Mise en production"
+        },
+        {
+          "id": "g9cafp5mb1hn",
+          "nom": "Conduite du changement / communication"
+        }
+      ],
+      "cells": {
+        "konbw08kb1hn": {
+          "demo000a": "A",
+          "demo000b": "R",
+          "demo000c": "C",
+          "demo000e": "I",
+          "demo000g": "I"
+        },
+        "lqvnw648b1hn": {
+          "demo000a": "I",
+          "demo000b": "A",
+          "demo000c": "R",
+          "demo000d": "C",
+          "demo000e": "R",
+          "demo000f": "C"
+        },
+        "6gq51l6ob1hn": {
+          "demo000a": "I",
+          "demo000b": "A",
+          "demo000c": "C",
+          "demo000d": "R",
+          "demo000e": "R",
+          "demo000f": "R",
+          "demo000g": "C"
+        },
+        "rm3mf928b1hn": {
+          "demo000a": "A",
+          "demo000b": "C",
+          "demo000c": "R",
+          "demo000e": "C",
+          "demo000f": "I",
+          "demo000g": "R"
+        },
+        "9v1bacw4b1hn": {
+          "demo000a": "C",
+          "demo000b": "A",
+          "demo000c": "R",
+          "demo000d": "I",
+          "demo000e": "I",
+          "demo000f": "R",
+          "demo000g": "C"
+        },
+        "eucexa9nb1hn": {
+          "demo000a": "A",
+          "demo000b": "R",
+          "demo000c": "C",
+          "demo000d": "I",
+          "demo000g": "C"
+        },
+        "qo9qf3alb1hn": {
+          "demo000b": "R"
+        }
+      }
+    },
+    "charge": {
+      "demo000a": {
+        "2026-09": "4",
+        "2026-10": "3",
+        "2026-11": "3",
+        "2026-12": "2",
+        "2027-01": "2",
+        "2027-02": "2",
+        "2027-03": "2"
+      },
+      "demo000b": {
+        "2026-09": "12",
+        "2026-10": "14",
+        "2026-11": "12",
+        "2026-12": "10",
+        "2027-01": "12",
+        "2027-02": "12",
+        "2027-03": "10"
+      },
+      "demo000c": {
+        "2026-09": "10",
+        "2026-10": "10",
+        "2026-11": "8",
+        "2026-12": "8",
+        "2027-01": "10",
+        "2027-02": "12",
+        "2027-03": "8"
+      },
+      "demo000d": {
+        "2026-09": "8",
+        "2026-10": "8",
+        "2026-11": "8",
+        "2026-12": "6",
+        "2027-01": "8",
+        "2027-02": "8",
+        "2027-03": "6"
+      },
+      "demo000e": {
+        "2026-09": "16",
+        "2026-10": "18",
+        "2026-11": "17",
+        "2026-12": "14",
+        "2027-01": "17",
+        "2027-02": "16",
+        "2027-03": "12"
+      },
+      "demo000f": {
+        "2026-09": "6",
+        "2026-10": "6",
+        "2026-11": "8",
+        "2026-12": "4",
+        "2027-01": "4",
+        "2027-02": "2",
+        "2027-03": "2"
+      },
+      "demo000g": {
+        "2026-09": "2",
+        "2026-10": "2",
+        "2026-11": "4",
+        "2026-12": "3",
+        "2027-01": "8",
+        "2027-02": "10",
+        "2027-03": "4"
+      }
+    },
+    "flash": {
+      "2026-11-16": {
+        "meteo": {
+          "global": "pluie",
+          "delais": "nuage",
+          "budget": "soleil",
+          "perimetre": "nuage",
+          "equipe": "soleil"
+        },
+        "faits": "",
+        "attention": "",
+        "besoins": "",
+        "envoyeLe": ""
+      }
+    },
+    "flashRappel": true,
+    "changements": [
+      {
+        "id": "fjv1zpi08eki",
+        "titre": "Ajouter l'export PDF des bulletins de paie",
+        "demandeur": "Nadia Roux",
+        "date": "2026-11-04",
+        "priorite": "haute",
+        "description": "Les salariés veulent télécharger leurs bulletins en PDF pour les envoyer à leur banque ou à leur bailleur.",
+        "justification": "Demande n°1 des salariés lors des démos de fin de sprint.",
+        "impacts": {
+          "delai": "10",
+          "cout": "8",
+          "charge": "12",
+          "perimetre": "Ajout : export PDF unitaire et par année"
+        },
+        "jalons": [
+          "eofdjcnaf3lv"
+        ],
+        "instance": "",
+        "statut": "acceptee",
+        "creeLe": "2026-11-04",
+        "arbitrage": {
+          "date": "2026-11-16",
+          "decideur": "Claire Martin",
+          "commentaire": "Accepté : demande n°1 des salariés. La recette est décalée de 10 jours, la mise en production ne bouge pas."
+        },
+        "decisionId": "vpi4i22e7m1i"
+      },
+      {
+        "id": "6d50mxhj3mwp",
+        "titre": "Ouvrir le portail aux intérimaires",
+        "demandeur": "Claire Martin",
+        "date": "2026-11-12",
+        "priorite": "moyenne",
+        "description": "Les intérimaires n'ont pas de compte Windows : il faudrait une connexion par e-mail et mot de passe.",
+        "justification": "Environ 120 intérimaires par an posent encore leurs demandes sur papier.",
+        "impacts": {
+          "delai": "15",
+          "cout": "12",
+          "charge": "20",
+          "perimetre": "Nouveau type de compte (connexion par e-mail)"
+        },
+        "jalons": [
+          "15kmkc4sf4e2"
+        ],
+        "instance": "47fiwx7t8tq3",
+        "statut": "analyse",
+        "creeLe": "2026-11-12"
+      },
+      {
+        "id": "2uejx14k5fc9",
+        "titre": "Reprendre l'historique des congés sur 3 ans",
+        "demandeur": "Sophie Laurent",
+        "date": "2026-11-09",
+        "priorite": "moyenne",
+        "description": "Importer les congés des 3 dernières années depuis l'ancien logiciel, pour que les salariés retrouvent leur historique.",
+        "justification": "Évite les appels au service RH pour consulter les anciens congés.",
+        "impacts": {
+          "delai": "8",
+          "cout": "5",
+          "charge": "10",
+          "perimetre": "Ajout : reprise de données de l'ancien logiciel"
+        },
+        "jalons": [
+          "eofdjcnaf3lv"
+        ],
+        "instance": "47fiwx7t8tq3",
+        "statut": "reportee",
+        "creeLe": "2026-11-09",
+        "arbitrage": {
+          "date": "2026-11-18",
+          "decideur": "Claire Martin",
+          "commentaire": "lot 2"
+        },
+        "decisionId": "folkm384v8ho"
+      },
+      {
+        "id": "d0h54rr0cit1",
+        "titre": "Notifications SMS pour les congés validés",
+        "demandeur": "Sophie Laurent",
+        "date": "2026-10-20",
+        "priorite": "basse",
+        "description": "Envoyer un SMS au salarié quand son congé est validé par son manager.",
+        "justification": "",
+        "impacts": {
+          "delai": "5",
+          "cout": "6",
+          "charge": "4",
+          "perimetre": "Ajout : passerelle SMS"
+        },
+        "jalons": [],
+        "instance": "nz40anz48tq3",
+        "statut": "refusee",
+        "creeLe": "2026-10-20",
+        "arbitrage": {
+          "date": "2026-11-02",
+          "decideur": "Claire Martin",
+          "commentaire": "Coût de la passerelle SMS non justifié : une notification par e-mail suffit."
+        },
+        "decisionId": "1vn7cewbwbmw"
+      }
+    ],
+    "gonogo": {
+      "jalonId": "pfxk4tfn8tq2",
+      "criteres": [
+        {
+          "id": "bevvbha0a6yj",
+          "cat": "Recette",
+          "libelle": "La recette fonctionnelle est validée par le métier",
+          "bloquant": true,
+          "statut": "ok",
+          "commentaire": ""
+        },
+        {
+          "id": "v90tsbc7gv42",
+          "cat": "Recette",
+          "libelle": "Aucune anomalie bloquante n'est ouverte",
+          "bloquant": true,
+          "statut": "ok",
+          "commentaire": ""
+        },
+        {
+          "id": "ispukpl6bb7h",
+          "cat": "Recette",
+          "libelle": "Le PV de recette est signé",
+          "bloquant": false,
+          "statut": "ko",
+          "commentaire": "Signature prévue le 2 mars par la RH"
+        },
+        {
+          "id": "fiq06e6w5mi4",
+          "cat": "Technique",
+          "libelle": "Les tests de performance et de charge sont concluants",
+          "bloquant": false,
+          "statut": "ok",
+          "commentaire": "500 connexions simultanées sans ralentissement"
+        },
+        {
+          "id": "wfsvw4cz9d8b",
+          "cat": "Technique",
+          "libelle": "La sécurité et les droits d'accès sont validés",
+          "bloquant": false,
+          "statut": "ok",
+          "commentaire": ""
+        },
+        {
+          "id": "vn3yezt5z1qh",
+          "cat": "Technique",
+          "libelle": "Le plan de retour arrière est prêt et testé",
+          "bloquant": true,
+          "statut": "ok",
+          "commentaire": "Testé le 12 février sur la préproduction"
+        },
+        {
+          "id": "k6uomp2hc1ca",
+          "cat": "Technique",
+          "libelle": "Les sauvegardes et la restauration sont vérifiées",
+          "bloquant": false,
+          "statut": "ok",
+          "commentaire": ""
+        },
+        {
+          "id": "e7clifmka3hr",
+          "cat": "Exploitation & support",
+          "libelle": "Le support est formé et connaît la procédure d'escalade",
+          "bloquant": true,
+          "statut": "ok",
+          "commentaire": ""
+        },
+        {
+          "id": "uwy5i4etef0c",
+          "cat": "Exploitation & support",
+          "libelle": "Les procédures d'exploitation et la supervision sont en place",
+          "bloquant": false,
+          "statut": "ko",
+          "commentaire": "Supervision à finaliser avec l'équipe infrastructure"
+        },
+        {
+          "id": "064947itulbz",
+          "cat": "Utilisateurs",
+          "libelle": "Les utilisateurs clés sont formés",
+          "bloquant": false,
+          "statut": "ok",
+          "commentaire": ""
+        },
+        {
+          "id": "h522s3ef7oss",
+          "cat": "Utilisateurs",
+          "libelle": "La documentation utilisateur est disponible",
+          "bloquant": false,
+          "statut": "ko",
+          "commentaire": "Manuel salarié en cours de rédaction"
+        },
+        {
+          "id": "k6zuk404nddt",
+          "cat": "Utilisateurs",
+          "libelle": "La communication de lancement est prête",
+          "bloquant": false,
+          "statut": "ok",
+          "commentaire": ""
+        },
+        {
+          "id": "5wfjuykykp4t",
+          "cat": "Organisation",
+          "libelle": "La date et le créneau de bascule sont validés par le sponsor",
+          "bloquant": true,
+          "statut": "ok",
+          "commentaire": "Bascule le vendredi soir"
+        },
+        {
+          "id": "1oj8e3fvf53w",
+          "cat": "Organisation",
+          "libelle": "L'équipe est mobilisée pour la bascule et l'hypercare (J à J+5)",
+          "bloquant": false,
+          "statut": "",
+          "commentaire": ""
+        }
+      ],
+      "anomalies": {
+        "bloquantes": "0",
+        "majeures": "3",
+        "mineures": "11",
+        "majLe": "2026-11-18"
+      },
+      "verdict": null,
+      "objectifs": {
+        "Dématérialiser 100 % des demandes de congés": {
+          "cible": "100 %",
+          "actuel": "Pilote RH : 40 salariés",
+          "statut": "encours",
+          "majLe": "2026-11-16"
+        },
+        "Mettre en ligne les bulletins de paie": {
+          "cible": "Tous les salariés",
+          "actuel": "Interface paie en cours",
+          "statut": "",
+          "majLe": "2026-11-16"
+        }
+      }
+    },
+    "etapes": {
+      "mode": "timeline",
+      "actives": [
+        "besoins",
+        "cadrage",
+        "contrat",
+        "conception",
+        "realisation",
+        "recette",
+        "deploiement",
+        "cloture"
+      ],
+      "dates": {
+        "besoins": {
+          "debut": "2026-09-07",
+          "fin": "2026-09-18"
+        },
+        "cadrage": {
+          "debut": "2026-09-21",
+          "fin": "2026-10-02"
+        },
+        "contrat": {
+          "debut": "2026-09-28",
+          "fin": "2026-10-16"
+        },
+        "conception": {
+          "debut": "2026-10-05",
+          "fin": "2026-10-30"
+        },
+        "realisation": {
+          "debut": "2026-10-19",
+          "fin": "2027-01-29"
+        },
+        "recette": {
+          "debut": "2027-02-01",
+          "fin": "2027-02-19"
+        },
+        "deploiement": {
+          "debut": "2027-02-22",
+          "fin": "2027-03-26"
+        },
+        "cloture": {
+          "debut": "2027-03-29",
+          "fin": "2027-04-09"
+        }
+      },
+      "courante": "realisation",
+      "terminees": {
+        "besoins": "2026-09-18",
+        "cadrage": "2026-10-02",
+        "contrat": "2026-10-16",
+        "conception": "2026-11-02"
+      }
+    },
+    "tendances": {
+      "2026-09-07": {
+        "meteo": 4,
+        "backlog": 0,
+        "risques": 3,
+        "critiques": 1,
+        "problemes": 0,
+        "retard": 0,
+        "glissement": 0,
+        "budget": 4,
+        "temps": 0,
+        "reel": 0
+      },
+      "2026-09-14": {
+        "meteo": 4,
+        "backlog": 4,
+        "risques": 4,
+        "critiques": 1,
+        "problemes": 0,
+        "retard": 0,
+        "glissement": 0,
+        "budget": 8,
+        "temps": 3,
+        "reel": 4
+      },
+      "2026-09-21": {
+        "meteo": 4,
+        "backlog": 9,
+        "risques": 4,
+        "critiques": 2,
+        "problemes": 0,
+        "retard": 1,
+        "glissement": 0,
+        "budget": 12,
+        "temps": 7,
+        "reel": 9
+      },
+      "2026-09-28": {
+        "meteo": 3,
+        "backlog": 15,
+        "risques": 5,
+        "critiques": 2,
+        "problemes": 0,
+        "retard": 1,
+        "glissement": 0,
+        "budget": 16,
+        "temps": 10,
+        "reel": 15
+      },
+      "2026-10-05": {
+        "meteo": 3,
+        "backlog": 21,
+        "risques": 5,
+        "critiques": 3,
+        "problemes": 0,
+        "retard": 2,
+        "glissement": 5,
+        "budget": 21,
+        "temps": 14,
+        "reel": 21
+      },
+      "2026-10-12": {
+        "meteo": 3,
+        "backlog": 28,
+        "risques": 6,
+        "critiques": 3,
+        "problemes": 1,
+        "retard": 1,
+        "glissement": 10,
+        "budget": 26,
+        "temps": 17,
+        "reel": 28
+      },
+      "2026-10-19": {
+        "meteo": 2,
+        "backlog": 36,
+        "risques": 6,
+        "critiques": 3,
+        "problemes": 1,
+        "retard": 2,
+        "glissement": 10,
+        "budget": 31,
+        "temps": 21,
+        "reel": 36
+      },
+      "2026-10-26": {
+        "meteo": 3,
+        "backlog": 44,
+        "risques": 5,
+        "critiques": 3,
+        "problemes": 0,
+        "retard": 3,
+        "glissement": 24,
+        "budget": 36,
+        "temps": 24,
+        "reel": 44
+      },
+      "2026-11-02": {
+        "meteo": 3,
+        "backlog": 52,
+        "risques": 5,
+        "critiques": 3,
+        "problemes": 0,
+        "retard": 2,
+        "glissement": 24,
+        "budget": 41,
+        "temps": 28,
+        "reel": 52
+      },
+      "2026-11-09": {
+        "meteo": 2,
+        "backlog": 60,
+        "risques": 5,
+        "critiques": 3,
+        "problemes": 1,
+        "retard": 3,
+        "glissement": 24,
+        "budget": 44,
+        "temps": 31,
+        "reel": 60
+      },
+      "2026-11-16": {
+        "meteo": 2,
+        "reel": 65,
+        "temps": 37,
+        "backlog": 65,
+        "risques": 4,
+        "critiques": 2,
+        "problemes": 1,
+        "retard": 3,
+        "glissement": 24,
+        "budget": 46
+      },
+      "2026-11-23": {
+        "meteo": 1,
+        "reel": 65,
+        "temps": 39,
+        "backlog": 65,
+        "risques": 4,
+        "critiques": 2,
+        "problemes": 1,
+        "retard": 7,
+        "glissement": 24,
+        "budget": 46
+      }
+    },
+    "chargeReel": {
+      "demo000a": {
+        "2026-09": "5.0",
+        "2026-10": "4.0",
+        "2026-11": "1.8"
+      },
+      "demo000b": {
+        "2026-09": "11.0",
+        "2026-10": "15.0",
+        "2026-11": "7.2"
+      },
+      "demo000c": {
+        "2026-09": "9.0",
+        "2026-10": "9.0",
+        "2026-11": "4.8"
+      },
+      "demo000d": {
+        "2026-09": "8.0",
+        "2026-10": "8.0",
+        "2026-11": "4.8"
+      },
+      "demo000e": {
+        "2026-09": "17.0",
+        "2026-10": "18.0",
+        "2026-11": "10.2"
+      },
+      "demo000f": {
+        "2026-09": "7.0",
+        "2026-10": "6.0",
+        "2026-11": "4.8"
+      },
+      "demo000g": {
+        "2026-09": "2.0",
+        "2026-10": "2.0",
+        "2026-11": "2.4"
+      }
+    }
+  },
+  "personnes": [
+    {
+      "id": "demo0001",
+      "nom": "Claire Martin",
+      "fonction": "Directrice RH",
+      "entite": "RH",
+      "email": "claire.martin@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0002",
+      "nom": "Julien Moreau",
+      "fonction": "Chef de projet",
+      "entite": "DSI",
+      "email": "julien.moreau@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0003",
+      "nom": "Sophie Laurent",
+      "fonction": "Product Owner",
+      "entite": "RH",
+      "email": "sophie.laurent@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0004",
+      "nom": "Karim Benali",
+      "fonction": "Scrum Master",
+      "entite": "DSI",
+      "email": "karim.benali@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0005",
+      "nom": "Élise Dubois",
+      "fonction": "Développeuse",
+      "entite": "DSI",
+      "email": "elise.dubois@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0006",
+      "nom": "Thomas Petit",
+      "fonction": "Architecte",
+      "entite": "DSI",
+      "email": "thomas.petit@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    },
+    {
+      "id": "demo0007",
+      "nom": "Nadia Roux",
+      "fonction": "Référente paie",
+      "entite": "RH",
+      "email": "nadia.roux@exemple.fr",
+      "tel": "",
+      "capacite": ""
+    }
+  ]
+}
