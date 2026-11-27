@@ -1,0 +1,9 @@
+import json, os
+D = os.path.dirname(os.path.abspath(__file__)) + '/'
+SIGN = "if (!$('#modalBack').hidden) { document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); await w(400); } await w(600); const s = $('#projSel'); s.value = [...s.options].find(o => o.textContent.includes('Signature')).value; s.dispatchEvent(new Event('change', { bubbles: true })); await w(800); document.querySelectorAll('.maj-bandeau').forEach(e => e.remove());"
+L = [
+  {"nom": "44-etapes-bandeau", "vp": [1280, 560], "js": SIGN + " if ($('.et-panneau')) await clic('[data-act=et-fermer]', 300); await clic('[data-act=module][data-id=cockpit]', 500); window.scrollTo(0,0); const R = marquer([[$('.et-pas.fini'), 1, 'tl'], [$('.et-pas.cours'), 2, 'tl'], [$$('.et-pas.avenir')[0], 3, 'tr'], [$('.et-auj'), 4, 'r'], [$('.tabs-etape'), 5, 'l'], [$('.tab-toutes'), 6, 'tr']]);"},
+  {"nom": "45-etapes-panneau", "vp": [1280, 760], "js": "await clic('.et-pas[data-id=cadrage]', 500); window.scrollTo(0,0); const P = $('.et-panneau'); const C = P.querySelectorAll('.et-cols > div'); const R = marquer([[C[0], 1, 'tl'], [C[1], 2, 'tl'], [C[2], 3, 'tr'], [P.querySelector('[data-act=et-courante], [data-act=et-suivante]'), 4, 'r']]);"},
+  {"nom": "46-etapes-reglage", "vp": [1280, 900], "js": "await clic('[data-act=et-fermer]', 300); await clic('[data-act=module][data-id=identite]', 500); await clic('[data-act=fiche-mode][data-id=saisie]', 600); const S = $('.et-modes').closest('section'); S.scrollIntoView(); window.scrollBy(0, -16); await w(300); const R = marquer([[$('.et-mode[data-id=libre]'), 1, 'tl'], [$('.et-mode[data-id=timeline]'), 2, 'tr'], [$$('.et-ligne input[type=checkbox]')[1], 3, 'l'], [$$('.et-ligne input[type=date]')[2], 4, 'tl'], [$('.et-ligne .pill[style]')?.parentElement, 5, 'r']]);"},
+]
+json.dump(L, open(D + 'lot_etapes.json', 'w', encoding='utf-8'), ensure_ascii=False)

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation technique</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #1f4e79; --navy-soft: #eaf1f8; --orange: #e8590c; --texte: #1c2434; --gris: #5d6779; --ligne: #e3e7ee; --fond: #f5f7fa; --carte: #fff; --code: #f2f4f7; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --navy-soft: #1d2a3a; --texte: #e8edf4; --gris: #a9b3c2; --ligne: #2c3747; --fond: #121821; --carte: #1a2230; --code: #222c3b; } }
+  :root[data-theme="dark"] { --navy-soft: #1d2a3a; --texte: #e8edf4; --gris: #a9b3c2; --ligne: #2c3747; --fond: #121821; --carte: #1a2230; --code: #222c3b; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+  body { margin: 0; font-family: Inter, -apple-system, "Segoe UI", Arial, sans-serif; font-size: 17px; line-height: 1.65; color: var(--texte); background: var(--fond); }
+  .page { display: grid; grid-template-columns: 280px minmax(0, 1fr); min-height: 100vh; }
+  nav { position: sticky; top: 0; height: 100vh; overflow-y: auto; background: var(--navy); color: #fff; padding: 24px 16px 40px; }
+  nav .marque { font-weight: 800; font-size: 1.1rem; margin-bottom: 2px; } nav .sous { color: #b9cde3; font-size: .85rem; margin-bottom: 16px; }
+  nav a { display: block; color: #e6eef7; text-decoration: none; padding: 6px 10px; border-radius: 10px; font-size: .9rem; line-height: 1.35; }
+  nav a:hover { background: rgba(255,255,255,.14); color: #fff; }
+  nav .retour { margin-top: 18px; border-top: 1px solid rgba(255,255,255,.2); padding-top: 14px; }
+  main { padding: 36px clamp(16px, 4vw, 60px) 100px; max-width: 1100px; }
+  article { background: var(--carte); border: 1px solid var(--ligne); border-radius: 22px; padding: 32px clamp(18px, 3vw, 44px); }
+  h1 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); margin: 0 0 6px; color: var(--navy); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) h1 { color: #8fb8e0; } }
+  h2 { font-size: 1.45rem; margin: 40px 0 12px; padding-top: 18px; border-top: 1px solid var(--ligne); }
+  h3 { font-size: 1.15rem; margin: 26px 0 10px; display: flex; gap: 10px; align-items: center; }
+  h3::before { content: ""; width: 5px; height: 22px; border-radius: 3px; background: var(--orange); }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .94rem; display: block; overflow-x: auto; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--ligne); vertical-align: top; }
+  th { background: var(--navy-soft); }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .86em; background: var(--code); border-radius: 6px; padding: 1px 6px; }
+  pre { background: var(--code); border-radius: 12px; padding: 14px 16px; overflow-x: auto; font-size: .85rem; line-height: 1.5; }
+  pre code { background: none; padding: 0; font-size: inherit; }
+  blockquote { margin: 16px 0; padding: 12px 18px; background: #fdf8ec; border-left: 5px solid #d9a42b; border-radius: 12px; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) blockquote { background: #332c18; } }
+  blockquote p { margin: 4px 0; }
+  hr { border: none; border-top: 1px solid var(--ligne); margin: 24px 0; }
+  a { color: var(--navy); }
+  .erreur { color: #b42318; }
+  @media (max-width: 900px) { .page { grid-template-columns: minmax(0, 1fr); } h1 { overflow-wrap: anywhere; } nav { position: static; height: auto; } }
+  @media print { nav { display: none; } .page { display: block; } body { background: #fff; } article { border: none; padding: 0; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav id="sommaire"><div class="marque">🧭 Cockpit Projet</div><div class="sous">Documentation technique</div></nav>
+  <main><article id="doc"><p>Chargement…</p></article></main>
+</div>
+<script>
+  // Affiche DOCUMENTATION_TECHNIQUE.md (source unique) sans aucune librairie : petit convertisseur Markdown maison
+  const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const inline = s => esc(s)
+    .replace(/`([^`]+)`/g, (_, c) => `<code>${c}</code>`)
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/(^|[^*])\*([^*\s][^*]*)\*/g, "$1<em>$2</em>")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  const slug = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  function convertir(md) {
+    const L = md.replace(/\r/g, "").split("\n"); const out = []; let i = 0;
+    while (i < L.length) {
+      const l = L[i];
+      if (/^```/.test(l)) { const b = []; i++; while (i < L.length && !/^```/.test(L[i])) b.push(L[i++]); i++; out.push(`<pre><code>${esc(b.join("\n"))}</code></pre>`); continue; }
+      const h = l.match(/^(#{1,3})\s+(.*)/); if (h) { const n = h[1].length; out.push(`<h${n} id="${slug(h[2])}">${inline(h[2])}</h${n}>`); i++; continue; }
+      if (/^---\s*$/.test(l)) { out.push("<hr>"); i++; continue; }
+      if (/^\|/.test(l)) {
+        const rows = []; while (i < L.length && /^\|/.test(L[i])) rows.push(L[i++]);
+        const cells = r => r.replace(/^\||\|$/g, "").split("|").map(c => c.trim());
+        const corps = rows.filter((r, k) => !(k === 1 && /^\|[\s:|-]+\|$/.test(r)));
+        out.push(`<table><thead><tr>${cells(corps[0]).map(c => `<th>${inline(c)}</th>`).join("")}</tr></thead><tbody>${corps.slice(1).map(r => `<tr>${cells(r).map(c => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>`);
+        continue;
+      }
+      if (/^>/.test(l)) { const b = []; while (i < L.length && /^>/.test(L[i])) b.push(L[i++].replace(/^>\s?/, "")); out.push(`<blockquote>${b.map(x => `<p>${inline(x)}</p>`).join("")}</blockquote>`); continue; }
+      if (/^\s*(\d+\.|-)\s+/.test(l)) {
+        const ordonne = /^\s*\d+\./.test(l); const items = [];
+        while (i < L.length && (/^\s*(\d+\.|-)\s+/.test(L[i]) || /^\s{2,}\S/.test(L[i]) || (L[i] === "" && /^\s{2,}(```|\S)/.test(L[i + 1] || "")))) {
+          const t = L[i];
+          if (/^(\d+\.|-)\s+/.test(t)) items.push([t.replace(/^(\d+\.|-)\s+/, "")]);
+          else items[items.length - 1].push(t.replace(/^\s{2,3}/, ""));
+          i++;
+        }
+        const tag = ordonne ? "ol" : "ul";
+        out.push(`<${tag}>${items.map(it => `<li>${convertir(it.join("\n")).replace(/^<p>([\s\S]*?)<\/p>/, "$1")}</li>`).join("")}</${tag}>`);
+        continue;
+      }
+      if (l.trim() === "") { i++; continue; }
+      const p = []; while (i < L.length && L[i].trim() !== "" && !/^(#|```|\||>|---|\s*(\d+\.|-)\s)/.test(L[i])) p.push(L[i++]);
+      out.push(`<p>${inline(p.join(" "))}</p>`);
+    }
+    return out.join("\n");
+  }
+  fetch("../DOCUMENTATION_TECHNIQUE.md", { cache: "no-store" })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(md => {
+      document.getElementById("doc").innerHTML = convertir(md);
+      const nav = document.getElementById("sommaire");
+      document.querySelectorAll("#doc h2").forEach(h => { const a = document.createElement("a"); a.href = "#" + h.id; a.textContent = h.textContent; nav.appendChild(a); });
+      const r = document.createElement("div"); r.className = "retour";
+      r.innerHTML = '<a href="./">📗 Manuel utilisateur</a><a href="../">🧭 Retour à l\'appli</a>'; nav.appendChild(r);
+    })
+    .catch(() => { document.getElementById("doc").innerHTML = '<p class="erreur">Impossible de charger DOCUMENTATION_TECHNIQUE.md. Ouvrez cette page depuis l\'appli (http://localhost:8765/manuel/doc-technique.html).</p>'; });
+</script>
+</body>
+</html>

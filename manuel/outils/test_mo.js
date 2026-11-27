@@ -1,0 +1,37 @@
+await w(1500); window.confirm = () => true;
+const out = { erreurs: [] }; window.addEventListener('error', e => out.erreurs.push(e.message));
+const liste = async c => (await (await fetch('/api/liste?chemin=' + encodeURIComponent(c), { cache: 'no-store' })).json()).map(x => x.nom);
+const lire = async c => (await fetch('/api/fichier?chemin=' + encodeURIComponent(c), { cache: 'no-store' })).text();
+out.projet = $('#projSel')?.selectedOptions[0]?.textContent;
+// faux sélecteur de fichier : renvoie un .docx fictif
+let prochain = null;
+const orig = HTMLInputElement.prototype.click;
+HTMLInputElement.prototype.click = function () { if (this.type === 'file' && prochain) { const dt = new DataTransfer(); dt.items.add(prochain); this.files = dt.files; this.dispatchEvent(new Event('change')); return; } return orig.call(this); };
+await clic('[data-act=module][data-id=livrables]', 500); await clic('[data-act=lv-vue][data-id=templates]', 500);
+out.vide = $('.tpl-vide')?.textContent.trim().slice(0, 60);
+await clic('[data-act=mo-ajout]', 400);
+prochain = new File(['contenu du modèle groupe'], 'Modele note de cadrage GROUPE.docx', { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+await clic('#moChoisir', 400);
+out.nomAuto = $('#moNom').value;
+$('#moPhase').value = 'cadrage'; $('#moDesc').value = 'Le modèle officiel du groupe';
+await clic('#moOk', 1000);
+out.cartes = $$('.tpl-maison').map(c => c.textContent.replace(/\s+/g, ' ').trim().slice(0, 100));
+out.compteur = $('[data-act=lv-vue][data-id=templates]').textContent.trim();
+out.fichiersTemplates = await liste('documents/templates');
+await clic('[data-act=tpl-phase][data-id=maison]', 300); out.filtreMaison = [$$('.tpl-maison').length, $$('.tpl-carte:not(.tpl-maison)').length];
+await clic('[data-act=tpl-phase][data-id=recette]', 300); out.filtreRecette = [$$('.tpl-maison').length, $$('.tpl-carte').length];
+await clic('[data-act=tpl-phase][data-id=toutes]', 300);
+await clic('.tpl-maison [data-act=mo-livrable]', 1500);
+out.livrable = $('#modal h2')?.textContent.trim();
+const dossiersDocs = await liste('documents'); const dp = dossiersDocs.find(n => n !== 'templates' && n !== 'captures');
+out.fichiersProjet = await liste('documents/' + dp);
+const nomCopie = out.fichiersProjet.find(n => n.endsWith('.docx')); out.contenuCopie = nomCopie ? await lire(`documents/${dp}/${nomCopie}`) : null;
+await clic('#doDel', 600);
+await w(800); out.communModeles = (JSON.parse(await lire('_commun.json')).modeles || []).map(m => m.nom);
+// modification puis retrait du template
+await clic('[data-act=lv-vue][data-id=templates]', 400);
+await clic('.tpl-maison [data-act=mo-edit]', 400); $('#moNom').value = 'Note de cadrage GROUPE'; await clic('#moOk', 800);
+out.apresRenommage = $('.tpl-maison b')?.textContent;
+await clic('.tpl-maison [data-act=mo-edit]', 400); await clic('#moDel', 1200);
+out.apresRetrait = [$$('.tpl-maison').length, await liste('documents/templates'), (await liste('corbeille')).filter(n => n.includes('template'))];
+return out;

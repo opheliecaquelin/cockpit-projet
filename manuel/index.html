@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manuel Cockpit Projet</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1f4e79; --navy-dark: #163a5c; --navy-soft: #eaf1f8;
+    --orange: #e8590c; --orange-soft: #fff1e8;
+    --vert: #2e7d5b; --vert-soft: #e9f6ef; --jaune-soft: #fdf8ec;
+    --texte: #1c2434; --gris: #5d6779; --ligne: #e3e7ee; --fond: #f5f7fa; --carte: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --navy-soft: #1d2a3a; --orange-soft: #3a2416; --vert-soft: #17302a; --jaune-soft: #332c18; --texte: #e8edf4; --gris: #a9b3c2; --ligne: #2c3747; --fond: #121821; --carte: #1a2230; }
+  }
+  :root[data-theme="dark"] { --navy-soft: #1d2a3a; --orange-soft: #3a2416; --vert-soft: #17302a; --jaune-soft: #332c18; --texte: #e8edf4; --gris: #a9b3c2; --ligne: #2c3747; --fond: #121821; --carte: #1a2230; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+  body { margin: 0; font-family: Inter, -apple-system, "Segoe UI", Arial, sans-serif; font-size: 18px; line-height: 1.65; color: var(--texte); background: var(--fond); }
+  a { color: var(--navy); } @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) a { color: #8fb8e0; } }
+
+  /* ── Mise en page : sommaire à gauche, contenu à droite */
+  .page { display: grid; grid-template-columns: 290px minmax(0, 1fr); min-height: 100vh; }
+  nav.sommaire { position: sticky; top: 0; height: 100vh; overflow-y: auto; background: var(--navy); color: #fff; padding: 26px 18px 40px; }
+  nav.sommaire .marque { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; margin-bottom: 4px; }
+  nav.sommaire .marque span { font-size: 1.6rem; }
+  nav.sommaire .sous { color: #b9cde3; font-size: .85rem; margin-bottom: 18px; }
+  nav.sommaire ol { list-style: none; margin: 0; padding: 0; counter-reset: ch; }
+  nav.sommaire li a { display: flex; gap: 10px; align-items: baseline; color: #e6eef7; text-decoration: none; padding: 7px 10px; border-radius: 10px; font-size: .92rem; line-height: 1.35; }
+  nav.sommaire li a:hover, nav.sommaire li a.actif { background: rgba(255,255,255,.14); color: #fff; }
+  nav.sommaire li a b { min-width: 26px; color: #9fc0e2; font-weight: 700; }
+  main { padding: 40px clamp(16px, 4vw, 64px) 120px; max-width: 1180px; }
+
+  /* ── Titres */
+  .couverture { background: linear-gradient(135deg, var(--navy), #2c6aa3); color: #fff; border-radius: 24px; padding: 44px 44px 40px; margin-bottom: 40px; }
+  .couverture h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.15; }
+  .couverture p { margin: 0; font-size: 1.15rem; color: #dce8f5; max-width: 760px; }
+  .trois { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+  .trois div { background: rgba(255,255,255,.12); border-radius: 16px; padding: 16px 18px; font-size: .98rem; color: #fff; }
+  .trois div b { display: block; font-size: 1.6rem; margin-bottom: 4px; }
+  section.chap { background: var(--carte); border: 1px solid var(--ligne); border-radius: 24px; padding: 34px clamp(18px, 3vw, 40px); margin-bottom: 34px; }
+  .chap > header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+  .chap > header .num { flex: none; width: 54px; height: 54px; border-radius: 16px; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 1.4rem; }
+  .chap h2 { margin: 0; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.2; }
+  .enbref { font-size: 1.1rem; color: var(--gris); margin: 6px 0 22px; }
+  h3 { font-size: 1.3rem; margin: 34px 0 12px; display: flex; align-items: center; gap: 10px; }
+  h3::before { content: ""; width: 6px; height: 26px; border-radius: 3px; background: var(--orange); }
+
+  /* ── Étapes numérotées */
+  ol.etapes { list-style: none; padding: 0; margin: 14px 0 20px; counter-reset: e; display: grid; gap: 12px; }
+  ol.etapes > li { counter-increment: e; position: relative; padding: 14px 18px 14px 66px; background: var(--navy-soft); border-radius: 14px; }
+  ol.etapes > li::before { content: counter(e); position: absolute; left: 16px; top: 12px; width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 800; display: grid; place-items: center; }
+
+  /* ── Captures + légende */
+  figure.ecran { margin: 22px 0 26px; }
+  figure.ecran img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--ligne); box-shadow: 0 10px 30px rgba(16,24,40,.10); cursor: zoom-in; background: #fff; }
+  figure.ecran.etroit img { max-width: 760px; margin: 0 auto; }
+  figure.ecran figcaption { margin-top: 12px; }
+  .legende { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; }
+  .legende li { display: flex; gap: 12px; align-items: flex-start; }
+  .pastille { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--orange); color: #fff; font-weight: 800; font-size: .95rem; display: grid; place-items: center; margin-top: 1px; box-shadow: 0 0 0 3px var(--orange-soft); }
+  .zoom { font-size: .85rem; color: var(--gris); text-align: right; margin-top: 4px; }
+
+  /* ── Encadrés */
+  .astuce, .attention, .retenir { border-radius: 14px; padding: 14px 18px 14px 58px; position: relative; margin: 16px 0; }
+  .astuce::before, .attention::before, .retenir::before { position: absolute; left: 18px; top: 12px; font-size: 1.4rem; }
+  .astuce { background: var(--jaune-soft); border-left: 5px solid #d9a42b; } .astuce::before { content: "💡"; }
+  .attention { background: var(--orange-soft); border-left: 5px solid var(--orange); } .attention::before { content: "⚠️"; }
+  .retenir { background: var(--vert-soft); border-left: 5px solid var(--vert); } .retenir::before { content: "✅"; }
+  kbd { font-family: inherit; font-size: .85em; font-weight: 600; background: var(--carte); border: 1px solid var(--ligne); border-bottom-width: 3px; border-radius: 7px; padding: 1px 8px; white-space: nowrap; }
+  .bouton { display: inline-block; font-size: .88em; font-weight: 600; background: var(--navy); color: #fff; border-radius: 999px; padding: 1px 12px; white-space: nowrap; }
+  .bouton.clair { background: var(--carte); color: var(--navy); border: 1px solid var(--ligne); }
+  table.simple { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .98rem; }
+  table.simple th, table.simple td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--ligne); vertical-align: top; }
+  table.simple th { background: var(--navy-soft); }
+  .deux { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .carte-mini { border: 1px solid var(--ligne); border-radius: 16px; padding: 16px 18px; }
+  .carte-mini h4 { margin: 0 0 6px; font-size: 1.05rem; }
+  .carte-mini p { margin: 0; color: var(--gris); font-size: .96rem; }
+
+  /* ── Agrandissement des captures */
+  .lb { position: fixed; inset: 0; background: rgba(10,16,26,.88); display: none; place-items: center; padding: 20px; z-index: 50; cursor: zoom-out; }
+  .lb.ouvert { display: grid; } .lb img { max-width: 96vw; max-height: 92vh; border-radius: 10px; background: #fff; }
+  .haut { position: fixed; right: 22px; bottom: 22px; background: var(--navy); color: #fff; text-decoration: none; border-radius: 999px; padding: 10px 16px; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,.2); font-size: .9rem; }
+
+  @media (max-width: 980px) {
+    .page { grid-template-columns: minmax(0, 1fr); } h1 { overflow-wrap: anywhere; }
+    nav.sommaire { position: static; height: auto; }
+    .trois, .deux { grid-template-columns: 1fr; }
+    body { font-size: 17px; }
+  }
+  @media print {
+    body { font-size: 12pt; background: #fff; } nav.sommaire, .haut, .zoom { display: none; } .page { display: block; } main { padding: 0; max-width: none; }
+    section.chap { break-before: page; border: none; padding: 0; } figure.ecran { break-inside: avoid; } figure.ecran img { box-shadow: none; }
+    .couverture { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<nav class="sommaire" aria-label="Sommaire">
+  <div class="marque"><span>🧭</span> Cockpit Projet</div>
+  <div class="sous">Manuel utilisateur</div>
+  <ol>
+    <li><a href="#demarrer"><b>1</b> Démarrer l'appli</a></li>
+    <li><a href="#portefeuille"><b>2</b> Le portefeuille de projets</a></li>
+    <li><a href="#creer"><b>3</b> Créer un projet</a></li>
+    <li><a href="#ensemble"><b>4</b> Vue d'ensemble & flash report</a></li>
+    <li><a href="#identite"><b>5</b> Identité, étapes, RACI & charge</a></li>
+    <li><a href="#planif"><b>6</b> Planification</a></li>
+    <li><a href="#risques"><b>7</b> Risques</a></li>
+    <li><a href="#instances"><b>8</b> Réunions & copils</a></li>
+    <li><a href="#reunions"><b>9</b> Comptes rendus</a></li>
+    <li><a href="#decisions"><b>10</b> Décisions & actions</a></li>
+    <li><a href="#livrables"><b>11</b> Livrables & docs</a></li>
+    <li><a href="#backlog"><b>12</b> Analyse du backlog</a></li>
+    <li><a href="#budget"><b>13</b> Budget</a></li>
+    <li><a href="#retex"><b>14</b> Retex / rétrospective</a></li>
+    <li><a href="#aujourdhui"><b>15</b> À faire aujourd'hui</a></li>
+    <li><a href="#reglages"><b>16</b> Réglages & partage</a></li>
+    <li><a href="#astuces"><b>17</b> Astuces & dépannage</a></li>
+  </ol>
+</nav>
+
+<main>
+  <div class="couverture">
+    <h1>🧭 Cockpit Projet<br>le manuel pas à pas</h1>
+    <p>Piloter un projet de A à Z au même endroit : planning, risques, copils, comptes rendus, décisions, actions, livrables, budget et retex.</p>
+    <div class="trois">
+      <div><b>📁</b>Vos données restent <strong>sur votre poste</strong>, dans le dossier de votre choix : un fichier par projet.</div>
+      <div><b>💾</b><strong>Tout s'enregistre tout seul</strong>, à chaque modification. Pas de bouton « Enregistrer » à chercher.</div>
+      <div><b>✏️</b>L'appli <strong>propose</strong> (planning, réunions, ordres du jour…), <strong>vous gardez la main</strong> : tout est modifiable.</div>
+    </div>
+  </div>
+
+  <div class="astuce">Dans ce manuel, les <span class="pastille" style="display:inline-grid;width:24px;height:24px;font-size:.8rem;vertical-align:middle">1</span> pastilles orange sur les captures renvoient aux explications numérotées juste en dessous. Cliquez sur une capture pour l'agrandir. Les projets montrés sont fictifs.</div>
+
+  <!-- ═════════ 1 -->
+  <section class="chap" id="demarrer">
+    <header><span class="num">1</span><h2>Démarrer l'appli</h2></header>
+    <p class="enbref">Cockpit Projet tourne sur votre ordinateur, dans votre navigateur (Chrome, Edge, Safari ou Firefox). Rien n'est envoyé sur Internet.</p>
+
+    <h3>Lancer Cockpit Projet</h3>
+    <ol class="etapes">
+      <li>Dans le Finder, ouvrez le dossier <b>Cockpit_Projet</b>.</li>
+      <li>Double-cliquez sur <b>Lancer Cockpit Projet.command</b>. Une fenêtre Terminal s'ouvre, puis votre navigateur affiche l'appli à l'adresse <code>http://localhost:8765</code>.</li>
+      <li><b>Laissez la fenêtre Terminal ouverte</b> tant que vous utilisez l'appli. Pour arrêter : fermez cette fenêtre.</li>
+    </ol>
+    <div class="retenir"><b>Sous Windows :</b> double-cliquez sur <b>Lancer Cockpit Projet.bat</b>. Python 3 doit être installé sur le poste. Une fenêtre noire s'ouvre : laissez-la ouverte, comme le Terminal sur Mac.</div>
+    <div class="astuce">Ajoutez <code>http://localhost:8765</code> à vos favoris. Si la page affiche une erreur, c'est que la fenêtre Terminal (ou la fenêtre noire sous Windows) a été fermée : relancez simplement <b>Lancer Cockpit Projet</b>.</div>
+    <div class="retenir"><b>Chrome, Edge, Safari ou Firefox</b> : tous conviennent. Avec <b>Safari</b> ou <b>Firefox</b>, rien à choisir : les projets sont enregistrés automatiquement dans le dossier de l'appli, par le petit serveur lancé avec « Lancer Cockpit Projet ». Ouvrez simplement <code>http://localhost:8765</code> dans Safari.</div>
+    <div class="attention">N'ouvrez pas l'appli <b>en même temps</b> dans deux navigateurs sur les mêmes données (par exemple Chrome et Safari) : la dernière modification enregistrée écraserait l'autre.</div>
+
+    <h3>Première fois : choisir le dossier de vos données</h3>
+    <figure class="ecran">
+      <img src="images/00-connexion.png" alt="Écran « Où ranger tes projets ? » avec le bouton Choisir un dossier" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Cliquez sur <span class="bouton">📁 Choisir un dossier</span>, puis sélectionnez (ou créez) un dossier, par exemple <b>Documents › Cockpit Projet</b>. Chrome demande votre accord pour y écrire : acceptez.</span></li>
+      </ul></figcaption>
+    </figure>
+    <p>Dans ce dossier, l'appli range :</p>
+    <table class="simple">
+      <tr><th>Fichier / dossier</th><th>Contenu</th></tr>
+      <tr><td><code>DEMO - Portail RH en ligne.json</code></td><td>Un fichier par projet (code + nom du projet).</td></tr>
+      <tr><td><code>_commun.json</code></td><td>Ce qui est partagé par tous vos projets : l'annuaire des personnes, les jours fériés et fermetures, le thème, les tuiles de la vue d'ensemble et vos templates.</td></tr>
+      <tr><td><code>documents/</code></td><td>Les fichiers joints aux livrables, vos captures d'écran (<code>documents/captures/</code>) et vos templates (<code>documents/templates/</code>).</td></tr>
+      <tr><td><code>corbeille/</code></td><td>Les projets supprimés : rien n'est perdu définitivement.</td></tr>
+    </table>
+    <div class="retenir">Les fois suivantes, Chrome vous demande simplement d'<b>autoriser l'accès</b> à ce dossier : un clic sur <span class="bouton">🔓 Autoriser l'accès</span> suffit.</div>
+
+    <h3>Quand l'appli est mise à jour</h3>
+    <figure class="ecran">
+      <img src="images/35-bandeau-maj.png" alt="Bandeau bleu « Une nouvelle version de Cockpit Projet est disponible » avec le bouton Recharger" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Ce bandeau apparaît en bas de l'écran quand une nouvelle version est disponible. Cliquez sur <span class="bouton clair">🔄 Recharger</span> : vos données ne bougent pas.</span></li>
+      </ul></figcaption>
+    </figure>
+  </section>
+
+  <!-- ═════════ 2 -->
+  <section class="chap" id="portefeuille">
+    <header><span class="num">2</span><h2>Le portefeuille de projets</h2></header>
+    <p class="enbref">C'est la page d'accueil : tous vos projets d'un coup d'œil. On y revient à tout moment en cliquant sur le logo 🧭 ou sur « Portefeuille ».</p>
+    <figure class="ecran">
+      <img src="images/01-portefeuille.png" alt="Portefeuille de projets en cartes" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span><b>Portefeuille</b> : revient à cette page d'accueil (le logo 🧭 fait pareil).</span></li>
+        <li><span class="pastille">2</span><span><b>Choisir un projet</b> : passe directement d'un projet à l'autre.</span></li>
+        <li><span class="pastille">3</span><span><b>À faire aujourd'hui</b> : vos tâches du jour, tous projets confondus. Le badge rouge indique combien (voir <a href="#aujourdhui">chapitre 15</a>).</span></li>
+        <li><span class="pastille">4</span><span><b>⚙️ Réglages</b> : dossier de données, annuaire, jours fériés, partage et suppression de projets (voir <a href="#reglages">chapitre 16</a>).</span></li>
+        <li><span class="pastille">5</span><span>Les sous-onglets du portefeuille : <b>▦ Cartes</b>, <b>▬ Frise</b> et <b>📊 Rapport</b>.</span></li>
+        <li><span class="pastille">6</span><span><b>Nouveau projet</b> : lance l'assistant de création. « Ajouter un projet » sert à ouvrir un fichier de projet reçu d'un collègue.</span></li>
+        <li><span class="pastille">7</span><span>Une <b>carte projet</b> : étape en cours, temps écoulé, sponsor, budget, sprint en cours, prochain copil, risques et actions en retard. Cliquez dessus pour ouvrir le projet.</span></li>
+      </ul></figcaption>
+    </figure>
+    <h3>La frise du portefeuille</h3>
+    <p>Dans le sous-onglet <b>▬ Frise</b>, vos projets s'alignent sur une même ligne de temps, avec leurs jalons et leurs copils. Pratique pour repérer les périodes chargées.</p>
+    <figure class="ecran">
+      <img src="images/02-portefeuille-frise.png" alt="Frise du portefeuille de projets" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span>Le sous-onglet <b>▬ Frise</b>.</span></li><li><span class="pastille">2</span><span><b>Toute la période</b>, ou les <b>12 prochains mois</b>.</span></li><li><span class="pastille">3</span><span>Une ligne par projet : son étape et sa méthode, sa barre de dates découpée en phases, ses jalons ◆ et ses copils ●. Cliquez sur le nom pour ouvrir le projet.</span></li><li><span class="pastille">4</span><span>La ligne <b>Aujourd'hui</b>.</span></li></ul></figcaption>
+    </figure>
+    <h3>Le rapport de portefeuille (pour la direction)</h3>
+    <figure class="ecran">
+      <img src="images/39-rapport.png" alt="Rapport de portefeuille" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span><b>📊 Rapport</b> : la synthèse de tous vos projets sur une page.</span></li>
+        <li><span class="pastille">2</span><span>Les <b>chiffres clés</b> : projets en glissement, risques élevés, actions en retard, arbitrages attendus, budget consolidé. Un chiffre en rouge demande votre attention.</span></li>
+        <li><span class="pastille">3</span><span><b>Une ligne par projet</b> : dernière météo, avancement, prochain jalon (et son glissement), <b>points de vigilance</b> résumés en quelques mots, et état de la mise en production. Cliquez sur une ligne pour ouvrir le projet.</span></li>
+        <li><span class="pastille">4</span><span>Les <b>prochains jalons</b> (3 mois), les <b>risques à surveiller</b> et les <b>arbitrages attendus</b> de tous les projets.</span></li>
+      </ul></figcaption>
+    </figure>
+    <p>Avec <span class="bouton">⛶ Mode capture</span>, faites-en une capture pour votre comité de direction.</p>
+  </section>
+
+  <!-- ═════════ 3 -->
+  <section class="chap" id="creer">
+    <header><span class="num">3</span><h2>Créer un projet</h2></header>
+    <p class="enbref">Un assistant en 3 étapes. Seul le nom est obligatoire : vous compléterez le reste plus tard.</p>
+    <figure class="ecran etroit">
+      <img src="images/03-assistant.png" alt="Assistant de création de projet, étape 1" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Les <b>3 étapes</b> : l'essentiel, puis dates et budget, puis interlocuteurs.</span></li>
+        <li><span class="pastille">2</span><span>Le <b>nom du projet</b> (obligatoire). Le code projet (ex. PRH) est facultatif mais pratique : il apparaît partout et dans le nom du fichier.</span></li>
+        <li><span class="pastille">3</span><span><span class="bouton">Suivant →</span> pour passer à l'étape suivante. À la fin, le projet s'ouvre.</span></li>
+      </ul></figcaption>
+    </figure>
+    <ol class="etapes">
+      <li><b>L'essentiel</b> : nom, code, description, enjeu, emoji et couleur (pour reconnaître le projet d'un coup d'œil).</li>
+      <li><b>Dates et budget</b> : date de début (indispensable pour le planning), date de fin si elle est connue, budget, et les <b>modules optionnels</b> (suivi du budget, charge des personnes).</li>
+      <li><b>Interlocuteurs</b> : choisissez les personnes dans l'annuaire commun et donnez-leur un rôle (Sponsor, Chef de projet, Product Owner…). Une personne saisie une fois est réutilisable dans tous vos projets.</li>
+    </ol>
+    <div class="retenir">Un nouveau projet démarre en <b>suivi en timeline</b> : un bandeau d'étapes (besoins, cadrage, réalisation, recette, déploiement, clôture) apparaît en haut de ses pages. Vous pouvez choisir ses étapes, ou revenir à la navigation libre, dans la fiche d'identité (voir chapitre 5).</div>
+  </section>
+
+  <!-- ═════════ 4 -->
+  <section class="chap" id="ensemble">
+    <header><span class="num">4</span><h2>Vue d'ensemble & flash report</h2></header>
+    <p class="enbref">La page d'accueil d'un projet : l'essentiel sur une seule page, et un flash report hebdomadaire prêt à envoyer.</p>
+    <figure class="ecran">
+      <img src="images/04-cockpit.png" alt="Vue d'ensemble d'un projet" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Les <b>onglets du projet</b>, sur une seule ligne. Ils sont présentés un par un dans la suite de ce manuel.</span></li>
+        <li><span class="pastille">2</span><span>Les <b>sous-onglets</b> de l'onglet ouvert, sur la bande teintée juste en dessous. Ici : Synthèse, Flash report et Tendances.</span></li>
+        <li><span class="pastille">3</span><span><b>Modifier la fiche</b> : ouvre la fiche d'identité du projet.</span></li>
+      </ul></figcaption>
+    </figure>
+    <p>La synthèse rassemble l'avancement calendaire, le sprint en cours, le prochain jalon, les risques (mini-matrice), les <b>prochaines échéances</b>, la météo, les décisions & actions et les interlocuteurs clés. Chaque bloc a un lien <b>Ouvrir →</b> vers l'onglet détaillé.</p>
+
+    <h3>Choisir les tuiles de la vue d'ensemble</h3>
+    <p>La vue d'ensemble se compose de <b>tuiles</b>. Six sont affichées au départ, sur trois colonnes ; vous pouvez en ajouter, en retirer et les déplacer où vous voulez.</p>
+    <figure class="ecran">
+      <img src="images/04b-personnaliser.png" alt="Vue d'ensemble en mode personnalisation" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Après un clic sur <span class="bouton clair">⚙️ Personnaliser</span> (en haut à droite des tuiles) : <b>＋ Ajouter une tuile</b> ouvre le catalogue. « ↺ Par défaut » revient aux six tuiles de départ, sur trois colonnes.</span></li>
+        <li><span class="pastille">2</span><span>Les tuiles sont rangées en <b>colonnes</b> (1 à 4, au choix avec « Colonnes »). <b>Glissez</b> une tuile par sa poignée <b>⠿</b> : elle se place en direct dans la colonne survolée, en haut, au milieu ou tout en bas, même dans une colonne vide ; les autres se décalent en douceur. Ou utilisez <b>‹ ›</b> (colonne de gauche / de droite) et <b>˄ ˅</b> (monter / descendre). <b>✕</b> la retire.</span></li>
+        <li><span class="pastille">3</span><span><b>✓ Terminé</b> quitte le mode personnalisation.</span></li>
+      <li><span class="pastille">4</span><span><b>＋ Ajouter une tuile</b>, aussi en bas de la page.</span></li></ul></figcaption>
+    </figure>
+    <figure class="ecran etroit">
+      <img src="images/04c-catalogue-tuiles.png" alt="Catalogue des tuiles" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Les tuiles sont rangées par brique du cockpit : il y en a au moins une par brique (27 en tout).</span></li>
+        <li><span class="pastille">2</span><span><b>＋ Ajouter</b> la place en bas de la colonne la plus courte ; déplacez-la ensuite où vous voulez. Une tuile déjà affichée peut aussi être retirée d'ici.</span></li>
+      </ul></figcaption>
+    </figure>
+    <table class="simple">
+      <tr><th>Brique</th><th>Tuiles disponibles</th></tr>
+      <tr><td>Vue d'ensemble</td><td>À faire aujourd'hui (pour ce projet, actions à cocher) · Prochaines échéances · Flash report de la semaine · <b>Étape du projet</b> · <b>Tendances</b></td></tr>
+      <tr><td>Identité</td><td>Le projet en bref (enjeu, objectifs) · Interlocuteurs clés · <b>Objectifs du projet</b> (cible, mesure, atteinte) · <b>Temps passé</b> (module Charge)</td></tr>
+      <tr><td>Planification</td><td>Avancement calendaire · Prochains jalons · Go / No-Go · <b>Avancement réel</b></td></tr>
+      <tr><td>Analyse du backlog</td><td>Backlog (avancement, vélocité, fin estimée)</td></tr>
+      <tr><td>Risques</td><td>Risques (matrice) · Top risques · <b>Problèmes</b></td></tr>
+      <tr><td>Réunions & copils</td><td>Réunions & comptes rendus · Prochain copil (préparation) · Météo du projet · <b>Réunions à préparer</b> (15 prochains jours : à préparer, en préparation, prêtes)</td></tr>
+      <tr><td>Décisions & actions</td><td>Décisions & actions · Actions en retard (à cocher) · Demandes de changement</td></tr>
+      <tr><td>Livrables & docs</td><td>Livrables & docs</td></tr>
+      <tr><td>Budget</td><td>Budget (si le module est activé)</td></tr>
+      <tr><td>Retex</td><td>Retex</td></tr>
+    </table>
+    <div class="retenir">Votre sélection est enregistrée dans votre dossier de données et vaut pour <b>tous vos projets</b>. Chaque tuile s'ajuste à la hauteur de son contenu.</div>
+
+    <h3>Le flash report de la semaine</h3>
+    <figure class="ecran">
+      <img src="images/05-flash.png" alt="Flash report hebdomadaire" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span><b>La météo de la semaine</b> : un clic sur une icône par axe (générale, délais, budget, périmètre, équipe).</span></li>
+        <li><span class="pastille">2</span><span><b>Faits marquants</b> (un par ligne), puis points d'attention et besoins vis-à-vis du sponsor.</span></li>
+      </ul></figcaption>
+    </figure>
+    <ol class="etapes">
+      <li>Remplissez la météo et les trois zones de texte. <b>Le reste se remplit tout seul</b> : jalons, risques, actions, décisions de la semaine.</li>
+      <li>Envoyez-le : <span class="bouton clair">📋 Copier</span> (à coller dans un mail ou Teams), <span class="bouton clair">✉️ Messagerie</span> (ouvre un nouveau mail, rien n'est envoyé sans vous) ou <span class="bouton clair">🖨️ Imprimer</span>.</li>
+      <li>Cliquez sur <span class="bouton">Marquer comme envoyé</span>. Avec l'option <b>Rappel le vendredi</b>, l'envoi apparaît dans « À faire aujourd'hui » chaque vendredi.</li>
+    </ol>
+
+    <h3>Les tendances, semaine après semaine</h3>
+    <p>Le sous-onglet <b>📈 Tendances</b> montre l'évolution des indicateurs du projet : météo, avancement réel, temps écoulé, backlog, risques ouverts et critiques, problèmes, actions en retard, glissement des jalons, budget consommé.</p>
+    <ol class="etapes">
+      <li>Rien à saisir : l'appli prend <b>une photo par semaine</b>, automatiquement, dès que vous ouvrez le projet. La photo de la semaine en cours se met à jour jusqu'au dimanche.</li>
+      <li>Chaque carte affiche une petite courbe : <b>vert</b> si ça s'améliore par rapport à la semaine précédente, <b>rouge</b> si ça se dégrade.</li>
+      <li><b>⛶ Mode capture</b> pour mettre les tendances dans votre support de copil. Une tuile <b>Tendances</b> existe aussi pour la vue d'ensemble (⚙️ Personnaliser).</li>
+    </ol>
+    <div class="astuce">Les courbes apparaissent à partir de la deuxième semaine de suivi.</div>
+
+    <h3>Le rapport à partager</h3>
+    <p>Sur la vue d'ensemble, <span class="bouton clair">📤 Rapport à partager</span> crée un <b>fichier HTML en lecture seule</b> : il s'ouvre dans n'importe quel navigateur, sans l'appli. Idéal pour le sponsor ou l'équipe (pièce jointe, Teams, SharePoint).</p>
+    <ol class="etapes">
+      <li>Cochez les parties à inclure : fiche et étapes, planning, tendances, risques, problèmes, décisions, actions ouvertes, livrables, Go / No-Go.</li>
+      <li><b>Créer le rapport</b> : le fichier se télécharge (« Rapport - code - date.html »).</li>
+    </ol>
+    <div class="attention">C'est une photo à la date du jour : refaites-le pour le mettre à jour. Les captures d'écran collées et les fichiers joints ne sont pas inclus.</div>
+  </section>
+
+  <!-- ═════════ 5 -->
+  <section class="chap" id="identite">
+    <header><span class="num">5</span><h2>Identité, étapes, matrice RACI & charge</h2></header>
+    <p class="enbref">La carte d'identité du projet et l'organisation de l'équipe : qui fait quoi, et combien de jours.</p>
+    <figure class="ecran">
+      <img src="images/06-identite.png" alt="Fiche d'identité du projet, en mode lecture" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Trois sous-onglets : <b>Fiche</b>, <b>Matrice RACI</b> et <b>Charge</b> (si le module est activé).</span></li>
+        <li><span class="pastille">2</span><span>Deux modes : <b>👁️ Lecture</b> pour consulter (c'est le mode par défaut), <b>✏️ Saisie</b> pour modifier.</span></li>
+        <li><span class="pastille">3</span><span>En lecture, l'essentiel en un coup d'œil : dates, durée, budget, méthode et temps écoulé.</span></li>
+        <li><span class="pastille">4</span><span>Le contenu est mis en forme : enjeu en citation, objectifs et périmètre (inclus / exclu) en listes, interlocuteurs en cartes avec leur e-mail cliquable. Un champ vide affiche « Non renseigné · compléter ».</span></li>
+      </ul></figcaption>
+    </figure>
+    <p>Le mode <b>Lecture</b> est idéal pour présenter le projet (bouton <span class="bouton">⛶ Mode capture</span> pour une capture propre). Pour modifier, cliquez sur <span class="bouton clair">✏️ Saisie</span>, ou sur <b>✏️ Modifier la fiche</b> depuis la vue d'ensemble.</p>
+    <figure class="ecran">
+      <img src="images/06b-identite-saisie.png" alt="Fiche d'identité, en mode saisie" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>En mode <b>Saisie</b>, tout se modifie directement et s'enregistre tout seul : nom, dates, description, enjeu, objectifs, périmètre, budget, interlocuteurs, notes, lien vers le backlog (Jira, ClickUp…). C'est aussi ici qu'on active les <b>modules optionnels</b> (suivi du budget, charge des personnes) et qu'on choisit les <b>étapes du projet</b> et la navigation (libre ou en timeline).</span></li>
+        <li><span class="pastille">2</span><span><b>✓ Terminé</b> revient en lecture.</span></li>
+      </ul></figcaption>
+    </figure>
+    <div class="astuce">Date de fin <b>estimée</b> ou <b>ferme (engagement)</b> : choisissez selon votre contexte. Le planning se cale dessus.</div>
+
+    <h3>La matrice RACI</h3>
+    <figure class="ecran">
+      <img src="images/07-raci.png" alt="Matrice RACI" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Cliquez sur une case pour faire défiler <b>R</b> (réalise), <b>A</b> (approuve), <b>C</b> (consulté), <b>I</b> (informé), puis vide.</span></li>
+      </ul></figcaption>
+    </figure>
+    <ol class="etapes">
+      <li>Ajoutez vos activités, ou cliquez sur <b>Proposer des activités</b> pour partir d'une liste type.</li>
+      <li>Remplissez les cases. Une coche ✓ en bout de ligne confirme qu'il y a <b>un seul A et au moins un R</b> ; sinon un ⚠ vous prévient.</li>
+      <li>Exportez en CSV ou passez en <b>⛶ Mode capture</b> pour une capture d'écran propre.</li>
+    </ol>
+
+    <h3>La charge des parties prenantes</h3>
+    <figure class="ecran">
+      <img src="images/08-charge.png" alt="Tableau de charge par personne et par mois" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Saisissez les <b>jours prévus</b> par personne et par mois. Sous la case, le pourcentage indique sa charge <b>tous projets confondus</b> : vert sous 80 %, orange de 80 à 100 %, rouge au-delà.</span></li>
+        <li><span class="pastille">2</span><span><b>Charge tous projets</b> : la vue globale, pour repérer les personnes surchargées.</span></li>
+      </ul></figcaption>
+    </figure>
+    <div class="astuce">La disponibilité d'une personne (18 jours par mois par défaut) se règle dans sa fiche de l'annuaire. « ⇥ remplir » met le même nombre de jours sur tous les mois du projet.</div>
+
+    <h3>Les étapes du projet et le suivi en timeline</h3>
+    <p>Un projet suit de grandes étapes : recueil des besoins, cadrage, réalisation, clôture… En mode <b>suivi en timeline</b>, un bandeau en haut de chaque page montre où vous en êtes, et les onglets se limitent aux pages utiles pour l'étape.</p>
+    <figure class="ecran">
+      <img src="images/44-etapes-bandeau.png" alt="Bandeau des étapes du projet" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Étape <b>terminée</b> (✓ vert).</span></li>
+        <li><span class="pastille">2</span><span>Étape <b>en cours</b> (bleu foncé), avec son jour : « J4/14 ». En retard, un ⏰ indique le dépassement.</span></li>
+        <li><span class="pastille">3</span><span>Étape <b>à venir</b> (pointillés).</span></li>
+        <li><span class="pastille">4</span><span>La barre du temps et le trait rouge <b>aujourd'hui</b> : pour vous situer dans le temps.</span></li>
+        <li><span class="pastille">5</span><span>L'étape dont les onglets montrent les pages.</span></li>
+        <li><span class="pastille">6</span><span><b>Toutes les pages ▾</b> : rouvre tous les onglets, à tout moment.</span></li>
+      </ul></figcaption>
+    </figure>
+    <p>Cliquez sur une étape (passée, en cours ou à venir) : les onglets s'adaptent et un panneau s'ouvre.</p>
+    <figure class="ecran">
+      <img src="images/45-etapes-panneau.png" alt="Panneau d'une étape" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span><b>Pages à remplir</b> : un clic vous y emmène.</span></li>
+        <li><span class="pastille">2</span><span><b>Templates utiles</b> pour l'étape (aperçu, Word, ajout aux livrables).</span></li>
+        <li><span class="pastille">3</span><span><b>Pour terminer l'étape</b> : les critères se cochent tout seuls d'après les données du projet (planning généré, RACI rempli, note de cadrage validée…).</span></li>
+        <li><span class="pastille">4</span><span>Sur l'étape en cours : <b>Passer à l'étape suivante</b>. S'il manque des critères, l'appli vous le signale mais ne vous bloque pas. Sur une autre étape : <b>Revenir à cette étape</b> ou en faire l'étape en cours.</span></li>
+      </ul></figcaption>
+    </figure>
+    <p>Le choix du mode et des étapes se fait dans la fiche d'identité, en mode <b>✏️ Saisie</b> :</p>
+    <figure class="ecran">
+      <img src="images/46-etapes-reglage.png" alt="Réglage des étapes dans la fiche d'identité" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span><b>Libre</b> : toutes les pages sont accessibles, sans bandeau d'étapes.</span></li>
+        <li><span class="pastille">2</span><span><b>Suivi en timeline</b> : le mode par défaut des nouveaux projets.</span></li>
+        <li><span class="pastille">3</span><span>Cochez les étapes de votre projet. Facultatives : Opportunité, Consultation & contractualisation (fournisseur, achat d'un produit), Conception, Accompagnement (après la mise en production).</span></li>
+        <li><span class="pastille">4</span><span>Les dates : laissées vides, elles sont reprises des phases du planning ; saisies, elles priment.</span></li>
+        <li><span class="pastille">5</span><span>L'état de chaque étape, et les dates proposées par le planning.</span></li>
+      </ul></figcaption>
+    </figure>
+    <div class="retenir">L'étape en cours est celle que vous avez validée avec « Passer à l'étape suivante » ; tant que vous ne l'avez pas fait, l'appli la déduit des dates. Elle apparaît aussi dans la fiche d'identité (mode lecture), sur les cartes et sur la frise du portefeuille. Les onglets <b>Vue d'ensemble</b> et <b>Identité</b> restent toujours visibles.</div>
+
+    <h3>Le temps réellement passé</h3>
+    <p>Dans <b>Identité › Charge</b>, le bouton <span class="bouton clair">⏱️ Temps passé</span> bascule le tableau : vous saisissez les jours <b>réellement passés</b> par personne et par mois. Sous chaque case, l'appli rappelle le prévu et l'écart : <span class="ch-g c-sur">rouge</span> si la personne a passé plus de temps que prévu. <span class="bouton clair">📅 Prévu</span> revient à la charge prévue.</p>
+  </section>
+
+  <!-- ═════════ 6 -->
+  <section class="chap" id="planif">
+    <header><span class="num">6</span><h2>Planification</h2></header>
+    <p class="enbref">L'appli construit le planning à partir de la méthode choisie (sprints, phases, jalons, réunions, copils). Vous ajustez ensuite ce que vous voulez.</p>
+
+    <h3>Mettre en place le planning (une seule fois)</h3>
+    <figure class="ecran">
+      <img src="images/13-choix-methode.png" alt="Choix de la méthode : Agile, Hybride, Cycle en V" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Choisissez la <b>méthode</b> : <b>Agile</b> (sprints), <b>Hybride</b> (cadrage, sprints, recette, déploiement) ou <b>Cycle en V</b> (phases successives).</span></li>
+        <li><span class="pastille">2</span><span>La <b>durée des sprints</b> (1 à 4 semaines). Les sprints commencent toujours un lundi.</span></li>
+        <li><span class="pastille">3</span><span><span class="bouton">Générer le planning →</span> : phases, sprints, jalons, cérémonies et copils sont créés d'un coup.</span></li>
+      </ul></figcaption>
+    </figure>
+    <div class="retenir">Les copils sont placés automatiquement : tous les 2 sprints en Agile et Hybride, à chaque jalon en Cycle en V. Les jours fériés et les fermetures de l'entreprise sont évités.</div>
+    <p>Dans <b>Planification › Réunions</b>, la liste « Types de réunions générées » permet de cocher ou décocher chaque type. En plus des cérémonies et des copils :</p>
+    <table class="simple">
+      <tr><th>Type</th><th>Quand</th><th>Ordre du jour proposé</th></tr>
+      <tr><td>🧭 Réunion de cadrage</td><td>Le premier jour du projet, l'après-midi (après la réunion de lancement)</td><td>Contexte et enjeux, objectifs, périmètre, parties prenantes, contraintes et risques, planning macro, prochaines étapes</td></tr>
+      <tr><td>🎙️ Entretien utilisateur</td><td>Un par semaine dès le début ; nombre réglable (3 par défaut)</td><td>Guide d'entretien : introduction (accord pour l'enregistrement, confidentialité), dernière utilisation, freins, questions métier, approfondissement, « baguette magique », conclusion</td></tr>
+      <tr><td>🤝 Point d'avancement (métier)</td><td>Toutes les 2 semaines, le jeudi ; fréquence et jour réglables</td><td>Avancement, démonstration, retours du métier, points ouverts, décisions, prochaines étapes</td></tr>
+    </table>
+    <div class="astuce">Le compte rendu d'un entretien est prérempli avec les sections du guide : il ne reste qu'à noter les réponses. Activé sur un projet déjà commencé, un type ne crée pas de réunions dans le passé : elles démarrent à partir d'aujourd'hui.</div>
+
+    <h3>La frise du planning</h3>
+    <figure class="ecran">
+      <img src="images/09-planif-frise.png" alt="Planification, vue Frise" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Les vues : <b>Frise</b>, <b>Frise copil</b>, <b>Go / No-Go</b>, <b>Sprints</b>, <b>Paramètres</b>, <b>Réunions</b>, <b>Jalons & phases</b>, <b>Tâches de préparation</b>.</span></li>
+        <li><span class="pastille">2</span><span><b>◆ Jalon</b> : ajoute un jalon (ex. « Recette utilisateurs »).</span></li>
+        <li><span class="pastille">3</span><span><b>＋ Réunion</b> : ajoute une réunion ponctuelle.</span></li>
+        <li><span class="pastille">4</span><span><b>↻ Recalculer</b> : réaligne les dates <b>non verrouillées</b>, avec un aperçu avant de valider.</span></li>
+        <li><span class="pastille">5</span><span>Les <b>filtres</b> : affichez ou masquez sprints, jalons, copils, cérémonies, fériés, réunions annulées ou passées.</span></li>
+      </ul></figcaption>
+    </figure>
+    <figure class="ecran">
+      <img src="images/10-planif-aujourdhui.png" alt="Frise avec la ligne Aujourd'hui et les cadenas" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>La ligne rouge <b>Aujourd'hui</b>. Le bouton « ⤓ Aujourd'hui » y ramène.</span></li>
+        <li><span class="pastille">2</span><span>Le <b>cadenas</b>. 🔒 : la date est verrouillée, « Recalculer » ne la touchera pas. 🔓 : la date suit le calcul automatique. Cliquez dessus pour changer.</span></li>
+      </ul></figcaption>
+    </figure>
+    <div class="astuce">Quand vous déplacez une date à la main, elle se verrouille 🔒 automatiquement. Cliquez sur une réunion ou un jalon pour le modifier, l'annuler ou le supprimer.</div>
+
+    <h3>La frise copil (pour vos présentations)</h3>
+    <figure class="ecran">
+      <img src="images/11-frise-copil.png" alt="Frise copil horizontale" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span><b>◇ Dates initiales</b> : montre en pointillés où étaient prévus les jalons au départ, avec une flèche vers la date revue.</span></li>
+        <li><span class="pastille">2</span><span><b>⛶ Mode capture</b> : masque les boutons pour une capture d'écran propre. <kbd>Échap</kbd> pour revenir.</span></li>
+      </ul></figcaption>
+    </figure>
+    <p>Couleur des jalons : <b>gris</b> = normal, <b>vert</b> = atteint, <b>orange</b> ou <b>rouge</b> = menacé par un risque élevé ou critique (à cocher dans la fiche du jalon).</p>
+
+    <h3>Suivre les glissements</h3>
+    <figure class="ecran">
+      <img src="images/12-jalons.png" alt="Tableau des jalons avec date initiale, date revue et écart" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>L'<b>écart</b> entre la date initiale et la date revue (ici +24 jours : un premier glissement de 14 jours, puis 10 jours décidés lors d’une demande de changement). « à l'heure » si rien n'a bougé.</span></li>
+      </ul></figcaption>
+    </figure>
+    <div class="astuce">Vous avez renégocié le planning ? Sous-onglet <b>Paramètres</b> › <b>Figer le planning actuel comme référence</b> : les écarts repartent de zéro.</div>
+
+    <h3>Décider du Go / No-Go de mise en production</h3>
+    <p>Planification › sous-onglet <b>🚦 Go / No-Go</b> : une liste de critères à vérifier avant la mise en production, et une décision tracée.</p>
+    <figure class="ecran">
+      <img src="images/38-gonogo.png" alt="Go / No-Go de mise en production" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Le <b>jalon de mise en production</b> concerné (trouvé automatiquement, modifiable).</span></li>
+        <li><span class="pastille">2</span><span>La <b>recommandation</b> calculée par l'outil, puis les boutons de décision <b>✅ Go</b>, <b>⚠️ Go sous réserves</b>, <b>⛔ No-Go</b>.</span></li>
+        <li><span class="pastille">3</span><span>Les <b>anomalies de recette</b> encore ouvertes (bloquantes, majeures, mineures), à reporter depuis votre outil de recette.</span></li>
+        <li><span class="pastille">4</span><span>Chaque critère : ✅ rempli, ❌ non rempli, ➖ sans objet. Ajoutez un commentaire ou une preuve.</span></li>
+        <li><span class="pastille">5</span><span>Un critère <b>bloquant</b> non rempli, ou une anomalie bloquante, entraîne une recommandation de No-Go.</span></li>
+      </ul></figcaption>
+    </figure>
+    <ol class="etapes">
+      <li>Quelques semaines avant la mise en production, évaluez les critères (recette, technique, exploitation et support, utilisateurs, organisation). Ajoutez les vôtres en bas de page.</li>
+      <li>En réunion de décision, cliquez sur le verdict. La décision part dans le journal des décisions ; pour un « Go sous réserves », une action peut être créée pour chaque réserve.</li>
+      <li>Dix jours avant la date, un rappel « Préparer le Go / No-Go » apparaît dans <b>À faire aujourd'hui</b>. Une diapo « Go / No-Go » s'ajoute au copil.</li>
+    </ol>
+
+
+    <h3>Suivre les objectifs dans le Go / No-Go</h3>
+    <p>En haut des critères, la section <b>🎯 Objectifs du projet</b> reprend les objectifs mesurables de la fiche d'identité. Pour chacun : la <b>cible</b>, la <b>mesure actuelle</b> et l'état (✅ atteint, 🟡 en bonne voie, ❌ non atteint). Mettez-les à jour avant la décision, puis au bilan de clôture.</p>
+
+    <h3>L'avancement réel (option)</h3>
+    <p>Le temps écoulé ne dit pas si le travail avance. Activez l'option <span class="bouton clair">📊 Avancement réel</span> (sur la frise copil ou dans Jalons & phases, comme « Dates initiales ») :</p>
+    <ol class="etapes">
+      <li>Dans <b>Jalons & phases</b>, saisissez le <b>% réalisé</b> de chaque phase. Une petite barre le compare au % prévu à la date du jour (trait rouge).</li>
+      <li>Sur la <b>frise copil</b>, chaque phase se remplit de son % réalisé (vert, ou orange en cas de retard), et une tuile indique l'avancement réel global, le prévu et l'écart (« 9 pts de retard »).</li>
+      <li>Projet agile sans phases : l'avancement réel est celui du backlog importé.</li>
+    </ol>
+    <div class="astuce">Désactiver l'option masque l'avancement réel sans effacer les % saisis.</div>
+
+    <h3>Les tâches de préparation automatiques</h3>
+    <p>Planification › sous-onglet <b>✅ Tâches de préparation</b>.</p>
+    <figure class="ecran">
+      <img src="images/23-taches.png" alt="Modèles de tâches de préparation par type de réunion" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span>Le <b>responsable</b> par défaut des tâches, et combien de jours avant la réunion elles sont créées.</span></li><li><span class="pastille">2</span><span>Une carte par type de réunion : ses tâches types, avec leur décalage en jours (J-10, J+2…). Décochez une tâche pour ne plus la créer.</span></li><li><span class="pastille">3</span><span><b>＋ Tâche</b> : ajoute une tâche type.</span></li></ul></figcaption>
+    </figure>
+    <p>Pour chaque type de réunion, définissez des tâches types avec un décalage en jours (ex. copil : envoyer l'invitation à J-10, préparer le support à J-5, envoyer le compte rendu à J+2). Elles sont créées toutes seules dans le registre des actions et <b>suivent la réunion si elle est déplacée</b>.</p>
+  </section>
+
+  <!-- ═════════ 7 -->
+  <section class="chap" id="risques">
+    <header><span class="num">7</span><h2>Risques</h2></header>
+    <p class="enbref">Identifier, évaluer et traiter les risques du projet, à partir d'un catalogue de risques types.</p>
+    <div class="retenir">Criticité = <b>Probabilité × Gravité</b> (de 1 à 3 chacune). Résultat : <b>1-2</b> faible, <b>3-4</b> modéré, <b>6</b> élevé, <b>9</b> critique.</div>
+
+    <h3>1. Choisir les risques dans le catalogue</h3>
+    <figure class="ecran">
+      <img src="images/14-risques-catalogue.png" alt="Catalogue de risques" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Filtrez le catalogue par <b>catégorie</b> (infrastructure, humain, planning…) ou cherchez un mot-clé.</span></li>
+        <li><span class="pastille">2</span><span><b>＋</b> ajoute le risque à votre projet, avec une probabilité et une gravité suggérées.</span></li>
+        <li><span class="pastille">3</span><span><b>Risque personnalisé</b> : pour un risque qui n'est pas dans le catalogue.</span></li>
+      </ul></figcaption>
+    </figure>
+
+    <h3>2. Décrire et traiter un risque</h3>
+    <p>Dans le <b>Registre du projet</b>, cliquez sur un risque pour ouvrir sa fiche.</p>
+    <figure class="ecran">
+      <img src="images/16-risques-registre.png" alt="Registre des risques du projet" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span>Les <b>filtres</b> : ouverts, tous, par statut ; en dessous, par catégorie.</span></li><li><span class="pastille">2</span><span>Le <b>tri</b> : criticité, catégorie, numéro, avancement des actions.</span></li><li><span class="pastille">3</span><span>Une carte par risque : criticité, numéro, tendance ▲▼, avancement des actions. Cliquez pour ouvrir la fiche.</span></li><li><span class="pastille">4</span><span><b>Risque personnalisé</b>, pour un risque hors catalogue (et l'export CSV).</span></li></ul></figcaption>
+    </figure>
+    <figure class="ecran etroit">
+      <img src="images/18-risque-fiche.png" alt="Fiche d'un risque" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span>La <b>probabilité</b> et la <b>gravité</b> : la criticité se calcule toute seule.</span></li><li><span class="pastille">2</span><span><b>💥 Risque avéré</b> : cochez si le risque se produit, il devient un problème (voir plus bas).</span></li><li><span class="pastille">3</span><span>Le <b>statut</b> : Identifié, Sous surveillance, En traitement, Accepté, Levé.</span></li><li><span class="pastille">4</span><span>Le <b>propriétaire</b> et la date de <b>prochaine revue</b> (elle apparaîtra dans « À faire aujourd'hui »).</span></li><li><span class="pastille">5</span><span>Les <b>actions de traitement</b>, avec un responsable et une échéance. Des suggestions sont proposées. Ces actions apparaissent aussi dans le registre des actions.</span></li></ul></figcaption>
+    </figure>
+
+    <h3>3. Suivre</h3>
+    <div class="deux">
+      <figure class="ecran"><img src="images/15-risques-tableau.png" alt="Tableau de bord des risques" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span><b>Tableau de bord</b>, les <b>chiffres clés</b> : risques ouverts, élevés ou critiques, actions en retard…</span></li><li><span class="pastille">2</span><span>La <b>matrice</b> des risques ouverts.</span></li><li><span class="pastille">3</span><span>Les <b>risques à surveiller</b> en priorité.</span></li><li><span class="pastille">4</span><span>La répartition <b>par niveau</b> et <b>par catégorie</b>.</span></li></ul></figcaption>
+    </figure>
+      <figure class="ecran"><img src="images/17-risques-matrice.png" alt="Matrice 3×3" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span><b>Matrice 3×3</b> : probabilité ↑ × gravité → ; la couleur de la case donne le niveau.</span></li><li><span class="pastille">2</span><span>Une pastille = un risque : <b>glissez-la</b> dans une autre case pour le réévaluer, cliquez pour ouvrir sa fiche.</span></li><li><span class="pastille">3</span><span>La légende des risques présents.</span></li></ul></figcaption>
+    </figure>
+    </div>
+    <figure class="ecran">
+      <img src="images/19-risques-copil.png" alt="Synthèse COPIL des risques" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span>L'en-tête : le projet et la date de la situation.</span></li><li><span class="pastille">2</span><span>La matrice et la liste des risques à présenter.</span></li><li><span class="pastille">3</span><span><b>⛶ Mode capture</b> : une page propre, prête pour votre support de copil.</span></li></ul></figcaption>
+      <p class="muted" style="margin:6px 0 0">Le <b>Plan d'actions</b> regroupe toutes les actions de traitement.</p>
+    </figure>
+
+    <h3>Quand un risque se produit : les problèmes</h3>
+    <ol class="etapes">
+      <li>Ouvrez le risque et cochez <b>💥 Risque avéré : c'est devenu un problème</b>. Il sort de la matrice et du registre des risques, et passe dans le sous-onglet <b>⚠️ Problèmes</b>, daté du jour. Ses actions deviennent le plan de résolution.</li>
+      <li>Un problème que personne n'avait prévu : <span class="bouton">＋ Problème</span>.</li>
+      <li>Quand c'est réglé, cochez <b>✅ Problème résolu</b> dans sa fiche. Les problèmes résolus restent visibles, avec la durée moyenne de résolution.</li>
+    </ol>
+    <div class="retenir">Décocher « Risque avéré » refait de lui un risque, avec son statut d'avant.</div>
+  </section>
+
+  <!-- ═════════ 8 -->
+  <section class="chap" id="instances">
+    <header><span class="num">8</span><h2>Réunions & copils</h2></header>
+    <p class="enbref">Toutes vos réunions au même endroit : les préparer, les présenter, puis en rédiger le compte rendu. Trois sous-onglets : Réunions & comptes rendus, Préparer le copil, Diapos copil. Les tâches de préparation automatiques se règlent dans Planification.</p>
+    <h3>La liste des réunions</h3>
+    <figure class="ecran">
+      <img src="images/24-reunions-liste.png" alt="Liste des réunions à venir et passées" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span><b>＋ Réunion</b> : ajoute une réunion qui n'était pas au planning (passée ou à venir).</span></li>
+        <li><span class="pastille">2</span><span><b>À venir</b> (45 prochains jours) : bouton <span class="bouton clair">Préparer</span>.</span></li>
+        <li><span class="pastille">3</span><span><b>Passées</b> (60 derniers jours, ou « Tout l'historique ») : bouton <span class="bouton clair">Rédiger le CR</span>.</span></li>
+        <li><span class="pastille">4</span><span>Sur un copil à venir, un seul bouton : <b>🏛️ Définir l'ordre du jour</b>, qui ouvre la préparation du copil (météo, faits marquants, décisions attendues, diapos). La fiche de la réunion (participants, points abordés, compte rendu) s'ouvre en cliquant sur la carte, ou par « 📝 Ordre du jour & compte rendu » depuis la préparation.</span></li>
+        <li><span class="pastille">5</span><span><b>📅</b> télécharge l'<b>invitation .ics</b> de la réunion : double-cliquez sur le fichier pour l'ouvrir dans Outlook, puis envoyez-la. L'appli n'envoie rien elle-même.</span></li>
+        <li><span class="pastille">6</span><span><b>Exporter vers Outlook</b> : les invitations de plusieurs réunions en une fois.</span></li>
+      </ul></figcaption>
+    </figure>
+    <div class="astuce">En haut de chaque réunion, la barre <b>État de la réunion</b> montre où elle en est : <b>① En préparation</b> → <b>② Prête</b> → <b>③ Réalisée</b>. L'étape entourée est l'état actuel ; ce n'est pas un bouton. Pour avancer, utilisez l'unique bouton bleu à droite, qui dit ce qu'il fait : « ✓ Préparation terminée : marquer comme prête » (les tâches de préparation sont cochées en même temps), puis, après la réunion, « ✓ Réunion faite, CR prêt : marquer comme réalisée ». Le lien « ↩︎ » permet de revenir en arrière.</div>
+
+    <p>Chaque réunion a un <b>ordre du jour proposé</b> selon son type (copil, revue de sprint, rétrospective…), nourri par les risques, le planning et la fiche d'identité. Les participants sont proposés par défaut et modifiables.</p>
+
+    <h3>Préparer un copil</h3>
+    <figure class="ecran">
+      <img src="images/21-preparer-copil.png" alt="Préparer le copil : météo, faits marquants, décisions attendues, diapos" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span><b>La météo du projet</b> sur 5 axes. Elle est conservée d'un copil à l'autre (courbe « Évolution de la météo »).</span></li>
+        <li><span class="pastille">2</span><span><b>Les faits marquants</b> depuis le dernier copil (un par ligne).</span></li>
+        <li><span class="pastille">3</span><span><b>Les décisions attendues</b> : après le copil, l'appli vous proposera de les enregistrer (validée, refusée, reportée).</span></li>
+      </ul></figcaption>
+    </figure>
+    <p>À droite : les <b>tâches de préparation</b> de ce copil et la liste des <b>diapos à présenter</b> (cochez celles à garder).</p>
+
+    <h3>Présenter les diapos</h3>
+    <figure class="ecran">
+      <img src="images/22-diapos.png" alt="Diapos du copil" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span>Le <b>copil</b> dont on affiche les diapos.</span></li><li><span class="pastille">2</span><span><b>Préparer / choisir les diapos</b> : revenir à la préparation du copil.</span></li><li><span class="pastille">3</span><span><b>⛶ Mode capture</b> : une diapo à la fois, en plein écran.</span></li><li><span class="pastille">4</span><span>Chaque diapo est construite avec les données du projet.</span></li></ul></figcaption>
+    </figure>
+    <ol class="etapes">
+      <li>Ouvrez <b>Diapos copil</b> : chaque diapo est construite avec les données du projet (frise, risques, actions, décisions, budget, backlog…).</li>
+      <li>Cliquez sur <b>⛶ Mode capture</b> : une diapo à la fois, en plein écran. Passez de l'une à l'autre avec les flèches <kbd>←</kbd> <kbd>→</kbd>.</li>
+      <li>Faites une capture de chaque diapo (<kbd>⌘ Cmd</kbd> + <kbd>Maj</kbd> + <kbd>4</kbd> sur Mac, <kbd>Windows</kbd> + <kbd>Maj</kbd> + <kbd>S</kbd> sous Windows) et collez-la dans votre présentation.</li>
+    </ol>
+
+  </section>
+
+  <!-- ═════════ 9 -->
+  <section class="chap" id="reunions">
+    <header><span class="num">9</span><h2>Comptes rendus</h2></header>
+    <p class="enbref">Dans Réunions & copils, cliquez sur une réunion : avant, vous la préparez ; après, vous rédigez son compte rendu au même endroit.</p>
+    <h3>Rédiger un compte rendu</h3>
+    <figure class="ecran">
+      <img src="images/25-cr-editeur.png" alt="Éditeur de compte rendu de réunion" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>La <b>date et l'heure</b> : changez-les pour replanifier la réunion. Le libellé passe de « Prévue le » à « Réalisée le ».</span></li>
+        <li><span class="pastille">2</span><span>La <b>présence</b> : Présent, Excusé, ou — pour chaque interlocuteur.</span></li>
+        <li><span class="pastille">3</span><span>Les <b>points abordés</b>, préremplis avec l'ordre du jour, et vos notes pour chacun. « ＋ Point » en ajoute un.</span></li>
+        <li><span class="pastille">4</span><span>Des <b>captures d'écran</b> collées dans le point (voir <a href="#astuces">astuces</a>).</span></li>
+        <li><span class="pastille">5</span><span>Les <b>liens web</b> écrits dans le texte deviennent cliquables.</span></li>
+        <li><span class="pastille">6</span><span>La barre <b>État de la réunion</b> : ① préparation, ② prête, ③ réalisée. Ici la réunion est réalisée ; avant, un bouton « ✓ Réunion faite, CR prêt : marquer comme réalisée » apparaît à droite. « ↩︎ Repasser en préparation » revient en arrière.</span></li>
+        <li><span class="pastille">7</span><span><b>Copier</b>, <b>Messagerie</b> ou <b>Imprimer / PDF</b> pour diffuser le compte rendu. Le PDF contient aussi les captures d'écran.</span></li>
+      </ul></figcaption>
+    </figure>
+    <p>À droite, les <b>décisions</b> et les <b>actions</b> saisies ici sont enregistrées directement dans le journal des décisions et le registre des actions, rattachées à cette réunion.</p>
+    <div class="retenir">Tout est enregistré au fil de la frappe. Le bouton <b>💾 Enregistrer</b> est là pour vous rassurer.</div>
+  </section>
+
+  <!-- ═════════ 10 -->
+  <section class="chap" id="decisions">
+    <header><span class="num">10</span><h2>Décisions & actions</h2></header>
+    <p class="enbref">Un registre unique de toutes les actions (réunions, décisions, risques, libres) et le journal des décisions.</p>
+    <h3>Le registre des actions</h3>
+    <figure class="ecran">
+      <img src="images/26-actions.png" alt="Registre des actions" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span><b>Ajouter une action</b> : texte, responsable, échéance, origine, puis ＋ Ajouter.</span></li><li><span class="pastille">2</span><span>Les <b>filtres</b> : par origine (risques, réunions, décisions, libres) et par responsable.</span></li><li><span class="pastille">3</span><span>Les actions sont rangées <b>En retard</b> (en rouge), <b>Cette semaine</b>, <b>Plus tard</b>, <b>Sans échéance</b>, <b>Terminées</b>.</span></li><li><span class="pastille">4</span><span>Cochez la case pour clore une action ; cliquez sur son texte pour la modifier.</span></li><li><span class="pastille">5</span><span><b>✅ Exporter en tâches</b> (Outlook, Rappels…) et <b>📊 Export CSV</b>.</span></li></ul></figcaption>
+    </figure>
+
+    <h3>Le journal des décisions</h3>
+    <figure class="ecran">
+      <img src="images/27-decisions.png" alt="Journal des décisions" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span><b>＋ Décision</b> : enregistre une nouvelle décision.</span></li>
+      </ul></figcaption>
+    </figure>
+    <figure class="ecran etroit">
+      <img src="images/28-decision-fiche.png" alt="Fiche d'une décision avec lien et capture d'écran" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Le <b>statut</b> : ⏳ En attente, ✅ Validée, ⛔ Refusée, ↪️ Reportée.</span></li>
+        <li><span class="pastille">2</span><span>Le <b>contexte / justification</b>.</span></li>
+        <li><span class="pastille">3</span><span>Les <b>liens</b> du texte, cliquables juste en dessous.</span></li>
+        <li><span class="pastille">4</span><span>Les <b>captures d'écran</b> jointes.</span></li>
+      </ul></figcaption>
+    </figure>
+    <p>Indiquez aussi l'<b>instance</b> (le copil où elle a été prise), le <b>décideur</b>, les <b>impacts</b> et les <b>risques concernés</b>. Une <b>action de suivi</b> peut être créée en même temps.</p>
+
+    <h3>Les demandes de changement</h3>
+    <p>Dès qu'on vous demande d'ajouter, de retirer ou de décaler quelque chose, enregistrez-le dans le sous-onglet <b>🔄 Demandes de changement</b> : c'est votre meilleure protection contre la dérive du périmètre.</p>
+    <figure class="ecran">
+      <img src="images/36-changements.png" alt="Demandes de changement" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span><b>＋ Demande</b> : qui demande quoi, pourquoi, et les <b>impacts estimés</b> (délai en jours, coût, charge, périmètre, jalons touchés).</span></li>
+        <li><span class="pastille">2</span><span>Les compteurs : à analyser, à arbitrer, acceptées (avec l'impact cumulé), refusées et reportées.</span></li>
+        <li><span class="pastille">3</span><span><b>⚖️ Arbitrer</b> : accepter, refuser ou reporter la demande.</span></li>
+      </ul></figcaption>
+    </figure>
+    <figure class="ecran etroit">
+      <img src="images/37-arbitrage.png" alt="Arbitrage d'une demande de changement" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>La décision : <b>Acceptée</b>, <b>Refusée</b> ou <b>Reportée</b>. Elle est ajoutée au journal des décisions.</span></li>
+        <li><span class="pastille">2</span><span>Si elle est acceptée : les jalons impactés peuvent être <b>décalés automatiquement</b>.</span></li>
+        <li><span class="pastille">3</span><span>… et le surcoût <b>ajouté au budget</b> (nouveau poste à son nom).</span></li>
+      </ul></figcaption>
+    </figure>
+    <div class="astuce">Rattachez la demande à un copil (champ « Instance d'arbitrage ») : elle apparaît dans la diapo <b>Demandes de changement</b> du copil, avec des cases Accepté / Refusé / Reporté.</div>
+
+    <h3>Mettre les actions dans votre liste de tâches</h3>
+    <p>Dans le registre des actions, <span class="bouton clair">✅ Exporter en tâches</span> crée un fichier avec les actions ouvertes (toutes, celles d'une personne, ou celles des 30 prochains jours) :</p>
+    <ul>
+      <li><b>📧 Outlook (Windows)</b> : un fichier CSV. Dans Outlook : Fichier › Ouvrir et exporter › Importer/Exporter › « Importer à partir d'un autre programme ou fichier » › Valeurs séparées par des virgules, puis choisissez le dossier <b>Tâches</b>.</li>
+      <li><b>🍎 Rappels, Thunderbird, autres</b> : un fichier de tâches .ics, à ouvrir d'un double-clic.</li>
+    </ul>
+    <div class="attention">Rien n'est envoyé ni synchronisé : c'est une copie. Si une action change dans l'appli, refaites l'export.</div>
+  </section>
+
+  <!-- ═════════ 11 -->
+  <section class="chap" id="livrables">
+    <header><span class="num">11</span><h2>Livrables & docs</h2></header>
+    <p class="enbref">La liste de tous les documents du projet, de la note de cadrage au manuel utilisateur, et une bibliothèque de modèles pour les rédiger. Deux sous-onglets : 📚 Livrables et 🧩 Templates.</p>
+    <h3>Suivre les livrables</h3>
+    <figure class="ecran">
+      <img src="images/29-livrables.png" alt="Livrables et documentation" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span><b>＋ Livrable / document</b> : ajoute un document à suivre.</span></li><li><span class="pastille">2</span><span>Les <b>chiffres clés</b> : documents, validés ou diffusés, en cours, en retard, prêts pour le prochain jalon.</span></li><li><span class="pastille">3</span><span>Le <b>filtre</b> par catégorie.</span></li><li><span class="pastille">4</span><span>Une ligne par document : cliquez pour le modifier ; ↗ ouvre le lien, 📎 le fichier joint.</span></li><li><span class="pastille">5</span><span>Son <b>statut</b> : À produire, En rédaction, En relecture, Validé, Diffusé.</span></li></ul></figcaption>
+    </figure>
+    <ol class="etapes">
+      <li><span class="bouton">＋ Livrable / document</span> : titre, catégorie (documentation, spécifications, manuel, tutoriel, how-to support, contrat, NDA…), responsable, valideur, échéance, version.</li>
+      <li>Suivez son <b>statut</b> : À produire → En rédaction → En relecture → Validé → Diffusé.</li>
+      <li>Ajoutez un <b>lien</b> (SharePoint, Confluence, Teams, ClickUp…) ou <b>joignez un fichier</b> : il est copié dans le dossier <code>documents/</code>.</li>
+    </ol>
+    <div class="retenir">Les comptes rendus de réunions, de copils et de retex s'ajoutent tout seuls à la liste. Un livrable en retard apparaît dans « À faire aujourd'hui ».</div>
+
+    <h3>Partir d'un template</h3>
+    <p>Le sous-onglet <b>🧩 Templates</b> propose 17 modèles de documents, classés par phase du projet. Ils sont <b>préremplis</b> avec ce que l'appli sait déjà : nom du projet, équipe, objectifs, périmètre, jalons, principaux risques, enseignements du retex.</p>
+    <figure class="ecran">
+      <img src="images/40-templates.png" alt="Bibliothèque de templates" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Le sous-onglet <b>🧩 Templates</b>.</span></li>
+        <li><span class="pastille">2</span><span>Filtrez par <b>phase</b> : cadrage, conception, recette, déploiement, pilotage, clôture, contractuel.</span></li>
+        <li><span class="pastille">3</span><span><b>Aperçu</b> : lisez le modèle avant de l'utiliser.</span></li>
+        <li><span class="pastille">4</span><span><b>Word</b> : téléchargez-le pour le compléter dans Word.</span></li>
+        <li><span class="pastille">5</span><span><b>＋ Livrable</b> : ajoute le document à la liste des livrables (statut « En rédaction », version 0.1), avec le fichier Word joint dans <code>documents/</code>.</span></li>
+        <li><span class="pastille">6</span><span><b>✓ Suivi</b> : un livrable de ce nom existe déjà dans la liste.</span></li>
+      </ul></figcaption>
+    </figure>
+    <table class="simple">
+      <tr><th>Phase</th><th>Templates</th></tr>
+      <tr><td>🧭 Cadrage</td><td>Note de cadrage · Expression de besoin · Guide d'entretien utilisateur · Matrice RACI</td></tr>
+      <tr><td>📐 Conception</td><td>Spécifications fonctionnelles · User story</td></tr>
+      <tr><td>🧪 Recette</td><td>Plan et cahier de recette · PV de recette</td></tr>
+      <tr><td>🚀 Déploiement</td><td>Plan de conduite du changement · Plan de mise en production · Manuel utilisateur · Fiche How-to support</td></tr>
+      <tr><td>🎛️ Pilotage</td><td>Compte rendu de réunion · Demande de changement</td></tr>
+      <tr><td>🏁 Clôture</td><td>Bilan et PV de clôture</td></tr>
+      <tr><td>📜 Contractuel</td><td>Grille d'analyse des offres · Accord de confidentialité (NDA)</td></tr>
+    </table>
+    <figure class="ecran">
+      <img src="images/41-template-apercu.png" alt="Aperçu d'un template" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Chaque document commence par un tableau de <b>versions</b>.</span></li>
+        <li><span class="pastille">2</span><span>Les textes <b>en gris italique</b> sont des consignes : remplacez-les par votre contenu, puis supprimez-les.</span></li>
+      </ul></figcaption>
+    </figure>
+    <div class="astuce">En bas de l'aperçu, <b>🖨️ Imprimer / PDF</b> produit une version papier, par exemple pour un atelier.</div>
+
+    <h3>Ajouter vos propres templates</h3>
+    <p>Votre entreprise a ses propres modèles (charte, trame de copil, tableur de budget…) ? Ajoutez-les une fois : ils seront disponibles <b>dans tous les projets</b>, en tête de la page, sous « 🏢 Mes templates ».</p>
+    <figure class="ecran">
+      <img src="images/42-mes-templates.png" alt="Mes templates" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Le filtre <b>🏢 Mes templates</b> n'affiche que vos modèles.</span></li>
+        <li><span class="pastille">2</span><span><span class="bouton">＋ Ajouter un template</span> : choisissez le fichier (Word, Excel, PowerPoint, PDF…).</span></li>
+        <li><span class="pastille">3</span><span><b>✏️</b> : modifier le nom, la phase, la description, remplacer le fichier, ou retirer le template.</span></li>
+        <li><span class="pastille">4</span><span><b>📂 Ouvrir</b> : ouvre ou télécharge le modèle.</span></li>
+        <li><span class="pastille">5</span><span><b>＋ Livrable</b> : crée le livrable dans le projet, avec une <b>copie</b> du fichier rangée dans ses documents. Le modèle d'origine reste intact.</span></li>
+      </ul></figcaption>
+    </figure>
+    <figure class="ecran">
+      <img src="images/43-ajout-template.png" alt="Ajouter un template" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Le <b>fichier</b> : il est copié dans <code>documents/templates/</code>.</span></li>
+        <li><span class="pastille">2</span><span>Le <b>nom</b> : proposé à partir du nom du fichier, modifiable.</span></li>
+        <li><span class="pastille">3</span><span>La <b>phase</b> du projet (facultative) : le template apparaît aussi quand on filtre sur cette phase.</span></li>
+        <li><span class="pastille">4</span><span>La <b>catégorie</b> donnée au livrable créé à partir de ce template.</span></li>
+      </ul></figcaption>
+    </figure>
+    <div class="retenir">Retirer un template ne supprime rien de définitif : son fichier part dans la <b>corbeille</b> de l'appli, et les livrables déjà créés gardent leur copie.</div>
+    <h3>Intégrer les valeurs du projet dans vos templates (balises)</h3>
+    <p>Dans votre modèle <b>Word, Excel ou PowerPoint</b> (ou un fichier texte), écrivez des <b>balises</b> entre doubles accolades là où vous voulez une valeur du projet, par exemple :</p>
+    <div class="astuce">Projet : <b>{{projet}}</b> ({{code}}) · Chef de projet : <b>{{chef_de_projet}}</b> · Du {{date_debut}} au {{date_fin}}</div>
+    <ol class="etapes">
+      <li>Le petit bouton <b>i</b>, à côté de « 🏢 Mes templates », liste toutes les balises, avec leur valeur pour le projet ouvert. 📋 copie une balise : collez-la dans votre modèle.</li>
+      <li>Ajoutez le modèle : sa carte indique le nombre de <b>balises</b> trouvées (🏷️), et signale une balise inconnue (⚠️).</li>
+      <li><b>⬇️ Rempli</b> télécharge une copie où chaque balise est remplacée par la valeur du projet ; <b>＋ Livrable</b> range cette copie remplie dans les documents du projet. Votre modèle d'origine ne change pas.</li>
+    </ol>
+    <table class="simple">
+      <tr><th>Balises</th><th>Valeur</th></tr>
+      <tr><td><code>{{projet}}</code> <code>{{code}}</code></td><td>nom et code du projet</td></tr>
+      <tr><td><code>{{chef_de_projet}}</code> <code>{{sponsor}}</code> <code>{{product_owner}}</code></td><td>personnes, selon leur rôle dans la fiche d'identité</td></tr>
+      <tr><td><code>{{date_debut}}</code> <code>{{date_fin}}</code> <code>{{date_du_jour}}</code></td><td>dates</td></tr>
+      <tr><td><code>{{description}}</code> <code>{{enjeu}}</code></td><td>textes de la fiche d'identité</td></tr>
+      <tr><td><code>{{objectifs}}</code> <code>{{perimetre_inclus}}</code> <code>{{perimetre_exclu}}</code></td><td>listes : une ligne par élément dans Word, des puces « • » dans Excel et PowerPoint</td></tr>
+      <tr><td><code>{{budget}}</code> <code>{{methode}}</code> <code>{{etape}}</code></td><td>budget, méthode, étape en cours</td></tr>
+      <tr><td><code>{{prochain_jalon}}</code> <code>{{mise_en_production}}</code></td><td>prochain jalon (et sa date), date de mise en production</td></tr>
+    </table>
+    <div class="attention">Tapez ou collez chaque balise <b>d'un seul trait</b> dans Word. Une balise inconnue est laissée telle quelle. Les <b>PDF</b> ne peuvent pas être remplis.</div>
+    <div class="attention">À l'ouverture du fichier, Word peut signaler que le format diffère de l'extension : répondez <b>Oui</b>, puis faites <b>Enregistrer sous › Document Word (.docx)</b>. Le NDA est une trame : faites-le valider par le service juridique.</div>
+  </section>
+
+  <!-- ═════════ 12 -->
+  <section class="chap" id="backlog">
+    <header><span class="num">12</span><h2>Analyse du backlog</h2></header>
+    <p class="enbref">Votre backlog reste dans Jira ou ClickUp. Ici, vous importez un export pour obtenir un tableau de bord.</p>
+    <figure class="ecran">
+      <img src="images/30-backlog.png" alt="Tableau de bord du backlog" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span><b>Nouvel import</b> : chargez le fichier CSV exporté de Jira ou ClickUp (ou collez son contenu).</span></li>
+        <li><span class="pastille">2</span><span><b>Mode capture</b> : pour mettre le tableau de bord dans votre support.</span></li>
+      </ul></figcaption>
+    </figure>
+    <ol class="etapes">
+      <li>Dans Jira ou ClickUp, exportez votre backlog en <b>CSV</b>.</li>
+      <li>Ici, <b>📥 Nouvel import</b> : l'appli reconnaît les colonnes (statut, sprint, points, responsable, epic, échéance…). Corrigez-les si besoin : vos choix sont mémorisés.</li>
+      <li>Validez. Vous obtenez : avancement, répartition par statut, <b>vélocité</b> par sprint, <b>date de fin estimée</b> comparée au jalon de mise en production, avancement par epic, reste à faire par personne, éléments bloqués ou en retard.</li>
+    </ol>
+    <div class="attention"><b>ClickUp n'exporte que les colonnes affichées.</b> Avant d'exporter, affichez au moins la colonne <b>Status</b> dans votre vue, sinon l'avancement ne peut pas être calculé.</div>
+    <div class="astuce">Chaque import est une <b>photo datée</b> : importez par exemple à chaque fin de sprint pour voir l'évolution (nouveaux éléments, terminés, retirés).</div>
+  </section>
+
+  <!-- ═════════ 13 -->
+  <section class="chap" id="budget">
+    <header><span class="num">13</span><h2>Budget</h2></header>
+    <p class="enbref">Module optionnel : à activer dans la fiche d'identité (Modules optionnels › Suivre le budget).</p>
+    <figure class="ecran">
+      <img src="images/31-budget.png" alt="Suivi du budget" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span>Les chiffres clés : <b>prévu</b>, <b>engagé</b>, <b>consommé</b>, <b>atterrissage</b> et écart.</span></li><li><span class="pastille">2</span><span>Les <b>postes budgétaires</b>, par catégorie.</span></li><li><span class="pastille">3</span><span>L'<b>évolution</b>, point après point.</span></li><li><span class="pastille">4</span><span><b>📸 Enregistrer un point budgétaire</b>.</span></li></ul></figcaption>
+    </figure>
+    <ol class="etapes">
+      <li>Ajoutez vos <b>postes</b> par catégorie (interne, prestations externes, licences, matériel…) avec <b>Prévu</b>, <b>Engagé</b> et <b>Consommé</b>.</li>
+      <li>Le <b>reste à faire</b> est calculé (modifiable), ainsi que l'<b>atterrissage</b> et l'<b>écart</b> par rapport au prévu.</li>
+      <li>De temps en temps, cliquez sur <b>Enregistrer un point budgétaire</b> : l'évolution s'affiche en courbe.</li>
+    </ol>
+    <div class="retenir">L'appli suggère une météo budget et alimente la diapo Budget du copil.</div>
+  </section>
+
+  <!-- ═════════ 14 -->
+  <section class="chap" id="retex">
+    <header><span class="num">14</span><h2>Retex / rétrospective</h2></header>
+    <p class="enbref">Ce qui a bien marché, ce qui est à améliorer : par sprint ou pour tout le projet.</p>
+    <figure class="ecran">
+      <img src="images/32-retex.png" alt="Atelier retex en deux colonnes" loading="lazy">
+      <figcaption><ul class="legende">
+        <li><span class="pastille">1</span><span>Le filtre <b>🏃 Sprint</b> : choisissez un sprint pour mener sa rétrospective, ou « Tous les sprints » pour le retex du projet.</span></li>
+        <li><span class="pastille">2</span><span><b>Ce qui a bien marché</b> : tapez le constat, choisissez la catégorie et le sprint, puis ＋.</span></li>
+        <li><span class="pastille">3</span><span><b>À améliorer</b> : même principe.</span></li>
+        <li><span class="pastille">4</span><span><b>Compte rendu</b> : un CR imprimable du sprint choisi ou de tout le projet.</span></li>
+      </ul></figcaption>
+    </figure>
+    <p>Cliquez sur une carte pour ajouter la <b>cause</b>, la <b>recommandation</b> pour les prochains projets ou des captures, ou pour en faire une <b>action</b>. Le sous-onglet <b>📚 Bibliothèque tous projets</b> rassemble les enseignements partagés de tous vos projets : idéal avant de lancer un nouveau projet.</p>
+  </section>
+
+  <!-- ═════════ 15 -->
+  <section class="chap" id="aujourdhui">
+    <header><span class="num">15</span><h2>À faire aujourd'hui</h2></header>
+    <p class="enbref">Votre liste du matin, tous projets confondus. Le bouton est en haut de l'écran, avec un badge rouge.</p>
+    <figure class="ecran etroit">
+      <img src="images/33-aujourdhui.png" alt="Fenêtre À faire aujourd'hui" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span>Les éléments sont <b>regroupés par projet</b>, avec leur nombre.</span></li><li><span class="pastille">2</span><span>Cochez la case pour <b>clore une action</b> directement.</span></li><li><span class="pastille">3</span><span>Cliquez sur une ligne pour <b>l'ouvrir</b> dans son projet.</span></li></ul></figcaption>
+    </figure>
+    <p>On y trouve : les actions <b>en retard</b> ou à faire aujourd'hui, les réunions et jalons du jour, les <b>comptes rendus à rédiger ou à finaliser</b> (réunions des 60 derniers jours pas encore marquées « Réalisée »), les <b>revues de risques</b> arrivées à échéance, les copils à <b>statuer</b>, le rappel du <b>flash report</b> le vendredi et les <b>livrables</b> en retard.</p>
+  </section>
+
+  <!-- ═════════ 16 -->
+  <section class="chap" id="reglages">
+    <header><span class="num">16</span><h2>Réglages & partage</h2></header>
+    <p class="enbref">Le bouton ⚙️ en haut à droite : ce qui concerne tous vos projets.</p>
+    <figure class="ecran">
+      <img src="images/34-reglages.png" alt="Écran Réglages" loading="lazy">
+      <figcaption><ul class="legende"><li><span class="pastille">1</span><span>🎨 <b>Apparence</b>.</span></li><li><span class="pastille">2</span><span>📁 <b>Mes données</b>.</span></li><li><span class="pastille">3</span><span>👥 <b>Annuaire</b>.</span></li><li><span class="pastille">4</span><span>🗂️ <b>Mes projets</b>.</span></li><li><span class="pastille">5</span><span>📘 <b>Documentation</b>.</span></li><li><span class="pastille">6</span><span>🎌 <b>Jours fériés & fermetures</b>. Chaque bloc est détaillé ci-dessous.</span></li></ul></figcaption>
+    </figure>
+    <div class="deux">
+      <div class="carte-mini"><h4>🎨 Apparence</h4><p>Trois thèmes : <b>Intermédiaire</b> (par défaut, avec des cartes et boutons qui bougent au survol), <b>Sobre</b> (bleu foncé, angles à peine arrondis, sans emojis, très strict) et <b>Fun</b> (couleurs, animations, confettis quand vous terminez une tâche). Le choix est mémorisé.</p></div>
+      <div class="carte-mini"><h4>📁 Mes données</h4><p>Le dossier utilisé, la dernière sauvegarde. Changer de dossier, faire une copie de sauvegarde. « 🖥️ Utiliser le dossier de l'appli » : les mêmes données que dans Safari.</p></div>
+      <div class="carte-mini"><h4>👥 Annuaire</h4><p>Les personnes communes à tous vos projets : nom, fonction, entité, e-mail, disponibilité (jours par mois). Sous-onglets « Liste des personnes » et « Charge tous projets ».</p></div>
+      <div class="carte-mini"><h4>🎌 Jours fériés & fermetures</h4><p>Les fériés français sont automatiques. Options Alsace-Moselle et lundi de Pentecôte travaillé. Ajoutez les fermetures de l'entreprise : les plannings les évitent.</p></div>
+      <div class="carte-mini"><h4>📘 Documentation</h4><p>Le <b>manuel utilisateur</b> (aussi avec le bouton ❓ en haut) et la <b>documentation technique</b>, pour installer l'appli ou la présenter au service informatique.</p></div>
+      <div class="carte-mini"><h4>🗂️ Mes projets</h4><p><b>Fichier du projet</b> : télécharge le projet pour l'envoyer à un collègue. <b>Supprimer</b> : le projet part dans le dossier <code>corbeille/</code>.</p></div>
+    </div>
+    <h3>Partager un projet avec un collègue</h3>
+    <ol class="etapes">
+      <li>⚙️ Réglages › Mes projets › <b>Fichier du projet</b> : un fichier <code>.json</code> est téléchargé.</li>
+      <li>Envoyez-le (mail, Teams…).</li>
+      <li>Votre collègue l'ouvre avec <b>Ajouter un projet</b> sur la page Portefeuille.</li>
+    </ol>
+    <div class="attention">Les captures d'écran et les fichiers joints restent dans votre dossier <code>documents/</code> : ils ne partent pas avec le fichier du projet.</div>
+  </section>
+
+  <!-- ═════════ 17 -->
+  <section class="chap" id="astuces">
+    <header><span class="num">17</span><h2>Astuces & dépannage</h2></header>
+
+    <h3>Ajouter une capture d'écran dans un texte</h3>
+    <p>Partout où vous écrivez (comptes rendus, décisions, actions, risques, livrables, retex, notes…) :</p>
+    <ol class="etapes">
+      <li>Faites une capture <b>dans le presse-papiers</b> : <kbd>⌘ Cmd</kbd> + <kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>4</kbd> sur Mac (<kbd>Windows</kbd> + <kbd>Maj</kbd> + <kbd>S</kbd> sous Windows), puis sélectionnez la zone.</li>
+      <li>Cliquez dans le champ texte, puis collez : <kbd>⌘ Cmd</kbd> + <kbd>V</kbd> sur Mac, <kbd>Ctrl</kbd> + <kbd>V</kbd> sous Windows. La vignette apparaît sous le champ.</li>
+      <li>Cliquez sur la vignette pour l'agrandir. La petite ✕ (au survol) la retire.</li>
+    </ol>
+    <div class="astuce">Autres façons : <b>glissez</b> une image sur le champ, ou utilisez le bouton <span class="bouton clair">📷 Capture</span> sous le champ. Avec <kbd>⌘</kbd> + <kbd>Maj</kbd> + <kbd>4</kbd> (sans Ctrl), la capture devient un fichier sur le Bureau : glissez alors la petite vignette qui apparaît en bas à droite de l'écran.</div>
+
+    <h3>Les liens web sont cliquables</h3>
+    <p>Tout texte qui commence par <code>http://</code>, <code>https://</code> ou <code>www.</code> devient un lien. Dans un champ en cours de saisie, les liens s'affichent dans une barre <b>🔗</b> juste en dessous. <kbd>⌘ Cmd</kbd> + clic (<kbd>Ctrl</kbd> + clic sous Windows) sur un lien du champ l'ouvre aussi.</p>
+
+    <h3>Se repérer dans les onglets</h3>
+    <p>Deux lignes en haut de l'écran : les <b>onglets du projet</b> (Vue d'ensemble, Identité, Planification…), puis, sur une bande teintée, les <b>sous-onglets</b> de l'onglet ouvert. Sur un écran étroit, une flèche <b>‹</b> ou <b>›</b> apparaît au bord : cliquez dessus pour faire défiler les onglets.</p>
+    <p>Dans les pages, les <b>étiquettes en pointillés</b> sont des filtres d'affichage (✓ quand ils sont actifs), les <b>boutons bleus</b> sont des actions.</p>
+
+    <h3>Changer d'apparence</h3>
+    <p>⚙️ Réglages › <b>Apparence</b> : <b>Intermédiaire</b> (par défaut), <b>Sobre</b> (bleu foncé, très strict, sans emojis) ou <b>Fun</b> (coloré, animé, confettis quand une tâche est terminée). Le choix est mémorisé dans votre dossier de données.</p>
+
+    <h3>Faire une belle capture pour un support</h3>
+    <p>Sur les écrans qui ont le bouton <span class="bouton">⛶ Mode capture</span> (fiche d'identité, frise copil, RACI, flash report, backlog, retex, synthèse risques, Go / No-Go, diapos, rapport de portefeuille), cliquez dessus : les barres et les boutons disparaissent. Faites votre capture, puis <kbd>Échap</kbd> pour revenir. Le bouton <span class="bouton">✕ Quitter le mode capture</span>, en haut à droite, se réduit après quelques secondes en une petite pastille <b>✕</b>, discrète mais toujours cliquable.</p>
+
+    <h3>En cas de souci</h3>
+    <table class="simple">
+      <tr><th>Ce que vous voyez</th><th>Que faire</th></tr>
+      <tr><td>« Error response 404 » ou « Ce site est inaccessible » sur <code>localhost:8765</code></td><td>Le petit serveur est arrêté. Double-cliquez sur <b>Lancer Cockpit Projet.command</b> (Mac) ou <b>Lancer Cockpit Projet.bat</b> (Windows).</td></tr>
+      <tr><td>« Ouverture de tes données… » reste affiché</td><td>Le navigateur ne répond pas (l'étape en cours est indiquée à côté). Au bout de 6 secondes, l'appli passe toute seule par le petit serveur, qui lit le même dossier, et s'en souvient pour les fois suivantes. Sinon : ⚙️ Réglages › Mes données › « 🖥️ Utiliser le dossier de l'appli ».</td></tr>
+      <tr><td>L'appli demande d'autoriser l'accès à votre dossier</td><td>Normal à chaque nouvelle ouverture de Chrome : cliquez sur <b>🔓 Autoriser l'accès</b>.</td></tr>
+      <tr><td>L'appli ne retrouve plus le dossier (dossier renommé ou déplacé)</td><td>Cliquez sur <b>Choisir un dossier</b> et sélectionnez-le à son nouvel emplacement. Vos projets sont intacts.</td></tr>
+      <tr><td>Safari ou Firefox : « Le petit serveur de Cockpit Projet ne répond pas »</td><td>Lancez l'appli avec <b>Lancer Cockpit Projet</b>, puis rechargez la page.</td></tr>
+      <tr><td>Une nouveauté annoncée n'apparaît pas</td><td>Cliquez sur <b>🔄 Recharger</b> dans le bandeau bleu, ou rechargez la page (<kbd>⌘ Cmd</kbd> + <kbd>R</kbd> sur Mac, <kbd>F5</kbd> sous Windows).</td></tr>
+      <tr><td>Un projet a été supprimé par erreur</td><td>Il est dans le sous-dossier <code>corbeille/</code> de votre dossier de données : ouvrez-le avec <b>Ajouter un projet</b>.</td></tr>
+    </table>
+  </section>
+</main>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-label="Capture agrandie"><img alt=""></div>
+<a class="haut" href="#">↑ Sommaire</a>
+<script>
+  // Agrandir une capture au clic
+  const lb = document.getElementById("lb");
+  document.querySelectorAll("figure.ecran img").forEach(img => img.addEventListener("click", () => { lb.querySelector("img").src = img.src; lb.querySelector("img").alt = img.alt; lb.classList.add("ouvert"); }));
+  lb.addEventListener("click", () => lb.classList.remove("ouvert"));
+  document.addEventListener("keydown", e => { if (e.key === "Escape") lb.classList.remove("ouvert"); });
+  // Sommaire : chapitre en cours surligné
+  const liens = [...document.querySelectorAll("nav.sommaire a")];
+  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) liens.forEach(a => a.classList.toggle("actif", a.getAttribute("href") === "#" + e.target.id)); }), { rootMargin: "-30% 0px -60% 0px" });
+  document.querySelectorAll("section.chap").forEach(s => obs.observe(s));
+</script>
+</body>
+</html>

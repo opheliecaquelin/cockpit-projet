@@ -1,0 +1,9 @@
+import json
+D = '/private/tmp/claude-501/-Users-ophelie-caquelin-Cockpit-Projet/02d1006b-fc0c-4a3a-b347-bcd2df1b8d71/scratchpad/manuel/'
+RECO = "window.confirm = () => true; const root = await navigator.storage.getDirectory(); const d = await root.getDirectoryHandle('Cockpit Projet'); window.showDirectoryPicker = async () => d; if (btn('Choisir un dossier')) await clic(btn('Choisir un dossier'), 1500);"
+PROJ = "if ($('#projSel').selectedOptions[0]?.textContent.indexOf('Portail') < 0) { const s = $('#projSel'); s.value = [...s.options].find(o => o.textContent.includes('Portail')).value; s.dispatchEvent(new Event('change', { bubbles: true })); await w(600); }"
+L = [
+  {"nom": "21-preparer-copil", "vp": [1280, 1500], "js": RECO + PROJ + " await clic('[data-act=module][data-id=instances]', 500); await clic('[data-act=in-vue][data-id=copil]', 500); window.scrollTo(0,0); await w(300); const R = marquer([[$('.meteo-row')?.parentElement, 1, 'l'], [$('[data-prep=faits]'), 2, 'l'], [$('[data-prep=decisions]'), 3, 'l']]); R.push(Math.round($('[data-prep=decisions]').getBoundingClientRect().bottom));"},
+  {"nom": "25-cr-editeur", "vp": [1280, 1500], "js": "await clic('[data-act=module][data-id=instances]', 500); await clic('[data-act=in-vue][data-id=reunions]', 500); if ($('[data-act=cr-retour]')) await clic('[data-act=cr-retour]', 400); const carte = $$('[data-act=cr-ouvrir]').find(e => e.textContent.includes('Copil n°2')); await clic(carte, 700); window.scrollTo(0,0); await w(300); const R = marquer([[$('.cr-date'), 1, 'tl'], [$('.cr-pres'), 2, 'l'], [$('textarea[data-crp]'), 3, 'l'], [$('.cap-zone'), 4, 'l'], [$('.liens-champ'), 5, 'r'], ['[data-act=cr-diffuse]', 6, 'tl'], ['[data-act=cr-imprimer]', 7, 'tl']]); R.push(Math.round($('.liens-champ').getBoundingClientRect().bottom));"},
+]
+json.dump(L, open(D + 'lot4.json', 'w', encoding='utf-8'), ensure_ascii=False)
