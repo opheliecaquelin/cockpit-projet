@@ -1765,6 +1765,7 @@ html.theme-sobre .dash-cols.edit .dash-col { border-radius: 3px; }
 .dash-cols.edit { align-items: stretch; }
 
 /* balises {{…}} des templates personnels */
+.demo-mode [hidden] { display: none !important; }
 .bal-i { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--primary); background: #fff; color: var(--primary); font: italic 700 .8rem Georgia, serif; cursor: pointer; display: inline-grid; place-items: center; padding: 0; }
 .bal-i:hover { background: var(--primary); color: #fff; }
 .bal-info { display: flex; gap: 6px; flex-wrap: wrap; }

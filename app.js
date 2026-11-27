@@ -7071,9 +7071,9 @@ ${S2.join("\n")}
   function appliquerVerrouDemo() {
     if (!DEMO_MODE) return;
     document.body.classList.add("demo-mode");
-    document.querySelectorAll("button").forEach(b => {
-      const safe = DEMO_NAV_ACTIONS.has(b.dataset.act) || ["rClose", "rOk"].includes(b.id) || b.matches(".nav-fleche");
-      if (!safe) b.hidden = true;
+    document.querySelectorAll("[data-act], button").forEach(el => {
+      const safe = DEMO_NAV_ACTIONS.has(el.dataset.act) || ["rClose", "rOk"].includes(el.id) || el.matches(".nav-fleche");
+      if (!safe) el.hidden = true;
     });
     document.querySelectorAll("input, textarea, select").forEach(el => {
       const safeInput = DEMO_FILTER_IDS.has(el.id);
