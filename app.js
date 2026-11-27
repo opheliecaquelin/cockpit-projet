@@ -272,7 +272,7 @@
   const bloquerDemo = e => { e.preventDefault(); e.stopImmediatePropagation(); };
   if (DEMO_MODE) {
     document.addEventListener("click", e => {
-      const target = e.target.closest?.("button, [role=button], a");
+      const target = e.target.closest?.("[data-act], button, [role=button], a");
       if (!target) return;
       const action = target.dataset?.act;
       const href = target.closest("a")?.getAttribute("href") || "";
@@ -7071,9 +7071,11 @@ ${S2.join("\n")}
   function appliquerVerrouDemo() {
     if (!DEMO_MODE) return;
     document.body.classList.add("demo-mode");
-    document.querySelectorAll("[data-act], button").forEach(el => {
+    document.querySelectorAll("button, [data-act]").forEach(el => {
       const safe = DEMO_NAV_ACTIONS.has(el.dataset.act) || ["rClose", "rOk"].includes(el.id) || el.matches(".nav-fleche");
-      if (!safe) el.hidden = true;
+      if (safe) return;
+      if (el.tagName === "BUTTON") el.hidden = true;
+      else el.classList.add("demo-inert");
     });
     document.querySelectorAll("input, textarea, select").forEach(el => {
       const safeInput = DEMO_FILTER_IDS.has(el.id);
